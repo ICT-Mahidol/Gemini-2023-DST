@@ -45,4 +45,3 @@
 
 **Add Propose to install a special device to Gemini**
 - Use Case ที่เก็บข้อมูลที่ Visitor เสนอ special device ที่ต้องการติดตั้งให้กับ Gemini
-- 
