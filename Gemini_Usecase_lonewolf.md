@@ -1,6 +1,6 @@
 # Use Cases Diagram
 
-![Gemini_Usecase](Gemini_Usecase_longwolf.png)
+![Gemini_Usecase](Gemini_Usecase_lonewolf.png)
 
 # Use Cases Description
 
