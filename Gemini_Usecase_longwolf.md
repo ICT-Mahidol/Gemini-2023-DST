@@ -1,6 +1,8 @@
-** Use Cases Diagram **
+# Use Cases Diagram
 
-![Screenshot](screenshot.png)
+![Gemini_Usecase](Gemini_Usecase_longwolf.png)
+
+# Use Cases Description
 
 สร้าง Science plan
 - Use Case ที่ Astronomer ทำการสร้าง Science plan
