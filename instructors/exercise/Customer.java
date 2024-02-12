@@ -1,4 +1,4 @@
-public class Customer extends Person {
+public class Customer extends Person { 
     private int customerID;
     private int membershipLevel;
 
