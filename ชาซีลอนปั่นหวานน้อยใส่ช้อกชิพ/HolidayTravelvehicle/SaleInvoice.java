@@ -1,8 +1,8 @@
 public class SaleInvoice{
     private String invoiceID;
 
-    public SaleInvoice(String invoiceID) {
-        this.invoiceID = invoiceID;
+    public SaleInvoice(String id) {
+        this.invoiceID = id;
     }
 
     public void printInfo() {
@@ -11,12 +11,6 @@ public class SaleInvoice{
 
 }
 
-// class main {
-//     public static void main(String[] args) {
-//         SaleInvoice invoice1 = new SaleInvoice("5555");
-//         invoice1.printInfo();
-//     }
-// }
 
 
 
