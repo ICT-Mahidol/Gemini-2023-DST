@@ -14,9 +14,6 @@ public class main {
 
         }
         */
-        public void printCarDetail(){
-            System.out.println(this);
-        }
 
         public static void main(String[] args) {
             myMethod();
