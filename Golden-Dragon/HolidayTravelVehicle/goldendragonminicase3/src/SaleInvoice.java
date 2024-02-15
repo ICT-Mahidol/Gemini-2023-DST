@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-//package HolidayTravelVehicle;
 
-=======
->>>>>>> 84e34aef03630a7c4947c09eea17291c14246b51
 public class SaleInvoice {
     private String customerInfo;
     private String tradeInVehicle;
