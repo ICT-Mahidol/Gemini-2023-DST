@@ -1,9 +1,9 @@
 public class DealerInstalled {
     private String optionCode;
     private String description;
-    private String price;
+    private int price;
 
-    public DealerInstalled(String optionCode, String description, String price){
+    public DealerInstalled(String optionCode, String description, int price){
         this.optionCode = optionCode;
         this.description = description;
         this.price = price;
@@ -17,7 +17,7 @@ public class DealerInstalled {
         return description;
     }
 
-    public String getPrice(){
+    public int getPrice(){
         return price;
     }
 
