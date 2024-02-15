@@ -10,8 +10,27 @@ public class TradeInVehicle {
         return serialNumber;
     }
 
-    public void setserialNumber(int serialNumber){
+    public void setSerialNumber(int serialNumber){
         this.serialNumber = serialNumber;
+    }
+
+    public void setMake(String make){
+        this.make = make;
+    }
+
+    public void setModel(String model){
+        this.model = model;
+    }
+
+    public void setYear(int year){
+        this.year = year;
+    }
+
+    public void setTradeInVehicle(int serialNumber,String make,String model,int year){
+        this.serialNumber = serialNumber;
+        this.make = make;
+        this.model = model;
+        this.year = year;
     }
 
     public ArrayList<String> getAllData()    {
