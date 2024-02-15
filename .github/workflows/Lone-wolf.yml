@@ -28,5 +28,5 @@ jobs:
       # Compile java file from directory
 
     - name: Run Java Program
-      run: java Main
+      run: java main
       
