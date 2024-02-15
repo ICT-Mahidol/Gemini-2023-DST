@@ -9,12 +9,12 @@ public class DealerInstalledOptions {
     // private List<SalesInvoice> associatedInvoices;
     private SalesInvoice tradeinAllowance;
 
+    public DealerInstalledOptions(){}
+
     public DealerInstalledOptions(String description, String optionCode, double price) {
         this.description = description;
         this.optionCode = optionCode;
         this.price = price;
-
-    
     }
     
     public String getDescription() {
@@ -41,8 +41,14 @@ public class DealerInstalledOptions {
         this.price = price;
     }
 
+    public void setDealerInstalledOptions(String description, String optionCode, double price){
+        this.description = description;
+        this.optionCode = optionCode;
+        this.price = price;
+    }
+
     public String toString(){
-        return "Description: " + description + "Option Code: " + optionCode + "Price: " + price;
+        return "Description: " + description + " | Option Code: " + optionCode + " | Price: " + price;
     }
 
     

@@ -34,7 +34,8 @@ public class Employee {
     public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
+    
     public String toString(){
-        return "Employee ID: " + employeeID + "Employee Name: " + employeeName + "Phone: " + phoneNumber;
+        return "Employee ID: " + employeeID + " | Employee Name: " + employeeName + " | Phone: " + phoneNumber;
     }
 }

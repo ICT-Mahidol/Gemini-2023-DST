@@ -63,6 +63,7 @@ public class Vehicle {
         this.baseCost = baseCost;
     }
     public String toString(){
-        return "VehicleSerailNumber: "+vehicleSerialNumber+"Name: "+name+"Model: "+model+"Year: "+year+"Manufacturer"+manufacturer+"Base Cost: "+baseCost;
+        return "VehicleSerailNumber: " + vehicleSerialNumber + " | Name: " + name + " | Model: " + model + 
+        " | Year: " + year + " | Manufacturer: " + manufacturer + " | Base Cost: " + baseCost;
     }
 }

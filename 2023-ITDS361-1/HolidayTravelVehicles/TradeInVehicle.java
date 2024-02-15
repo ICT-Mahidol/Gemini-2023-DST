@@ -40,7 +40,7 @@ public class TradeInVehicle {
     }
 
     public String toString(){
-        return "serialNumber: " + serialNumber + "make: " + make + "model: " + model + "year: " + year;
+        return "serialNumber: " + serialNumber + " | make: " + make + " | model: " + model + " | year: " + year;
     }
 
 }
