@@ -23,9 +23,9 @@ public class Main {
         tradeIn1.printInfo();
 
         DealerInstalled dealerInstalled = new DealerInstalled(
-            0, 
-            null, 
-            null
+            "120", 
+            "New Wheel Cover", 
+            32000
             );
         dealerInstalled.printInfo();
 
