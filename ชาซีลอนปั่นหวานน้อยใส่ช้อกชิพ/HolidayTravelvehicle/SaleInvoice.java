@@ -6,7 +6,8 @@ public class SaleInvoice{
     }
 
     public void printInfo() {
-        System.out.println("Invoice Number: " + this.invoiceID);
+        System.out.println("Invoice Number: " + this.invoiceID
+        + "CustomerID: " );
     }
 
 }
