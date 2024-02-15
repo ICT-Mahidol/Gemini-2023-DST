@@ -30,3 +30,4 @@ jobs:
       run: |
         cd ชาบูหมาล่า/HolidayTravelVehicle
         java -cp . Main
+
