@@ -30,6 +30,6 @@ jobs:
     - name: run Java
       run: |
         cd lonewolf/HolidayTravelVehicles 
-        java . main.java
-      # Compile java file from directory
+        java main
+      # Run java file from directory
       
