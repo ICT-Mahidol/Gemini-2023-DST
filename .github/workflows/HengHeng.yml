@@ -48,6 +48,6 @@ jobs:
 
         cd HengHeng/HolidayTravelVehicles
 
-        java Main.java
+        java Main
 
 # Compile java file from directory
