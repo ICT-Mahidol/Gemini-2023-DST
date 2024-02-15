@@ -11,13 +11,13 @@ public class Employee {
         this.employeeName = employeeName;
         this.phoneNumber = phoneNumber;
     }
-    public String getemployeeID() {
+    public String getEmployeeID() {
         return employeeID;
     }
-    public String getemployeeName() {
+    public String getEmployeeName() {
         return employeeName;
     }
-    public String getphoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
     public void setEmployeeProfile(String employeeID,String employeeName, String phoneNumber){
