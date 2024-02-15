@@ -26,3 +26,7 @@ jobs:
         cd ชาบูหมาล่า/HolidayTravelVehicles 
         javac -d . *.java
       # Compile java file from directory
+    - name: Run java Program
+        run: |
+          cd ชาบูหมาล่า/HolidayTravelVehicle
+          java -cp . Main
