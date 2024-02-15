@@ -1,3 +1,46 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class DealerInstalledOptions {
+    private String description;
+    private String optionCode;
+    private double price;
+    // private ArrayList<SalesInvoice> tradeinAllowance;
+    // private List<SalesInvoice> associatedInvoices;
+    private SalesInvoice tradeinAllowance;
+
+    public DealerInstalledOptions(String description, String optionCode, double price) {
+        this.description = description;
+        this.optionCode = optionCode;
+        this.price = price;
+
+    
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getOptionCode() {
+        return optionCode;
+    }
+
+    public void setOptionCode(String optionCode) {
+        this.optionCode = optionCode;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     
 }
+
