@@ -3,6 +3,7 @@ public class Customer {
     public String name;
     public String address;
     public int phoneNumber;
+    private Saleinvoice saleinvoice ;
 
     public Customer(int newCustomerID, String newName, String newAddress, int newPhonenumber) {
         this.customerID = newCustomerID;

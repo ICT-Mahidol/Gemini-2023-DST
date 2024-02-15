@@ -5,7 +5,7 @@ public class TradeinVehicle {
     public String serialnumber ;
     public String model ;
     public int year ;
-    private SaleInvoice saleinvoice;
+    private Saleinvoice saleinvoice;
 
 
 public TradeinVehicle(String serialnumber, String model, int year) {

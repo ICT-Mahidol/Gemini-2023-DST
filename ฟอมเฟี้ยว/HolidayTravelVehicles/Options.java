@@ -2,6 +2,7 @@ public class Options {
     public int option_code;
     public String description;
     public int price;
+    private Saleinvoice saleinvoice ;
 
     public Options(int newOptions_code, String newDescription, int newPrice) {
         this.option_code = newOptions_code;
