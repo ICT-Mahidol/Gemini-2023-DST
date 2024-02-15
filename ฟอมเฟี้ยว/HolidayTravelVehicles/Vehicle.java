@@ -37,7 +37,7 @@ public class Vehicle {
         return this.manufacturer;
     }
 
-    public int Basecost() {
+    public int getBasecost() {
         return this.basecost;
     }
 
