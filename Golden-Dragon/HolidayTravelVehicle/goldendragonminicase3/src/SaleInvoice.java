@@ -1,5 +1,3 @@
-package HolidayTravelVehicle;
-
 public class SaleInvoice {
     private String customerInfo;
     private String tradeInVehicle;
