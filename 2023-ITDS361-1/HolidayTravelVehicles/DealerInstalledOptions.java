@@ -7,7 +7,7 @@ public class DealerInstalledOptions {
     private double price;
     // private ArrayList<SalesInvoice> tradeinAllowance;
     // private List<SalesInvoice> associatedInvoices;
-    private SalesInvoice tradeinAllowance;
+    // private SalesInvoice tradeinAllowance;
 
     public DealerInstalledOptions(){}
 

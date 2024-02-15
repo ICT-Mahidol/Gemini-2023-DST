@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class TradeInVehicle {
     private String serialNumber;
-    private String customer; 
     public String make;
     public String model;
     public int year;
@@ -10,10 +9,6 @@ public class TradeInVehicle {
 
     public String getSerialNumber(){
         return serialNumber;
-    }
-
-    public void setCustomer(){
-        this.customer = customer.toString();
     }
 
     public void setSerialNumber(String serialNumber){
