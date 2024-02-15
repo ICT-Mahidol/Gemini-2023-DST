@@ -3,7 +3,7 @@ name: Java CI
 on:
   push:
     branches:
-      - ชาบูหมาล่า
+      - Golden-Dragon
 
 jobs:
   build:
@@ -23,10 +23,7 @@ jobs:
 
     - name: Compile Java
       run: |
-        cd ชาบูหมาล่า/HolidayTravelVehicles 
+        cd HolidayTravelVehicle/goldendragonminicase3
         javac -d . *.java
       # Compile java file from directory
-    - name: Run java Program
-      run: |
-          cd ชาบูหมาล่า/HolidayTravelVehicle
-          java -cp . Main
+      
