@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Vehicle {
     private String serial;
     private String model;
     private String year;
     private String manufacturer;
     private int baseCost;
+    private List<Customer> customers; 
+
 
     public Vehicle(String serial, String model, String year, String manufacturer, int baseCost) {
         this.serial = serial;
@@ -11,8 +16,11 @@ public class Vehicle {
         this.year = year;
         this.manufacturer = manufacturer;
         this.baseCost = baseCost;
+        this.customers = new ArrayList<>();
     }
-
+    public List<Customer> getcustomers() {
+        return customers;
+    }
     public String getSerial() {
         return serial;
     }
