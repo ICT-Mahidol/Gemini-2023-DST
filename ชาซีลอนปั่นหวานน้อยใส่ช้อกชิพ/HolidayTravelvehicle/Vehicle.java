@@ -6,8 +6,6 @@ public class Vehicle {
     private String manufacturer;
     private double baseCost;
 
-    public Vehicle() {}
-
     public Vehicle(int serialNumber, String name, String model, int year, String manufacturer, double baseCost) {
         this.serialNumber = serialNumber;
         this.name = name;
@@ -71,7 +69,7 @@ public class Vehicle {
         System.out.println("Model: " + getModel());
         System.out.println("Year: " + getYear());
         System.out.println("Manufacturer: " + getManufacturer());
-        System.out.println("Base Cost: $" + getBaseCost());
+        System.out.println("Base Cost: " + getBaseCost() + "$");
     }
 
 }
