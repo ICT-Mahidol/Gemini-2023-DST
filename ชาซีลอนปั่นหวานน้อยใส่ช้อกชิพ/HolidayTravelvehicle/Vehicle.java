@@ -40,12 +40,12 @@ public class Vehicles {
     }
 
     public void printInfo() {
-        System.out.println("Serial Number: " + vehicle.getSerialNumber());
-        System.out.println("Name: " + vehicle.getName());
-        System.out.println("Model: " + vehicle.getModel());
-        System.out.println("Year: " + vehicle.getYear());
-        System.out.println("Manufacturer: " + vehicle.getManufacturer());
-        System.out.println("Base Cost: $" + vehicle.getBaseCost());
+        System.out.println("Serial Number: " + Vehicles.getSerialNumber());
+        System.out.println("Name: " + Vehicles.getName());
+        System.out.println("Model: " + Vehicles.getModel());
+        System.out.println("Year: " + Vehicles.getYear());
+        System.out.println("Manufacturer: " + Vehicles.getManufacturer());
+        System.out.println("Base Cost: $" + Vehicles.getBaseCost());
     }
 
 }
