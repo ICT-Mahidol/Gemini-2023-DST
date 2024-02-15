@@ -2,12 +2,18 @@ import java.util.ArrayList;
 
 public class TradeInVehicle {
     private int serialNumber;
+    private String customer; 
     public String make;
     public String model;
     public int year;
 
+
     public int getserialNumber(){
         return serialNumber;
+    }
+
+    public void setcustomer(){
+        this.customer = customer.toString();
     }
 
     public void setSerialNumber(int serialNumber){
@@ -33,14 +39,8 @@ public class TradeInVehicle {
         this.year = year;
     }
 
-    public ArrayList<String> getAllData()    {
-    ArrayList<String>  TradeInData = new ArrayList<String>();   //create list
-    String serialNumberSTR = String.valueOf(serialNumber);  //convert int to str
-    String yearSTR = String.valueOf(year);  //convert int to str
-    TradeInData.add(serialNumberSTR);
-    TradeInData.add(make);
-    TradeInData.add(model);
-    TradeInData.add(yearSTR);
-    return(TradeInData);
-}
+    public String toString(){
+        return "serialNumber: " + serialNumber + "make: " + make + "model: " + model + "year: " + year;
+    }
+
 }
