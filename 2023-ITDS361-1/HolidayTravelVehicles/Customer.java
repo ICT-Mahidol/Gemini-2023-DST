@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 public class Customer {
-    private int customerID;
+    private String customerID;
     private String custormerName, address;
     private String phoneNumber;
     private ArrayList<TradeInVehicle> tradeInList;
 
     public Customer(){}
 
-    public Customer(int customerID, String custormerName, String address, String phoneNumber){
+    public Customer(String customerID, String custormerName, String address, String phoneNumber){
         this.customerID = customerID;
         this.custormerName = custormerName;
         this.address = address;
@@ -15,7 +15,7 @@ public class Customer {
         this.tradeInList = new ArrayList<TradeInVehicle>();
     }
 
-    public int getCustomerID(){
+    public String getCustomerID(){
         return customerID;
     }
 
@@ -31,7 +31,7 @@ public class Customer {
         return phoneNumber;
     }
 
-    public void setCustomerID(int customerID){
+    public void setCustomerID(String customerID){
         this.customerID = customerID;
     }
 
@@ -47,7 +47,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setCutomerProfile(int customerID, String customerName, String address, String phoneNumber){
+    public void setCutomerProfile(String customerID, String customerName, String address, String phoneNumber){
         this.customerID = customerID;
         this.custormerName = customerName;
         this.address = address;

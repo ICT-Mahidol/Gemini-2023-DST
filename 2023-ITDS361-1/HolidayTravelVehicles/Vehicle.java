@@ -54,6 +54,14 @@ public class Vehicle {
     public void setBaseCost(float baseCost) {
         this.baseCost = baseCost;
     }
+    public void setVehicle(String name,String vehicleSerialNumber,String model,int year,String manufacturer,float baseCost){
+        this.name = name;
+        this.vehicleSerialNumber = vehicleSerialNumber;
+        this.model = model;
+        this.year = year;
+        this.manufacturer = manufacturer;
+        this.baseCost = baseCost;
+    }
     public String toString(){
         return "Name: "+name+"Medel: "+model+"Cost: "+baseCost+"Year: "+year+"Manufacturer"+manufacturer+"VehicleSerailNumber: "+vehicleSerialNumber;
     }
