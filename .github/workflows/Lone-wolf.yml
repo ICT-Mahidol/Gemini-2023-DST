@@ -27,9 +27,6 @@ jobs:
         javac -d main.java
       # Compile java file from directory
 
-    - name: run Java
-      run: |
-        cd lonewolf/HolidayTravelVehicles 
-        java main
-      # Run java file from directory
+    - name: Run Java Program
+      run: java Main
       
