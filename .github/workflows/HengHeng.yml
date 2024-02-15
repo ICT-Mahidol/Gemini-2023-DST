@@ -42,4 +42,12 @@ jobs:
 
         javac -d . *.java
 
+    - name: Run Main File
+
+      run: |
+
+        cd HengHeng/HolidayTravelVehicles
+
+        java Main.java
+
 # Compile java file from directory
