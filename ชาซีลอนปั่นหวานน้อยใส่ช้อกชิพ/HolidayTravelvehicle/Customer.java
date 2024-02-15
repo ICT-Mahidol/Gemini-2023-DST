@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class Customer {
     private String customerID;
     public String name;
@@ -40,5 +41,5 @@ public class Customer {
         return phone_number;
     }
 
-    
+
 }
