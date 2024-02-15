@@ -29,5 +29,6 @@ jobs:
 
     - name: Run Java Program
       run: | 
+        cd lonewolf/HolidayTravelVehicles 
         java -cp . main
       
