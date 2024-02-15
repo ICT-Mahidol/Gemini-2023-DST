@@ -14,9 +14,6 @@ public class Main {
         ); 
         vehicle.printInfo();
 
-
-
-        
     }
 
 }
