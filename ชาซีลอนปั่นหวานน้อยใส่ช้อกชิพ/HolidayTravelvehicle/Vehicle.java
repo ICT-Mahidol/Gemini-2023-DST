@@ -6,7 +6,7 @@ public class Vehicles {
     private String manufacturer;
     private double baseCost;
 
-    public Vehicles(String serialNumber, String name, String model, int year, String manufacturer, double baseCost) {
+    public Vehicles(int serialNumber, String name, String model, int year, String manufacturer, double baseCost) {
         this.serialNumber = serialNumber;
         this.name = name;
         this.model = model;
