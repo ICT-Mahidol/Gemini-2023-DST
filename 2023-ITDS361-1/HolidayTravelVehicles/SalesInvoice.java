@@ -11,7 +11,7 @@ public class SalesInvoice {
         Vehicle V1  = new Vehicle();
         DealerInstalledOptions D1 = new DealerInstalledOptions("Add door", "10001" , 40000);
         T1.setTradeInVehicle("01","Big","A001",2000);
-        C1.setCutomerProfile("001","P'Krit","Mahidol", "0899999999");
+        C1.setCustomerProfile("001","P'Krit","Mahidol", "0899999999");
         E1.setEmployeeProfile("01","Mind","0245789136");
         V1.setVehicle("A01","Austin","X1",2000,"toyota",1000000);
         System.out.println(T1.toString());

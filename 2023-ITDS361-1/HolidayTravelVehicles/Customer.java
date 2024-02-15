@@ -47,7 +47,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setCutomerProfile(String customerID, String customerName, String address, String phoneNumber){
+    public void setCustomerProfile(String customerID, String customerName, String address, String phoneNumber){
         this.customerID = customerID;
         this.custormerName = customerName;
         this.address = address;
