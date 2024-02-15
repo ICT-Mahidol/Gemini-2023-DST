@@ -24,7 +24,7 @@ jobs:
     - name: Compile Java
       run: |
         cd lonewolf/HolidayTravelVehicles 
-        javac -d main.java
+        javac -d . main.java
       # Compile java file from directory
 
     - name: Run Java Program
