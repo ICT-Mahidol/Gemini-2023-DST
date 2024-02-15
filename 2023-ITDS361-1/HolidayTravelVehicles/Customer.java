@@ -32,15 +32,26 @@ public class Customer {
         this.customerID = customerID;
     }
 
-    public void setCustomerName(){
-        this.custormerName = custormerName;
+    public void setCustomerName(String customerName){
+        this.custormerName = customerName;
     }
 
-    public void setAddress(){
+    public void setAddress(String address){
         this.address = address;
     }
 
-    public void setPhoneNumber(){
+    public void setPhoneNumber(int phoneNumber){
         this.phoneNumber = phoneNumber;
+    }
+
+    public void setCutomerProfile(int customerID, String customerName, String address, int phoneNumber){
+        this.customerID = customerID;
+        this.custormerName = customerName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String toString(){
+        return "Customer ID: " + customerID + "Customer Name: " + custormerName + "Address: " + address + "Phone: " + phoneNumber;
     }
 }
