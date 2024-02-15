@@ -2,11 +2,11 @@ public class SaleInvoice{
     private String invoiceID;
 
     public SaleInvoice(String invoiceID) {
-        this.invoice = invoiceID;
+        this.invoiceID = invoiceID;
     }
 
     public void printInfo() {
-        System.out.println("Invoice Number: " + this.invoice);
+        System.out.println("Invoice Number: " + this.invoiceID);
     }
 
 }
