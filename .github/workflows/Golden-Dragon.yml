@@ -23,7 +23,7 @@ jobs:
 
     - name: Compile Java
       run: |
-        cd HolidayTravelVehicle/goldendragonminicase3
+        cd HolidayTravelVehicle/goldendragonminicase3/src
         javac -d . *.java
       # Compile java file from directory
       
