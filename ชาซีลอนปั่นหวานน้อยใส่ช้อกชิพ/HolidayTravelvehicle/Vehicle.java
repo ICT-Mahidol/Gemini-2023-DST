@@ -1,4 +1,4 @@
-public class Vehicles {
+public class Vehicle {
     private int serialNumber;
     public String name;
     private String model;
@@ -6,7 +6,7 @@ public class Vehicles {
     private String manufacturer;
     private double baseCost;
 
-    public Vehicles(int serialNumber, String name, String model, int year, String manufacturer, double baseCost) {
+    public Vehicle(int serialNumber, String name, String model, int year, String manufacturer, double baseCost) {
         this.serialNumber = serialNumber;
         this.name = name;
         this.model = model;
@@ -40,12 +40,12 @@ public class Vehicles {
     }
 
     public void printInfo() {
-        System.out.println("Serial Number: " + Vehicles.getSerialNumber());
-        System.out.println("Name: " + Vehicles.getName());
-        System.out.println("Model: " + Vehicles.getModel());
-        System.out.println("Year: " + Vehicles.getYear());
-        System.out.println("Manufacturer: " + Vehicles.getManufacturer());
-        System.out.println("Base Cost: $" + Vehicles.getBaseCost());
+        System.out.println("Serial Number: " + getSerialNumber());
+        System.out.println("Name: " + getName());
+        System.out.println("Model: " + getModel());
+        System.out.println("Year: " + getYear());
+        System.out.println("Manufacturer: " + getManufacturer());
+        System.out.println("Base Cost: $" + getBaseCost());
     }
 
 }
