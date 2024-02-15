@@ -2,44 +2,44 @@ name: Java CI
 
 on:
 
-push:
+  push:
 
-branches:
+    branches:
 
-- HengHeng
+      - HengHeng
 
 jobs:
 
-build:
+  build:
 
-runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-steps:
+    steps:
 
-- name: Checkout code
+    - name: Checkout code
 
-uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
-with:
+      with:
 
-ref: ${{ github.event.pull_request.head.ref }}
+        ref: ${{ github.event.pull_request.head.ref }}
+        
+        fetch-depth: ${{ env.PR_FETCH_DEPTH }}
 
-fetch-depth: ${{ env.PR_FETCH_DEPTH }}
+    - name: Set up JDK
 
-- name: Set up JDK
+      uses: actions/setup-java@v1
 
-uses: actions/setup-java@v1
+      with:
 
-with:
+        java-version: '11' # You can change this to the version you want
 
-java-version: '11' # You can change this to the version you want
+    - name: Compile Java
 
-- name: Compile Java
+      run: |
 
-run: |
+        cd HengHeng/HolidayTravelVehicles
 
-cd HengHeng/HolidayTravelVehicles
-
-javac -d . *.java
+        javac -d . *.java
 
 # Compile java file from directory
