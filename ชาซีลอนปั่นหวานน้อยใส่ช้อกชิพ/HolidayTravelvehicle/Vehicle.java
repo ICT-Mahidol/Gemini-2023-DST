@@ -41,8 +41,28 @@ public class Vehicle {
         return baseCost;
     }
 
-    public void setBaseCost(double a) {
-        this.baseCost = a;
+    public void setSerialNumber(int serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public void setBaseCost(double baseCost) {
+        this.baseCost = baseCost;
     }
 
     public void printInfo() {
