@@ -1,9 +1,8 @@
 
 
-public class OldVehicle {
-
-
+public class OldVehicleVehicle {
         // fields
+
         String type;
         String model;
         String color;
@@ -23,6 +22,9 @@ public class OldVehicle {
         }
         
         // ...
-    
-    
 }
+
+
+
+
+
