@@ -5,6 +5,7 @@ public class Vehicle {
    private String name;
    public String manufacturer;
    public int baseCost;
+
    // Constructor
    public Vehicle(int serialNumber, String model, int year, String name, String manufacturer, int baseCost) {
        this.serialNumber = serialNumber;
@@ -14,6 +15,7 @@ public class Vehicle {
        this.manufacturer = manufacturer;
        this.baseCost = baseCost;
    }
+
    // Getters and setters
    public int getSerialNumber() {
        return serialNumber;
@@ -55,8 +57,10 @@ public class Vehicle {
 
 public class Main {
    public static void main(String[] args) {
+
        // สร้างอ็อบเจกต์ของคลาส Vehicle
        Vehicle car = new Vehicle(123456, "Toyota Camry", 2022, "Camry", "Toyota", 25000);
+
        // แสดงข้อมูลของรถ
        System.out.println("Serial Number: " + car.getSerialNumber());
        System.out.println("Model: " + car.getModel());
@@ -64,9 +68,11 @@ public class Main {
        System.out.println("Name: " + car.getName());
        System.out.println("Manufacturer: " + car.getManufacturer());
        System.out.println("Base Cost: $" + car.getBaseCost());
+
        // อัพเดทข้อมูลรถ
        car.setModel("Toyota Corolla");
        car.setBaseCost(20000);
+       
        // แสดงข้อมูลหลังอัพเดท
        System.out.println("\nAfter Update:");
        System.out.println("Model: " + car.getModel());
