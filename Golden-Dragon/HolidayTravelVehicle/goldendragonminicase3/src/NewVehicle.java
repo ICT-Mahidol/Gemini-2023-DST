@@ -1,5 +1,5 @@
 
 
-public class NewVehicle {
+public class NewVehicle  {
     
 }

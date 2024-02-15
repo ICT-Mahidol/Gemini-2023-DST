@@ -1,5 +1,5 @@
 
-public class SaleInvoice {
+public class SaleInvoice  {
     private String customerInfo;
     private String tradeInVehicle;
     private int tradeInAllowance;
