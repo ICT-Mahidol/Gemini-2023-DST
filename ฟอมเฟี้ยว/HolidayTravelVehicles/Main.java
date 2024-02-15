@@ -9,4 +9,5 @@ public class Main {
         System.out.println("ปี: " + SaleVehicle.getManufacturer());
         System.out.println("ปี: " + SaleVehicle.getBaseCost());
     }
+    
 }
