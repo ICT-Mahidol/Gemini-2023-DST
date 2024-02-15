@@ -6,7 +6,7 @@ public class Car {
         private String manufacturer;
         private int basecost;
 
-        public Car (int vehicle_serial_number, String name, String model, int year, String manufacturer, int basecost){
+        public Car (int vehicle_serial_number, String name, String model, int year, String manufacturer, int basecost) {
             this.vehicle_serial_number = vehicle_serial_number;
             this.name = name;
             this.model = model;
@@ -15,15 +15,7 @@ public class Car {
             this.basecost = basecost;
         }
 
-        public void printCar(){
-            System.out.println(this.vehicle_serial_number);
-            System.out.println(this.name);
-            System.out.println(this.model);
-            System.out.println(this.year);
-            System.out.println(this.manufacturer);
-            System.out.println(this.basecost);
-        }
-
+        //Get method
         public int getVehicle_serial_number(){
             return vehicle_serial_number;
         }
