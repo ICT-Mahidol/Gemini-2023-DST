@@ -1,5 +1,3 @@
-package HolidayTravelVehicle;
-
 public class Vehicle {
 
     // fields
