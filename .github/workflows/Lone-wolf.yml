@@ -28,6 +28,6 @@ jobs:
       # Compile java file from directory
 
     - name: Run Java Program
-      run: cd lonewolf/HolidayTravelVehicles 
-           java -cp . main
+      run: | 
+        java -cp . main
       
