@@ -2,12 +2,12 @@ import java.util.ArrayList;
 public class Customer {
     private int customerID;
     private String custormerName, address;
-    private int phoneNumber;
+    private String phoneNumber;
     private ArrayList<TradeInVehicle> tradeInList;
 
     public Customer(){}
 
-    public Customer(int customerID, String custormerName, String address, int phoneNumber){
+    public Customer(int customerID, String custormerName, String address, String phoneNumber){
         this.customerID = customerID;
         this.custormerName = custormerName;
         this.address = address;
@@ -27,7 +27,7 @@ public class Customer {
         return address;
     }
 
-    public int getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
 
@@ -43,11 +43,11 @@ public class Customer {
         this.address = address;
     }
 
-    public void setPhoneNumber(int phoneNumber){
+    public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
 
-    public void setCutomerProfile(int customerID, String customerName, String address, int phoneNumber){
+    public void setCutomerProfile(int customerID, String customerName, String address, String phoneNumber){
         this.customerID = customerID;
         this.custormerName = customerName;
         this.address = address;

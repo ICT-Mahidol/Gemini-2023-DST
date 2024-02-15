@@ -1,5 +1,5 @@
 public class Vehicle {
-    private String VehicleSerialNumber;
+    private String vehicleSerialNumber;
     private String name;
     private String model;
     private int year;
@@ -9,52 +9,52 @@ public class Vehicle {
     public Vehicle(){
 
     }
-    public Vehicle(String name,String VehicleSerialNumber,String model,int year,String manufacturer,float baseCost){
+    public Vehicle(String name,String vehicleSerialNumber,String model,int year,String manufacturer,float baseCost){
         this.name = name;
-        this.VehicleSerialNumber = VehicleSerialNumber;
+        this.vehicleSerialNumber = vehicleSerialNumber;
         this.model = model;
         this.year = year;
         this.manufacturer = manufacturer;
         this.baseCost = baseCost;
     }
-    public String getname() {
+    public String getName() {
         return name;
     }
     public String getVehicleSerialNumber() {
-        return VehicleSerialNumber;
+        return vehicleSerialNumber;
     }
-    public String getmodel(){
+    public String getModel(){
         return model;
     }
-    public int getyear() {
+    public int getYear() {
         return year;
     }
-    public String getmanufacturer() {
+    public String getManufacturer() {
         return manufacturer;
     }
-    public float getbaseCost() {
+    public float getBaseCost() {
         return baseCost;
     }
     
-    public String setname() {
-        return name;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String setmodel() {
-        return VehicleSerialNumber;
+    public void setModel(String model) {
+        this.model = model;
     }
-    public String setVehicleSerialNumber() {
-        return VehicleSerialNumber;
+    public void setVehicleSerialNumber(String vehicleSerialNumber) {
+        this.vehicleSerialNumber = vehicleSerialNumber;
     }
-    public int setyear() {
-        return year;
+    public void setYear(int year) {
+        this.year =  year;
     }
-    public String setmanufacturer() {
-        return manufacturer;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
-    public float setbaseCost() {
-        return baseCost;
+    public void setBaseCost(float baseCost) {
+        this.baseCost = baseCost;
     }
-    public void printVehicle(){
-        System.out.println("Name: "+ this.name +", Model: "+this.model+", Cost: "+this.baseCost+", Year: "+this.year+ ", Manufacturer: "+this.manufacturer+", VehicleSerialNumber: "+this.VehicleSerialNumber);
+    public String toString(){
+        return "Name: "+name+"Medel: "+model+"Cost: "+baseCost+"Year: "+year+"Manufacturer"+manufacturer+"VehicleSerailNumber: "+vehicleSerialNumber;
     }
 }
