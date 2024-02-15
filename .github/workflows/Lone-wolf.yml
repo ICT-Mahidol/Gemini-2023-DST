@@ -26,4 +26,10 @@ jobs:
         cd lonewolf/HolidayTravelVehicles 
         javac -d . main.java
       # Compile java file from directory
+
+    - name: run Java
+      run: |
+        cd lonewolf/HolidayTravelVehicles 
+        java . main.java
+      # Compile java file from directory
       
