@@ -1,4 +1,4 @@
-
+package HolidayTravelVehicle;
 
 public class SaleInvoice {
     private String customerInfo;
@@ -15,43 +15,19 @@ public class SaleInvoice {
         this.finalCost = finalCost;
     }
 
-    public String getCustomerInfo() {
-        return customerInfo;
+    // Getter and setter methods
+
+    @Override
+    public String toString() {
+        return "Customer Info: " + customerInfo + "\n" +
+               "Trade-In Vehicle: " + tradeInVehicle + "\n" +
+               "Trade-In Allowance: " + tradeInAllowance + "\n" +
+               "Vehicle Fee: " + vehicleFee + "\n" +
+               "Final Cost: " + finalCost;
     }
 
-    public void setCustomerInfo(String customerInfo) {
-        this.customerInfo = customerInfo;
-    }
-
-    public String getTradeInVehicle() {
-        return tradeInVehicle;
-    }
-
-    public void setTradeInVehicle(String tradeInVehicle) {
-        this.tradeInVehicle = tradeInVehicle;
-    }
-
-    public int getTradeInAllowance() {
-        return tradeInAllowance;
-    }
-
-    public void setTradeInAllowance(int tradeInAllowance) {
-        this.tradeInAllowance = tradeInAllowance;
-    }
-
-    public int getVehicleFee() {
-        return vehicleFee;
-    }
-
-    public void setVehicleFee(int vehicleFee) {
-        this.vehicleFee = vehicleFee;
-    }
-
-    public int getFinalCost() {
-        return finalCost;
-    }
-
-    public void setFinalCost(int finalCost) {
-        this.finalCost = finalCost;
+    public static void main(String[] args) {
+        SaleInvoice invoice = new SaleInvoice("John Doe", "Toyota Camry", 5000, 25000, 20000);
+        System.out.println(invoice);
     }
 }
