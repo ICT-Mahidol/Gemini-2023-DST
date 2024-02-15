@@ -1,22 +1,22 @@
 import java.util.ArrayList;
 
 public class TradeInVehicle {
-    private int serialNumber;
+    private String serialNumber;
     private String customer; 
     public String make;
     public String model;
     public int year;
 
 
-    public int getserialNumber(){
+    public String getSerialNumber(){
         return serialNumber;
     }
 
-    public void setcustomer(){
+    public void setCustomer(){
         this.customer = customer.toString();
     }
 
-    public void setSerialNumber(int serialNumber){
+    public void setSerialNumber(String serialNumber){
         this.serialNumber = serialNumber;
     }
 
@@ -32,7 +32,7 @@ public class TradeInVehicle {
         this.year = year;
     }
 
-    public void setTradeInVehicle(int serialNumber,String make,String model,int year){
+    public void setTradeInVehicle(String serialNumber,String make,String model,int year){
         this.serialNumber = serialNumber;
         this.make = make;
         this.model = model;

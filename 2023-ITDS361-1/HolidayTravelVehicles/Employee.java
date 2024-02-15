@@ -1,10 +1,7 @@
-import java.util.ArrayList;
-
 public class Employee {
     private String employeeID;
     private String employeeName;
     private String phoneNumber;
-    private ArrayList<SalesInvoice> tradeinAllowance;
 
     public Employee(){
         
@@ -14,17 +11,14 @@ public class Employee {
         this.employeeName = employeeName;
         this.phoneNumber = phoneNumber;
     }
-    public String getemployeeID() {
+    public String getEmployeeID() {
         return employeeID;
     }
-    public String getemployeeName() {
+    public String getEmployeeName() {
         return employeeName;
     }
-    public String getphoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
-    }
-    public ArrayList<SalesInvoice> gettradeinAllowance() {
-        return this.tradeinAllowance;
     }
     public void setEmployeeProfile(String employeeID,String employeeName, String phoneNumber){
         this.employeeID = employeeID;
@@ -43,5 +37,4 @@ public class Employee {
     public String toString(){
         return "Employee ID: " + employeeID + "Employee Name: " + employeeName + "Phone: " + phoneNumber;
     }
-    
 }

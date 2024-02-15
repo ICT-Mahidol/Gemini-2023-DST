@@ -41,6 +41,10 @@ public class DealerInstalledOptions {
         this.price = price;
     }
 
+    public String toString(){
+        return "Description: " + description + "Option Code: " + optionCode + "Price: " + price;
+    }
+
     
 }
 
