@@ -28,5 +28,5 @@ jobs:
       # Compile java file from directory
     - name: Run java Program
       run: |
-        cd ชาบูหมาล่า/HolidayTravelVehicle
+        cd ชาบูหมาล่า/HolidayTravelVehicles
         java -cp . Main
