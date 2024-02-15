@@ -1,6 +1,6 @@
 
 
-public class OldVehicleVehicle {
+public class OldVehicle {
         // fields
 
         String type;
