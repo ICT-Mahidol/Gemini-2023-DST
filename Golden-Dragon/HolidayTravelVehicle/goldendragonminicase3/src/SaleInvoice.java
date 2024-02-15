@@ -1,4 +1,4 @@
-package HolidayTravelVehicle;
+//package HolidayTravelVehicle;
 
 public class SaleInvoice {
     private String customerInfo;
