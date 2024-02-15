@@ -41,10 +41,6 @@ public class Vehicle {
                 '}';
     }
 
-    // Main method to execute the program
-    public static void main(String[] args) {
-        Vehicle vehicle = new Vehicle("12345", "Toyota Camry", "Sedan", 2022, "Toyota", 25000);
-        System.out.println(vehicle);
-    }
+   
 }
 

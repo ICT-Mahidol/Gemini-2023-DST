@@ -34,13 +34,12 @@ public class Person {
         Phonenumber = phonenumber;
     }
 
-    @Override
     public String toString() {
         return "Person [Name=" + Name + ", Address=" + Address + ", Phonenumber=" + Phonenumber + "]";
     }
-    public static void main(String[] args) throws Exception {
-        Person somchai = new Person("somchai" ,"salaya" , "02-222-2222");
-        System.out.println(somchai);
-    }
+    // public static void main(String[] args) throws Exception {
+    //     Person somchai = new Person("somchai" ,"salaya" , "02-222-2222");
+    //     System.out.println(somchai);
+    // }
 }
 
