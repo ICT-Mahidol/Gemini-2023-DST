@@ -14,10 +14,27 @@ public class Main {
         ); 
         vehicle.printInfo();
 
+        TradeIn tradeIn1 = new TradeIn(
+            001, 
+            "RV", 
+            "RV", 
+            2022
+            );
+        tradeIn1.printInfo();
+
+        DealerInstalled dealerInstalled = new DealerInstalled(
+            0, 
+            null, 
+            null
+            );
+        dealerInstalled.printInfo();
+
+
         Vehicle vehicle2 = new Vehicle(); 
         vehicle2.setBaseCost(5.55);
         vehicle2.printInfo();
 
     }
+
 
 }
