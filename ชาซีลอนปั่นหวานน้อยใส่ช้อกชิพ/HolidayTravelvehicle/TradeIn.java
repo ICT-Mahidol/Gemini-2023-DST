@@ -27,6 +27,22 @@ public class TradeIn {
         return year;
     }
 
+    public void setSerialNumber(int serialNumber){
+        this.serialNumber = serialNumber;
+    }
+
+    public void setMake(String make){
+        this.make = make;
+    }
+
+    public void setModel(String model){
+        this.model = model;
+    }
+
+    public void setYear(int year){
+        this.year = year;
+    }
+
     public void printInfo() {
         System.out.println("Serial Number: " + getSerialNumber());
         System.out.println("Make: " + getMake());

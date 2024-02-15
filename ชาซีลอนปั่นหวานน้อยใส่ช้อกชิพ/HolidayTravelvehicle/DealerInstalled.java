@@ -21,6 +21,18 @@ public class DealerInstalled {
         return price;
     }
 
+    public void setOptionCode(String optionCode) {
+        this.optionCode = optionCode;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public void printInfo() {
         System.out.println("Option Code: " + getOptionCode());
         System.out.println("Description: " + getDescription());
