@@ -6,7 +6,7 @@ public class Vehicles {
     private String manufacturer;
     private double baseCost;
 
-    public Vehicle(String serialNumber, String name, String model, int year, String manufacturer, double baseCost) {
+    public Vehicles(int serialNumber, String name, String model, int year, String manufacturer, double baseCost) {
         this.serialNumber = serialNumber;
         this.name = name;
         this.model = model;
@@ -15,11 +15,11 @@ public class Vehicles {
         this.baseCost = baseCost;
     }
 
-    public String getSerialNumber() {
+    public int getSerialNumber() {
         return serialNumber;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
@@ -35,7 +35,7 @@ public class Vehicles {
         return manufacturer;
     }
 
-    public String getBaseCost() {
+    public double getBaseCost() {
         return baseCost;
     }
 
