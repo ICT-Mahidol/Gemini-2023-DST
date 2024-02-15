@@ -1,7 +1,9 @@
+import java.util.ArrayList;
 public class Customer {
     private int customerID;
     private String custormerName, address;
     private int phoneNumber;
+    private ArrayList<TradeInVehicle> tradeInList;
 
     public Customer(){}
 
@@ -10,6 +12,7 @@ public class Customer {
         this.custormerName = custormerName;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.tradeInList = new ArrayList<TradeInVehicle>();
     }
 
     public int getCustomerID(){
@@ -49,6 +52,11 @@ public class Customer {
         this.custormerName = customerName;
         this.address = address;
         this.phoneNumber = phoneNumber;
+    }
+
+    public void addTradeInVehicle(TradeInVehicle tradeInvInVehicle){
+        tradeInList.add(tradeInvInVehicle);
+        System.out.println(tradeInList);
     }
 
     public String toString(){
