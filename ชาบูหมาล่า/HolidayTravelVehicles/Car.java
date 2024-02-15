@@ -23,5 +23,24 @@ public class Car {
             System.out.println(this.manufacturer);
             System.out.println(this.basecost);
         }
+
+        public int getVehicle_serial_number(){
+            return vehicle_serial_number;
+        }
+        public String getName(){
+            return name;
+        }
+        public String getModel(){
+            return model;
+        }
+        public int getYear(){
+            return year;
+        }
+        public String getManufacturer(){
+            return manufacturer;
+        }
+        public int getBasecost(){
+            return basecost;
+        }
 }
 
