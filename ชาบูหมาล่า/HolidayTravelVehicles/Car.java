@@ -1,5 +1,4 @@
 public class main {
-    printCarDetail
     public class car {
         private int vehicle_serial_number;
         private String name;
