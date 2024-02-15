@@ -15,11 +15,11 @@ public class Vehicles {
         this.baseCost = baseCost;
     }
 
-    public String getSerialNumber() {
+    public int getSerialNumber() {
         return serialNumber;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
@@ -35,7 +35,7 @@ public class Vehicles {
         return manufacturer;
     }
 
-    public String getBaseCost() {
+    public double getBaseCost() {
         return baseCost;
     }
 
