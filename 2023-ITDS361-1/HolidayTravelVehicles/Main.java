@@ -1,41 +1,31 @@
-// import java.util.Scanner;
-// public class Main {
-//     public static void main (String args[]){
-//         Scanner scanner = new Scanner(System.in);
+import java.util.Scanner;
+public class Main {
+    public static void main (String args[]){
+        
+        System.out.println("============================Customer Information============================");
+        Customer aCustomer = new Customer("001","Mrs. Robbinson Hobter",
+        "999 Phutthamonthon Sai 4 Rd, Salaya, Phutthamonthon District, Nakhon Pathom 73170", "0899999999");
+        aCustomer.addTradeInVehicle(
+            new TradeInVehicle("601SEW","Big","AX01",2000));
+        System.out.println(aCustomer.toString());
+        aCustomer.showTradeInlist();
+        System.out.println();
 
-//         Customer C1 = new Customer();
-//         TradeInVehicle T1 = new TradeInVehicle();
-//         Employee  E1 = new Employee();
-//         Vehicle V1  = new Vehicle();
-//         DealerInstalledOptions D1 = new DealerInstalledOptions();
+        System.out.println("============================Employee Information============================");
+        Employee  anEmployee = new Employee("01","Miss. Alice Berman","0245789136");
+        System.out.println(anEmployee.toString());
+        System.out.println();
 
-//         System.out.println("Enter Customer Information");
-//         System.out.print("Enter ID: ");
-//         String customerID = scanner.nextLine();
-//         System.out.print("Enter Name: ");
-//         String customerName = scanner.nextLine();
-//         System.out.print("Enter Address: ");
-//         String customerAddress = scanner.nextLine();
-//         System.out.print("Enter Phone Number: ");
-//         String phoneNumber = scanner.nextLine();
-//         System.out.println();
+        System.out.println("============================Vehicle Information============================");
+        Vehicle vehicles  = new Vehicle("A01","Austin","X1",2000,"toyota",1000000);
+        System.out.println(vehicles.toString());
+        System.out.println();
 
-//         System.out.println("Enter Trade-in Vehicles");
-//         System.out.print("Do you have trade-in vehicles? (true/false) ");
-//         Boolean isTradeIn = scanner.nextBoolean();
-//         if (isTradeIn){
-//             System.out.print("Enter Serail Number: ");
-//             String serialNumber = scanner.nextLine();
-//             System.out.print("Enter Make: ");
-//             String make = scanner.nextLine();
-//             System.out.print("Enter Model: ");
-//             String model = scanner.nextLine();
-//             System.out.print("Enter Year: ");
-//             int year = scanner.nextInt();
-//             scanner.nextLine();
-//         }
+        System.out.println("============================Installed Options============================");
+        DealerInstalledOptions dealerInstalledOptions = new DealerInstalledOptions("Add door", "10001" , 40000);
+        System.out.println(dealerInstalledOptions.toString());
 
-
-
-//     }
-// }
+        System.out.println("\n\n");
+        SalesInvoice.printInvoice(aCustomer,anEmployee,vehicles,dealerInstalledOptions);
+    }
+}

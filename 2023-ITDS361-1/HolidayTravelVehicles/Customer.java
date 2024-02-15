@@ -5,7 +5,9 @@ public class Customer {
     private String phoneNumber;
     private ArrayList<TradeInVehicle> tradeInList;
 
-    public Customer(){}
+    public Customer(){
+        this.tradeInList = new ArrayList<TradeInVehicle>();
+    } 
 
     public Customer(String customerID, String custormerName, String address, String phoneNumber){
         this.customerID = customerID;
@@ -54,10 +56,27 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public void addTradeInVehicle(TradeInVehicle tradeInvInVehicle){
-        tradeInList.add(tradeInvInVehicle);
-        System.out.println(tradeInList);
+    public void addTradeInVehicle(TradeInVehicle tradeIn){
+        boolean dup = false;
+        for(TradeInVehicle t: tradeInList){
+            if(t.getSerialNumber() == tradeIn.getSerialNumber()){
+                dup = true;
+                break;
+            }
+        }if(dup) {
+            System.out.println( tradeIn.getSerialNumber()+"already in the list");
+        }tradeInList.add(tradeIn);
     }
+
+    public void showTradeInlist() {
+        if(tradeInList.size()>0){
+            System.out.println("Trade In Vehicle");
+		for(int i = 0; i < tradeInList.size(); i++) {
+			System.out.println("[" + i + "] " + tradeInList.get(i).toString());
+		}
+        }
+		
+	}
 
     public String toString(){
         return "Customer ID: " + customerID + " | Customer Name: " + custormerName + " | Address: " + address + " | Phone: " + phoneNumber;

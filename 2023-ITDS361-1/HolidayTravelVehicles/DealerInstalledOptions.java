@@ -5,9 +5,6 @@ public class DealerInstalledOptions {
     private String description;
     private String optionCode;
     private double price;
-    // private ArrayList<SalesInvoice> tradeinAllowance;
-    // private List<SalesInvoice> associatedInvoices;
-    // private SalesInvoice tradeinAllowance;
 
     public DealerInstalledOptions(){}
 
