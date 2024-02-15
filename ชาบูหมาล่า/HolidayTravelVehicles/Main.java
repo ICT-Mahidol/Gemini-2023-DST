@@ -4,9 +4,9 @@ public class Main {
      
     System.out.println("Serial Number: " + car.getVehicle_serial_number());
     System.out.println("Name: " + car.getName());
-    System.out.println("Model: " + car.model());
-    System.out.println("Year: " + car.year());
-    System.out.println("Manufacturer: " + car.manufacturer());
-    System.out.println("Base cost: " + car.basecost());
+    System.out.println("Model: " + car.getModel());
+    System.out.println("Year: " + car.getYear());
+    System.out.println("Manufacturer: " + car.getManufacturer());
+    System.out.println("Base cost: " + car.getBasecost());
     }
 }
