@@ -47,3 +47,4 @@ public class Vehicle {
         System.out.println(vehicle);
     }
 }
+
