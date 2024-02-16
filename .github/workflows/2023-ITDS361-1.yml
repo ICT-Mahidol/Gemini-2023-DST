@@ -23,11 +23,8 @@ jobs:
 
     - name: Compile Java
       run: |
-        cd Golden-Dragon/HolidayTravelVehicle/goldendragonminicase3/src
+        cd 2023-ITDS361-1/HolidayTravelVehicle
         javac -d . *.java
       # Compile java file from directory
       
-    - name: Run Main Class
-      run: |
-            cd 2023-ITDS361-1/HolidayTravelVehicle
-            java -cp . Display
+
