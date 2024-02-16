@@ -21,10 +21,6 @@ public class Main {
         vehicles.addInstalledOptions(new DealerInstalledOptions("Filmed", "10002" , 40000));
         vehicles.showInstalledOptions();
 
-        // System.out.println("\nInstalled Options------------------");
-        // DealerInstalledOptions dealerInstalledOptions = new DealerInstalledOptions("Add door", "10001" , 40000);
-        // System.out.println(dealerInstalledOptions.toString());
-
         System.out.println("\n\n");
         SalesInvoice.printInvoice(aCustomer,anEmployee,vehicles);
     }

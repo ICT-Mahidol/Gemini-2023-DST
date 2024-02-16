@@ -13,10 +13,8 @@ public class SalesInvoice {
 
         String formatString = "%-" + (25) + "s%-20s%s\n";
         System.out.printf(formatString, "Items", "Price/Unit", "Discount");
-        // System.out.println("Items\t\t\t\tPrice/Unit\t\tDiscount");
         System.out.println("------------------");
-        String vehicleItems = vehicle.getManufacturer() + " " + vehicle.getName() + " " + vehicle.getModel();
-        System.out.printf(formatString, vehicleItems, vehicle.getBaseCost(),"");
+        vehicle.showVehicleItems();
         vehicle.showInstalledOptionsItems();
         customer.showTradeInItems();
         System.out.println();

@@ -75,15 +75,15 @@ public class Customer {
 			System.out.println("[" + i + "] " + tradeInList.get(i).toString());
 		}
         }
-		
 	}
 
-    public void showTradeInItems(){
-        System.out.println("\nTrade In Vehicles");
-        System.out.println("------------------");
+    public void showTradeInItems(){;
+        String formatString = "%-" + (25) + "s%-20s%s\n";
         if(tradeInList.size() > 0){
+            System.out.println("\nTrade In Vehicles");
+            System.out.println("------------------");
             for(TradeInVehicle t: tradeInList){
-                System.out.println(t.getMake() + " "+t.getModel());
+                System.out.printf(formatString, t.getMake() + " "+t.getModel(),"", "");
             }
         }
         

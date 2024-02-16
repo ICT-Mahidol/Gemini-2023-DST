@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
-
 public class Vehicle {
     private String vehicleSerialNumber;
     private String name;
@@ -87,6 +85,11 @@ public class Vehicle {
 		}
         }
 	}
+
+    public void showVehicleItems(){
+        String formatString = "%-" + (25) + "s%-20s%s\n";
+        System.out.printf(formatString, manufacturer+" "+name+" "+model, baseCost,"");
+    }
     
     public void showInstalledOptionsItems() {
         if (installedList.size() > 0) {
