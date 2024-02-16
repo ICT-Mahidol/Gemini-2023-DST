@@ -27,4 +27,14 @@ jobs:
         javac -d . *.java
       # Compile java file from directory
       
+    - name: Run Main Class and save output to log file
+      run: |
+        cd 2023-ITDS361-1/HolidayTravelVehicles
+        java Main > output.log
+      
+    - name: Upload Log File
+      uses: actions/upload-artifact@v2
+      with:
+        name: main-class-output
+        path: 2023-ITDS361-1/HolidayTravelVehicles/output.log      
 
