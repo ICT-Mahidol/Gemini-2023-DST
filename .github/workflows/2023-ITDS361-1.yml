@@ -23,7 +23,7 @@ jobs:
 
     - name: Compile Java
       run: |
-        cd 2023-ITDS361-1/HolidayTravelVehicle
+        cd 2023-ITDS361-1/HolidayTravelVehicles
         javac -d . *.java
       # Compile java file from directory
       
