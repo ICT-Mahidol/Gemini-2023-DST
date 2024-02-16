@@ -5,13 +5,13 @@ public class Vehicle {
     private String model;
     private int year;
     private String manufacturer;
-    private float baseCost;
+    private double baseCost;
     private ArrayList<DealerInstalledOptions> installedList;
     
     public Vehicle(){
         this.installedList = new ArrayList<DealerInstalledOptions>();
     }
-    public Vehicle(String name,String vehicleSerialNumber,String model,int year,String manufacturer,float baseCost){
+    public Vehicle(String name,String vehicleSerialNumber,String model,int year,String manufacturer,double baseCost){
         this.name = name;
         this.vehicleSerialNumber = vehicleSerialNumber;
         this.model = model;
@@ -35,7 +35,7 @@ public class Vehicle {
     public String getManufacturer() {
         return manufacturer;
     }
-    public float getBaseCost() {
+    public double getBaseCost() {
         return baseCost;
     }
     
@@ -54,10 +54,10 @@ public class Vehicle {
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
-    public void setBaseCost(float baseCost) {
+    public void setBaseCost(double baseCost) {
         this.baseCost = baseCost;
     }
-    public void setVehicle(String vehicleSerialNumber,String name,String model,int year,String manufacturer,float baseCost){
+    public void setVehicle(String vehicleSerialNumber,String name,String model,int year,String manufacturer,double baseCost){
         this.vehicleSerialNumber = vehicleSerialNumber;
         this.name = name;
         this.model = model;

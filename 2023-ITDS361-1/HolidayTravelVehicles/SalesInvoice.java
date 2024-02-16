@@ -17,7 +17,7 @@ public class SalesInvoice {
         vehicle.showVehicleItems();
         vehicle.showInstalledOptionsItems();
         customer.showTradeInItems();
+        System.out.println("================================================================================================================");
         System.out.println();
-        System.out.println("================================================================================================================");  
     }
 }
