@@ -83,7 +83,7 @@ public class Customer {
             System.out.println("\nTrade In Vehicles");
             System.out.println("------------------");
             for(TradeInVehicle t: tradeInList){
-                System.out.printf(formatString, t.getMake() + " "+t.getModel(),"", "");
+                System.out.printf(formatString, t.getMake() + " "+t.getModel(),"", t.getTradeInAllowance());
             }
         }
         

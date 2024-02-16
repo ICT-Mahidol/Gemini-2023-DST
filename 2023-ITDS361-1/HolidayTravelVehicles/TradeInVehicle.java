@@ -3,14 +3,16 @@ public class TradeInVehicle {
     private String make;
     private String model;
     private int year;
+    private double tradeinAllowance;
 
     public TradeInVehicle(){}
 
-    public TradeInVehicle(String serialNumber,String make,String model,int year){
+    public TradeInVehicle(String serialNumber,String make,String model,int year,double tradeinAllowance){
         this.serialNumber = serialNumber;
         this.make = make;
         this.model = model;
         this.year = year;
+        this.tradeinAllowance = tradeinAllowance;
     }
 
 
@@ -30,6 +32,10 @@ public class TradeInVehicle {
         return year;
     }
 
+    public double getTradeInAllowance(){
+        return tradeinAllowance;
+    }
+
     public void setSerialNumber(String serialNumber){
         this.serialNumber = serialNumber;
     }
@@ -46,15 +52,20 @@ public class TradeInVehicle {
         this.year = year;
     }
 
-    public void setTradeInVehicle(String serialNumber,String make,String model,int year){
+    public void setTradeInAllowance(double tradeinAllowance){
+        this.tradeinAllowance = tradeinAllowance;
+    }
+
+    public void setTradeInVehicle(String serialNumber,String make,String model,int year, double tradeinAllowance){
         this.serialNumber = serialNumber;
         this.make = make;
         this.model = model;
         this.year = year;
+        this.tradeinAllowance = tradeinAllowance;
     }
 
     public String toString(){
-        return "serialNumber: " + serialNumber + " | make: " + make + " | model: " + model + " | year: " + year;
+        return "serialNumber: " + serialNumber + " | make: " + make + " | model: " + model + " | year: " + year + " | trade in allowance: "+tradeinAllowance;
     }
 
 }

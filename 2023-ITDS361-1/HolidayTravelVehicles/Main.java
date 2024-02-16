@@ -4,8 +4,8 @@ public class Main {
         System.out.println("\nCustomer Information------------------");
         Customer aCustomer = new Customer("001","Mrs. Robbinson Hobter",
         "999 Phutthamonthon Sai 4 Rd, Salaya, Phutthamonthon District, Nakhon Pathom 73170", "0899999999");
-        aCustomer.addTradeInVehicle(new TradeInVehicle("601SEW","Big","AX01",2000));
-        aCustomer.addTradeInVehicle(new TradeInVehicle("7731X","Nissan","ZX6Y",2000));
+        aCustomer.addTradeInVehicle(new TradeInVehicle("601SEW","Big","AX01",2000,0));
+        aCustomer.addTradeInVehicle(new TradeInVehicle("7731X","Nissan","ZX6Y",2000,15000));
         System.out.println(aCustomer.toString());
         aCustomer.showTradeInlist();
 
