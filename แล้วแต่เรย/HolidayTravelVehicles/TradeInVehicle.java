@@ -1,28 +1,25 @@
 package แล้วแต่เรย.HolidayTravelVehicles;
 
-public class Vehicle {
+public class TradeInVehicle {
     public int SerialNumber;
-    public String Name;
+    public String Make;
     public String Model;
     public int Year;
-    public String Manufacturer;
-    public int BaseCost;
 
     // constructor
-    public Vehicle() {
+    public TradeInVehicle() {
         this.SerialNumber = SerialNumber;
-        this.Name = Name;
+        this.Make = Make;
         this.Model = Model;
         this.Year = Year;
-        this.Manufacturer=Manufacturer;
     }
 
     public int GetSerialNumber() {
         return this.SerialNumber;
     }
 
-    public String GetName() {
-        return this.Name;
+    public String GetMake() {
+        return this.Make;
     }
 
     public String GetModel() {
@@ -30,14 +27,7 @@ public class Vehicle {
     }
 
     public int GetYear() {
-        
         return this.Year;
     }
-    public String GetManufacturer() {
-        return this.Manufacturer;
-    }
-    public int GetBaseCost(){
-        return this.BaseCost;
-    }
-     
 }
+
