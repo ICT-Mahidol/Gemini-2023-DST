@@ -64,8 +64,8 @@ public class Customer {
                 break;
             }
         }if(dup) {
-            System.out.println( tradeIn.getSerialNumber()+"already in the list");
-        }tradeInList.add(tradeIn);
+            System.out.println( tradeIn.getSerialNumber()+" already in the list");
+        }else{tradeInList.add(tradeIn);}
     }
 
     public void showTradeInlist() {

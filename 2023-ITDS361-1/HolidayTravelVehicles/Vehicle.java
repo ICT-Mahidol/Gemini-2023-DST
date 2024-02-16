@@ -73,7 +73,7 @@ public class Vehicle {
                 break;
             }
         }if(dup) {
-            System.out.println( installed.getDescription()+"already in the list");
+            System.out.println( installed.getDescription()+" already in the list");
         }installedList.add(installed);
     }
 
