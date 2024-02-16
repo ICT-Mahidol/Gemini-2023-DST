@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class DealerInstalledOptions {
     private String description;
     private String optionCode;

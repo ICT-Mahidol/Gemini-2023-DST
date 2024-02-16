@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-
 public class TradeInVehicle {
     private String serialNumber;
-    public String make;
-    public String model;
-    public int year;
+    private String make;
+    private String model;
+    private int year;
 
     public TradeInVehicle(){}
 
@@ -18,6 +16,18 @@ public class TradeInVehicle {
 
     public String getSerialNumber(){
         return serialNumber;
+    }
+
+    public String getMake(){
+        return make;
+    }
+
+    public String getModel(){
+        return model;
+    }
+
+    public int getYear(){
+        return year;
     }
 
     public void setSerialNumber(String serialNumber){

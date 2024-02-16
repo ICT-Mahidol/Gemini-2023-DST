@@ -78,6 +78,16 @@ public class Customer {
 		
 	}
 
+    public void showTradeInItems(){
+        System.out.println("\nTrade In Vehicles");
+        System.out.println("------------------");
+        if(tradeInList.size() > 0){
+            for(TradeInVehicle t: tradeInList){
+                System.out.println(t.getMake() + " "+t.getModel());
+            }
+        }
+        
+    }
     public String toString(){
         return "Customer ID: " + customerID + " | Customer Name: " + custormerName + " | Address: " + address + " | Phone: " + phoneNumber;
     }
