@@ -29,10 +29,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
            name: output
-           path: output.log
+           path: ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/output.log
+
            
     - name: Display Output
       shell: bash
       run: |
-          value=`cat $GITHUB_WORKSPACE/output.log`
+          value=$(cat $GITHUB_WORKSPACE/ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/output.log)
           echo "The result is $value"
