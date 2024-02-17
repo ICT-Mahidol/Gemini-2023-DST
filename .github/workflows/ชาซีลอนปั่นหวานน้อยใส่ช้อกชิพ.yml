@@ -25,8 +25,15 @@ jobs:
     - name: Compile Main.Java
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        java Main > output2.txt
-
+        - shell: bash
+        run: |
+          java Main > output2.txt
+    - name: Upload ouput2 result 
+      uses: actions/upload-artifact@v4
+      with:
+           name: output2
+           path: output2.txt
+           
     - name: Display Output
       shell: bash
       run: |
