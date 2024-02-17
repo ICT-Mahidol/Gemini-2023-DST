@@ -29,9 +29,9 @@ public class Main {
             );
         dealerInstalled.printInfo();
 
-        Vehicle vehicle2 = new Vehicle(); 
-        vehicle2.setBaseCost(5.55);
-        vehicle2.printInfo();
+        // Vehicle vehicle2 = new Vehicle(); 
+        // vehicle2.setBaseCost(5.55);
+        // vehicle2.printInfo();
 
     }
 
