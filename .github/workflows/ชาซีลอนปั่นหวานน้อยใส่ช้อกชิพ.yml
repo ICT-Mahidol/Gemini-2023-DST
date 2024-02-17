@@ -24,4 +24,4 @@ jobs:
 
     - name: Display Output
       run: |
-        cat ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/output.txt
+        cat ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/output.log
