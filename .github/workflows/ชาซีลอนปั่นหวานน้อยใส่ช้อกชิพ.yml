@@ -20,8 +20,13 @@ jobs:
     - name: Compile Java
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        javac -d . *.java > output2.log
+        javac -d . *.java 
+        
+    - name: Compile Java
+      run: |
+        cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/Main.java
+        java Main.java > output2.log
 
     - name: Display Output
       run: |
-        echo output2.log
+        cat output2.log
