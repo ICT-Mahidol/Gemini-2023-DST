@@ -20,14 +20,7 @@ jobs:
     - name: Compile Java
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        javac -d . *.java 
-        
-    - name: Compile Main.Java
-      run: |
-        cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        # - shell: bash
-        # run: |
-          java Main.java > output2.txt
+        javac -d . *.java > output2.txt
     - name: Upload ouput2 result 
       uses: actions/upload-artifact@v4
       with:
