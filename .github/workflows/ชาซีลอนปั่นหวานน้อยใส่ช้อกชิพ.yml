@@ -28,5 +28,7 @@ jobs:
         java Main > output2.txt
 
     - name: Display Output
+      shell: bash
       run: |
-        cat output2.txt
+          value=`cat output2.txt`
+          echo The result is $value
