@@ -27,6 +27,6 @@ jobs:
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
         java Main > output2.txt
 
-    # - name: Display Output
-    #   run: |
-    #     cat output2.txt
+    - name: Display Output
+      run: |
+        cat output2.txt
