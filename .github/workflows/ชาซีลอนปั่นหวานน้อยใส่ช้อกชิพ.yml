@@ -30,5 +30,6 @@ jobs:
     - name: Display Output
       shell: bash
       run: |
-          value=`cat output2.txt`
+          cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
+          value= cat `output2.txt`
           echo The result is $value
