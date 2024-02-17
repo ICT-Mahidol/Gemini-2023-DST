@@ -19,5 +19,5 @@ jobs:
         java-version: '11'
     - name: Compile Java
       run: |
-        cd Gemini-2023-DST/ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
+        cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
         javac -d . *.java
