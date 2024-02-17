@@ -34,5 +34,5 @@ jobs:
     - name: Display Output
       shell: bash
       run: |
-          value=$(cat output2.txt)
-          echo "The result is $value"
+          value=`cat math-homework.txt`
+          echo The result is $value
