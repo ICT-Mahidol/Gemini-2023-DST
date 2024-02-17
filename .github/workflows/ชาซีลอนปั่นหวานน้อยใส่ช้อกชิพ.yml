@@ -24,15 +24,15 @@ jobs:
     - shell: bash
       run: | 
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        java Main > output2.txt
-    - name: Upload ouput2 result 
-      uses: actions/upload-artifact@v4
-      with:
-           name: output2
-           path: output2.txt
+        java Main 
+    # - name: Upload ouput2 result 
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #        name: output2
+    #        path: output2.txt
            
-    - name: Display Output
-      shell: bash
-      run: |
-          value=`cat math-homework.txt`
-          echo The result is $value
+    # - name: Display Output
+    #   shell: bash
+    #   run: |
+    #       value=`cat math-homework.txt`
+    #       echo The result is $value
