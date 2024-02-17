@@ -20,12 +20,7 @@ jobs:
     - name: Compile Java
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        javac -d . *.java
-        
-    - name: Run Main Class
-      run: |
-        cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        java Main.java > output.txt
+        javac -d . *.java > output.log
 
     - name: Display Output
       run: |
