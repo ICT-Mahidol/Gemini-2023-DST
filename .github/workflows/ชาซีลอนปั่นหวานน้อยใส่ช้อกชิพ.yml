@@ -25,7 +25,7 @@ jobs:
     - name: Compile Main.Java
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        java Main.java > output2.txt
+        java Main > output2.txt
 
     # - name: Display Output
     #   run: |
