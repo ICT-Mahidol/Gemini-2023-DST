@@ -1,13 +1,11 @@
-name: Java CI
+name: Java CI 
 
 on:
   push:
-    branches: 
-      - "ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ"
+    branches: [ "ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ" ]
 
 jobs:
   build:
-    name: Build and Run Java Application
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -15,12 +13,10 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.ref}}
         fetch-depth: ${{ env.PR_FETCH_DEPTH}}
-        
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v1
       with:
         java-version: '11'
-        
     - name: Compile Java
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
@@ -29,7 +25,7 @@ jobs:
     - name: Run Main Class
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        java MainClassName > output.txt
+        java Main.java > output.txt
 
     - name: Display Output
       run: |
