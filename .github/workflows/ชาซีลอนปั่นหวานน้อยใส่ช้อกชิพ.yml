@@ -21,18 +21,18 @@ jobs:
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
         javac -d . *.java 
-    - shell: bash
+    - name: Java Run Main
       run: | 
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        java Main >> output.log
-    - name: Upload ouput result 
+        java Main >> output_main.log
+    - name: Upload output_main result 
       uses: actions/upload-artifact@v4
       with:
-           name: output
-           path: output.log
+           name: output_main
+           path: output_main.log
            
     - name: Display Output
       shell: bash
       run: |
-          value=`cat output.log`
-          echo The result is $value
+          value=`cat $GITHUB_WORKSPACE/output_main.log`
+          echo "The result is $value"
