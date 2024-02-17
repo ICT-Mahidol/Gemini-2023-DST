@@ -24,7 +24,7 @@ jobs:
     - shell: bash
       run: | 
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        expr java Main > output2.txt
+        java Main > output2.txt
     - name: Upload ouput2 result 
       uses: actions/upload-artifact@v4
       with:
