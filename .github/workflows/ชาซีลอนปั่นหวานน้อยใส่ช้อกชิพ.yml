@@ -20,16 +20,15 @@ jobs:
     - name: Compile Java
       run: |
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        javac -d . *.java > output2.txt
+        javac -d . *.java > output2.log
     - name: Upload ouput2 result 
       uses: actions/upload-artifact@v4
       with:
            name: output2
-           path: output2.txt
+           path: output2.log
            
     - name: Display Output
       shell: bash
       run: |
-          cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-          value= cat `output2.txt`
+          value= `cat output2.log`
           echo The result is $value
