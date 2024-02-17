@@ -22,12 +22,12 @@ jobs:
         cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
         javac -d . *.java 
         
-    - name: Compile Main.Java
-      run: |
-        cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
-        javac Main.java 
-        java Main > output2.log
+    # - name: Compile Main.Java
+    #   run: |
+    #     cd ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/HolidayTravelvehicle/
+    #     javac Main.java 
+    #     java Main > output2.log
 
-    - name: Display Output
-      run: |
-        cat output2.log
+    # - name: Display Output
+    #   run: |
+    #     cat output2.log
