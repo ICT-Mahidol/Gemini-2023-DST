@@ -1,5 +1,3 @@
-package แล้วแต่เรย.HolidayTravelVehicles;
-
 public class customer {
     public int CustomerID;
     public String Name;
