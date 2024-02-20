@@ -1,5 +1,3 @@
-package แล้วแต่เรย.HolidayTravelVehicles;
-
 public class Vehicle {
     public int SerialNumber;
     public String Name;
@@ -9,12 +7,13 @@ public class Vehicle {
     public int BaseCost;
 
     // constructor
-    public Vehicle() {
-        this.SerialNumber = SerialNumber;
-        this.Name = Name;
-        this.Model = Model;
-        this.Year = Year;
-        this.Manufacturer=Manufacturer;
+    public Vehicle(int i, String string, String string2, int j, String string3, int k) {
+        this.SerialNumber = i;
+        this.Name = string;
+        this.Model = string2;
+        this.Year = j;
+        this.Manufacturer=string3;
+        this.BaseCost=k;
     }
 
     public int GetSerialNumber() {
@@ -38,6 +37,10 @@ public class Vehicle {
     }
     public int GetBaseCost(){
         return this.BaseCost;
+    }
+
+    public String toString() {
+        return SerialNumber+" "+Name+" "+Model+" "+Year+" "+Manufacturer+" "+BaseCost;
     }
      
 }
