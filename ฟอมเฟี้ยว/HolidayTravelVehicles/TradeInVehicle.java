@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-public class TradeinVehicle {
+public class TradeInVehicle {
 
     public String serialnumber;
     public String model;
     public int year;
     private Saleinvoice saleinvoice;
 
-    public TradeinVehicle(String serialnumber, String model, int year) {
+    public TradeInVehicle(String serialnumber, String model, int year) {
 
         this.serialnumber = serialnumber;
         this.model = model;

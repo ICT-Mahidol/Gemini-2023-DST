@@ -2,11 +2,11 @@ public class Saleinvoice {
     private Customer cT;
     private Saleperson sP;
     private Vehicle vC;
-    private TradeinVehicle tV;
+    private TradeInVehicle tV;
     private Options dO;
 
     // Constructor
-    public Saleinvoice(Customer newcT, Saleperson newsP, Vehicle newvC, TradeinVehicle newtV, Options newdO) {
+    public Saleinvoice(Customer newcT, Saleperson newsP, Vehicle newvC, TradeInVehicle newtV, Options newdO) {
         this.cT = newcT;
         this.sP = newsP;
         this.vC = newvC;
@@ -23,7 +23,7 @@ public class Saleinvoice {
     public Vehicle getvC() {
         return this.vC;
     }
-    public TradeinVehicle gettV(){
+    public TradeInVehicle gettV(){
         return this.tV;
     }
 
