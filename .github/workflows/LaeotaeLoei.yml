@@ -1,4 +1,5 @@
-name: Java CI
+
+name: Java CI 
 
 on:
   push:
@@ -15,6 +16,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.ref }}
         fetch-depth: ${{ env.PR_FETCH_DEPTH }}
 
+
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
@@ -25,3 +27,4 @@ jobs:
         cd แล้วแต่เรย/HolidayTravelVehicles 
         javac -d . *.java
       # Compile java file from directory
+
