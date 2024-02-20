@@ -20,11 +20,13 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
-        java-version: '11' # You can change this to the version you want
+        java-version: '17' # You can change this to the version you want
 
     - name: Compile Java
       run: |
-        cd แล้วแต่เรย/HolidayTravelVehicles 
+        cd แล้วแต่เรย/HolidayTravelVehicles/Main.java 
         javac -d . *.java
       # Compile java file from directory
+    - name: log
+    
 
