@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Saleinvoice{
+public class SaleInvoice{
     private String customerinfo;
     private String tradeinvehicle;
     private String tradeinallowance;
@@ -9,28 +7,27 @@ public class Saleinvoice{
     public int finalprice;
     public int tax;
     public int registrationfee;
-}
 
-public Saleinvoice(customerinfo,tradeinvehicle,tradeinallowance,vehicledetail,dealerinstalled,finalprice,tax,registrationfee){
-    this.customerinfo = customerinfo;
-    this.tradeinvehicle = tradeinvehicle;
-    this.tradeinallowance = tradeinallowance;
-    this.vehicledetail = vehicledetail;
-    this.dealerinstalled = dealerinstalled;
-    this finalprice = finalprice;
-    this.tax = tax;
-    this.registrationfee = registrationfee;
+    public SaleInvoice(String a, String b, String c, String d, String e, int aa, int bb, int cc) {
+        this.customerinfo = a;
+        this.tradeinvehicle = b;
+        this.tradeinallowance = c;
+        this.vehicledetail = d;
+        this.dealerinstalled = e;
+        this.finalprice = aa;
+        this.tax = bb;
+        this.registrationfee = cc;
+    }
 }
 
 public static void main(String[] arg){
-    Saleinvoice invoice = new Saleinvoice("customerinfo","tradeinvehicle","tradeinallowance","vehicledetail","dealerinstalled","finalprice","tax","registrationfee")
+    SaleInvoice invoice = new SaleInvoice("customerinfo","tradeinvehicle","tradeinallowance","vehicledetail","dealerinstalled",1,2,3);
+    System.out.println("Customer Info : " + invoice.customerinfo);
+    System.out.println("Tradeinvehicle : " + invoice.tradeinvehicle);
+    System.out.println("Tradeinallowance : " + invoice.tradeinvehicle);
+    System.out.println("VehicleDetail : " + invoice.vehicledetail);
+    System.out.println("DealerIntalled : " + invoice.dealerinstalled);
+    System.out.println("FinalPrice : " + invoice.finalprice);
+    System.out.println("Tax : " + invoice.tax);
+    System.out.println("RegistrationFee: " + invoice.registrationfee);
 }
-
-System.out.println("Customer Info : " + invoice.customerinfo)
-System.out.println("Tradeinvehicle : " + invoice.tradeinvehicle)
-System.out.println("Tradeinallowance : " + invoice.tradeinvehicle)
-System.out.println("VehicleDetail : " + invoice.vehicledetail)
-System.out.println("DealerIntalled : " + invoice.dealerinstalled)
-System.out.println("FinalPrice : " + invoice.finalprice)
-System.out.println("Tax : " + invoice.tax)
-System.out.println("RegistrationFee: " + invoice.registrationfee)
