@@ -30,7 +30,7 @@ jobs:
     - name: Run Main
       run: |
         cd แล้วแต่เรย/HolidayTravelVehicles
-        javac Main.java > result.log
+        java Main > result.log
         
     - name: Upload 
       uses: actions/upload-artifact@v3
