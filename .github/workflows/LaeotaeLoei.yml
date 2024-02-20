@@ -29,6 +29,7 @@ jobs:
       # Compile java file from directory
     - name: Run Main
       run: |
+        cd แล้วแต่เรย/HolidayTravelVehicles
         javac -d . Main.java
     
 
