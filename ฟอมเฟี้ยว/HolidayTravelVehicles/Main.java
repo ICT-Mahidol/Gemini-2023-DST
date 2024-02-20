@@ -7,7 +7,7 @@ public class Main {
         System.out.println("รุ่น: " + SaleVehicle.getModel());
         System.out.println("ปี: " + SaleVehicle.getYear());
         System.out.println("ผู้ผลิต: " + SaleVehicle.getManufacturer());
-        System.out.println("ต้นทุน: " + SaleVehicle.getBaseCost());
+        System.out.println("ราคาต้นทุน: " + SaleVehicle.getBaseCost());
     }
     
 }
