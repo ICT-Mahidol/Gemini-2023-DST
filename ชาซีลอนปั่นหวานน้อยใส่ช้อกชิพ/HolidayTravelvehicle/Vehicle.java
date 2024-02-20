@@ -1,4 +1,4 @@
-public class Vehicle {
+public class Vehicle  {
     private int serialNumber;
     public String name;
     private String model;
