@@ -20,14 +20,3 @@ public class SaleInvoice{
     }
 }
 
-public static void main(String[] arg){
-    SaleInvoice invoice = new SaleInvoice("customerinfo","tradeinvehicle","tradeinallowance","vehicledetail","dealerinstalled",1,2,3);
-    System.out.println("Customer Info : " + invoice.customerinfo);
-    System.out.println("Tradeinvehicle : " + invoice.tradeinvehicle);
-    System.out.println("Tradeinallowance : " + invoice.tradeinvehicle);
-    System.out.println("VehicleDetail : " + invoice.vehicledetail);
-    System.out.println("DealerIntalled : " + invoice.dealerinstalled);
-    System.out.println("FinalPrice : " + invoice.finalprice);
-    System.out.println("Tax : " + invoice.tax);
-    System.out.println("RegistrationFee: " + invoice.registrationfee);
-}
