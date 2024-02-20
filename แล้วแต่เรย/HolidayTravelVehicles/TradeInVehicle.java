@@ -1,5 +1,3 @@
-package แล้วแต่เรย.HolidayTravelVehicles;
-
 public class TradeInVehicle {
     public int SerialNumber;
     public String Make;
@@ -30,4 +28,3 @@ public class TradeInVehicle {
         return this.Year;
     }
 }
-
