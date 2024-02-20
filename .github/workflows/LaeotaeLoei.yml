@@ -27,6 +27,5 @@ jobs:
         cd แล้วแต่เรย/HolidayTravelVehicles/Main.java 
         javac -d . *.java
       # Compile java file from directory
-    - name: log
     
 
