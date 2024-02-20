@@ -40,6 +40,4 @@ public class Vehicle {
     public int getBaseCost() {
         return this.basecost;
     }
-
-
 }
