@@ -30,12 +30,12 @@ jobs:
     - name: Run Main
       run: |
         cd แล้วแต่เรย/HolidayTravelVehicles
-        java Main > result.log
+        java Main > result.txt
         
     - name: Upload 
       uses: actions/upload-artifact@v3
       with:
            name: result
-           path: แล้วแต่เรย/HolidayTravelVehicles/result.log
+           path: แล้วแต่เรย/HolidayTravelVehicles/result.txt
     
 
