@@ -25,7 +25,10 @@ jobs:
     - name: Compile Java
       run: |
         cd แล้วแต่เรย/HolidayTravelVehicles
-        javac -d . Main.java
+        javac -d . *.java
       # Compile java file from directory
+    - name: Run Main
+      run: |
+        javac -d . Main.java
     
 
