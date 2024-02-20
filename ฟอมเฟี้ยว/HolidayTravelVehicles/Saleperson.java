@@ -7,7 +7,6 @@ public class Saleperson {
     public int phoneNumber ;
     private Saleinvoice saleinvoice ;
 
-
 public Saleperson(int salePersonID, String namesalePerson, int phoneNumber) {
     
     this.salePersonID = salePersonID;
@@ -26,6 +25,4 @@ public Saleperson(int salePersonID, String namesalePerson, int phoneNumber) {
     public int getphoneNumber() {
         return phoneNumber;
     }
-
-
 }
