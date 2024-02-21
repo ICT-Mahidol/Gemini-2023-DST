@@ -5,6 +5,7 @@ public class Vehicle {
     public int year;
     public String manufacturer;
     public int basecost;
+    private Saleinvoice saleinvoice;
 
 
     public Vehicle(String serialnumber, String name, String model, int year, String manufacturer, int basecost) {
@@ -36,9 +37,7 @@ public class Vehicle {
         return this.manufacturer;
     }
 
-    public int Basecost() {
+    public int getBaseCost() {
         return this.basecost;
     }
-
-
 }
