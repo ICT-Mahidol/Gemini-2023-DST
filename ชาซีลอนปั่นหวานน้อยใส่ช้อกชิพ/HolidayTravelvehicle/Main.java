@@ -52,7 +52,7 @@ public class Main {
         
         String invoiceID = "ABC123";
         
-        sales_person employee = new sales_person("555", "test01", 25, "087999999");
+        SalesPerson employee = new SalesPerson("555", "test01", 25, "087999999");
         
         SaleInvoice invoice1 = new SaleInvoice(customer, tradeInVehicle, tradeInAllowance, vehicle1, dealerInstalledList, invoiceID, employee);
         invoice1.printInfo();
