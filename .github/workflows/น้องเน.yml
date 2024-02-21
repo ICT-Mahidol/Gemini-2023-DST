@@ -2,11 +2,11 @@ name: Java CI
 
 on:
   push:
-    branches: [ "น้องเน" ]
+    branches: 
+      - "น้องเน"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
