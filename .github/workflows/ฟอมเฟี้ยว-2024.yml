@@ -26,7 +26,7 @@ jobs:
         cd ฟอมเฟี้ยว-2024/HolidayTravelVehicles 
         javac -d . *.java
       # Compile java file from directory
-    - name: Run java Program
+    - name: Run Java
       run: |
         cd ฟอมเฟี้ยว-2024/HolidayTravelVehicle
         java -cp . Main
