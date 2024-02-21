@@ -21,13 +21,5 @@ public class SalesPerson {
         return lastName;
     }
 
-    //Set method
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+
 }
