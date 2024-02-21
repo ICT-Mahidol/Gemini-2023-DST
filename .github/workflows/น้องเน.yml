@@ -23,7 +23,7 @@ jobs:
 
     - name: Compile Java
       run: |
-        cd น้องเน/HolidayTravelVehicles
+        cd น้องเน/HolidayTravelVahicles
         javac -d . *.java
       # Compile java file from directory
       
