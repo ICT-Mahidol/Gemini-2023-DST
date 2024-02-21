@@ -37,6 +37,10 @@ public class SalesInvoice {
     }
 
     public Vehicle getVehicle() {
-        return vehicle;   
+        return vehicle;
+    }
+
+    public void setTradeInVehicle(TradeInVehicle tradeInVehicle) {
+        this.tradeInVehicle = tradeInVehicle;
     }
 }
