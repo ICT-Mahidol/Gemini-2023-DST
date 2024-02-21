@@ -28,5 +28,5 @@ jobs:
       # Compile java file from directory
     - name: Run Java
       run: |
-        cd ฟอมเฟี้ยว/HolidayTravelVehicle
-        java -cp . Main.java
+        cd ฟอมเฟี้ยว/HolidayTravelVehicles
+        java -cp . Main
