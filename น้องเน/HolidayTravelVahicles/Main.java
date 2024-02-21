@@ -1,4 +1,4 @@
-//Main Class Test
+//Main Class
 public class Main {
     public static void main(String[] args) {
         Vehicles SaleVehicle = new Vehicles("BMW", "AAUD4686453", "X1", 2023, "BMW", 1200000);
