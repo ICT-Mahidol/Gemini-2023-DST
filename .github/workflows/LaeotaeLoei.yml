@@ -32,10 +32,10 @@ jobs:
         cd แล้วแต่เรย/HolidayTravelVehicles
         java Main > result.txt
         
-    - name: Upload 
-      uses: actions/upload-artifact@v3
-      with:
-           name: result
-           path: แล้วแต่เรย/HolidayTravelVehicles/result.txt
+    - name: Run
+      run: |
+        cd แล้วแต่เรย/HolidayTravelVehicles
+        java Main > output.log
+        cat output.log
     
 
