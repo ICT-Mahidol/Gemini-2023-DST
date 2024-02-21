@@ -44,9 +44,9 @@ public class SalesPerson {
     // Additional methods
 
     // คำนวณอายุเฉลี่ยของ sale person  ทั้งหมด
-    public double calculateAverageAge(sales_person[] employees) {
+    public double calculateAverageAge(SalesPerson[] employees) {
         int totalAge = 0;
-        for (sales_person employee : employees) {
+        for (SalesPerson employee : employees) {
             totalAge += employee.getAge();
         }
         return (double) totalAge / employees.length;

@@ -7,9 +7,9 @@ public class SaleInvoice {
     private Vehicle vehicle;
     private List<DealerInstalled> dealerInstalled;
     private String invoiceID;
-    private sales_person employee;
+    private SalesPerson employee;
 
-    public SaleInvoice(Customer customer, TradeIn tradeInVehicle, double tradeInAllowance, Vehicle vehicle, List<DealerInstalled> dealerInstalledOptions, String invoiceID, sales_person employee) {
+    public SaleInvoice(Customer customer, TradeIn tradeInVehicle, double tradeInAllowance, Vehicle vehicle, List<DealerInstalled> dealerInstalledOptions, String invoiceID, SalesPerson employee) {
         this.customer = customer;
         this.tradeInVehicle = tradeInVehicle;
         this.tradeInAllowance = tradeInAllowance;
@@ -71,7 +71,7 @@ public class SaleInvoice {
         return employee.getAge();
     }
 
-    public void setEmployee(sales_person employee) {
+    public void setEmployee(SalesPerson employee) {
         this.employee = employee;
     }
 
