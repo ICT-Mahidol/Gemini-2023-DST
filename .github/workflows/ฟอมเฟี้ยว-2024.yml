@@ -23,10 +23,10 @@ jobs:
 
     - name: Compile Java
       run: |
-        cd ฟอมเฟี้ยว-2024/HolidayTravelVehicles 
+        cd ฟอมเฟี้ยว/HolidayTravelVehicles 
         javac -d . *.java
       # Compile java file from directory
     - name: Run Java
       run: |
-        cd ฟอมเฟี้ยว-2024/HolidayTravelVehicle
+        cd ฟอมเฟี้ยว/HolidayTravelVehicle
         java -cp . Main
