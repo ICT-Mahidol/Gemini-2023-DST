@@ -38,11 +38,11 @@ public class InvioceRecode {
         this.price = price;
     }
 
-    public ArrayList<sales_person> getPersons() {
+    public ArrayList<SalesPerson> getPersons() {
         return this.persons;
     }
 
-    public void addSalePerson(sales_person person) {
+    public void addSalePerson(SalesPerson person) {
         this.persons.add(person);
     }
 
