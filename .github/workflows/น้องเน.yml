@@ -27,3 +27,13 @@ jobs:
         javac -d . *.java
       # Compile java file from directory
       
+    - name: Run Main
+      run: |
+        cd น้องเน/HolidayTravelVehicles
+        java Main > result.txt
+        
+    - name: Run
+      run: |
+        cd น้องเน/HolidayTravelVehicles
+        java Main > output.log
+        cat output.log
