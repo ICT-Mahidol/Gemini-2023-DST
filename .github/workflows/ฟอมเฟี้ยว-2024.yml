@@ -29,4 +29,4 @@ jobs:
     - name: Run Java
       run: |
         cd ฟอมเฟี้ยว/HolidayTravelVehicles
-        java Main
+        javac -d . Main.java
