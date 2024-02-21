@@ -7,6 +7,7 @@ public class Vehicle {
     public int basecost;
     private Saleinvoice saleinvoice;
 
+    
     public Vehicle(String serialnumber, String name, String model, int year, String manufacturer, int basecost) {
         this.serialnumber = serialnumber;
         this.name = name;
