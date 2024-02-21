@@ -1,20 +1,42 @@
-//Vehicles
-public class Vehicle {
-    private String vehicleserialnumber;
+public class Vehicles {
     private String name;
+    private String serialNumber;
     private String model;
-    private String manufacturer;
     private int year;
-    private int basecost;
-}
+    private String manufacturer;
+    private int baseCost;
+    private SaleInvoice saleInvoice;
 
-//Constructor
-public salesinvoice(String full, String customerinformation, String tradeinvehicle, String tradeinallowance, String dealerinstalledoptions) {
-    this.full = full;
-    this.customerinformation = CustomerInformation;
-    this.tradeinvehivle = TradeinVehicle;
-    this.tradeinallowance = TradeinAllowance;
-    this.dealerinstalledoptions = DealerInstallOption;
-}
+    public Vehicles(String name, String serialNumber, String model, int year, String manufacturer, int baseCost) {
+        this.name = name;
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.year = year;
+        this.manufacturer = manufacturer;
+        this.baseCost = baseCost;
+    }
 
-//Associations
+    public String getName() {
+        return name;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getBaseCost() {
+        return baseCost;
+    }
+}
