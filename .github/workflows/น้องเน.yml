@@ -26,4 +26,7 @@ jobs:
         cd น้องเน/HolidayTravelVahicles
         javac -d . *.java
       # Compile java file from directory
-      
+    - name: Run Java
+      run: |
+        cd น้องเน/HolidayTravelVahicles
+        java -cp . Main
