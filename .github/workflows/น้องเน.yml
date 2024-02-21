@@ -23,5 +23,5 @@ jobs:
 
     - name: Compile Java
       run: |
-        cd [น้องเน]/HolidayTravelVehicles
+        cd น้องเน/HolidayTravelVehicles
         javac -d . *.java
