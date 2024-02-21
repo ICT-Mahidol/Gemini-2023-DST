@@ -3,11 +3,11 @@ import java.util.List;
 
 public class SalesInvoice {
     private int invoiceID;
-    private Salesperson salesperson;
-    private Vehicle vehicle;
-    private Customer customer;
+    private SalesPerson salesperson;
+    private Car vehicle;
+    private customer Customer;
     private TradeInVehicle tradeInVehicle;
-    private List<DealerInstalledOption> dealerInstalledOptions;
+    private List<DealerInstalledOptions> dealerInstalledOptions;
     private double negotiatedPrice;
     private double tax;
     private double registrationCost;
@@ -16,7 +16,7 @@ public class SalesInvoice {
         this.dealerInstalledOptions = new ArrayList<>();
     }
 
-    public void addDealerInstalledOption(DealerInstalledOption option) {
+    public void addDealerInstalledOption(DealerInstalledOptions option) {
         this.dealerInstalledOptions.add(option);
     }
 
@@ -28,15 +28,19 @@ public class SalesInvoice {
         this.invoiceID = invoiceID;
     }
 
-    public Salesperson getSalesperson() {
+    public SalesPerson getSalesperson() {
         return salesperson;
     }
 
-    public void setSalesperson(Salesperson salesperson) {
+    public void setSalesperson(SalesPerson salesperson) {
         this.salesperson = salesperson;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;   
+    public Car getVehicle() {
+        return vehicle;
+    }
+
+    public void setTradeInVehicle(TradeInVehicle tradeInVehicle) {
+        this.tradeInVehicle = tradeInVehicle;
     }
 }
