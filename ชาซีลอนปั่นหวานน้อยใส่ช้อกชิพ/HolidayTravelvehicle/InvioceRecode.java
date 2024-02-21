@@ -4,7 +4,7 @@ public class InvioceRecode {
     private String invoice_id;
     private String vehicle_serial_no;
     private int price;
-    private ArrayList<sales_person> persons; //listข้อมูลของ sale_person
+    private ArrayList<SalesPerson> persons; //listข้อมูลของ sale_person
 
     public InvioceRecode(String invoice_id, String vehicle_serial_no, int price) {
         this.invoice_id = invoice_id;
@@ -59,7 +59,7 @@ public class InvioceRecode {
         System.out.println("Vehicle Serial Number: " + vehicle_serial_no);
         System.out.println("Price: " + price);
 
-        // for (sales_person person : persons) {
+        // for (SalesPerson person : persons) {
         //     System.out.println("Employee ID: " + person.getId());
         //     System.out.println("Invoice ID: " + invoice_id);
         //     System.out.println("Vehicle Serial Number: " + vehicle_serial_no);
