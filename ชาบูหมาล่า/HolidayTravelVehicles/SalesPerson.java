@@ -21,5 +21,15 @@ public class SalesPerson {
         return lastName;
     }
 
+    public static void main(String[] args){
+        SalesPerson salesPerson = new SalesPerson(123, "John", "Doe");
+
+        int employeeID = salesPerson.getEmployeeID(); // returns 123
+        String firstname = salesPerson.getFirstName(); // returns "John"
+        String lastname = salesPerson.getLastName(); // returns "Doe"
+
+        System.out.println("Salesperson employee ID: " + employeeID);
+        System.out.println("Salesperson name: " + firstname + " " + lastname);
+    }
 
 }
