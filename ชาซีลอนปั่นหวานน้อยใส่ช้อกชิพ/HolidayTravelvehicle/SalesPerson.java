@@ -1,11 +1,11 @@
-public class sales_person {
+public class SalesPerson {
     private String emp_id;
     private String emp_name;
     private int emp_age;
     private String emp_phone_number;
     
 
-    public sales_person(String emp_id, String emp_name, int emp_age, String emp_phone_number) {
+    public SalesPerson(String emp_id, String emp_name, int emp_age, String emp_phone_number) {
         this.emp_id = emp_id;
         this.emp_name = emp_name;
         this.emp_age = emp_age;
