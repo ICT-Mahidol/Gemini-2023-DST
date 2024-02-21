@@ -1,5 +1,5 @@
 public class Vehicle {
-    private String serialnumber;
+    public String serialnumber;
     public String name;
     public String model;
     public int year;
