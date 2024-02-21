@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class invioce_recode {
+public class InvioceRecode {
     private String invoice_id;
     private String vehicle_serial_no;
     private int price;
     private ArrayList<sales_person> persons; //listข้อมูลของ sale_person
 
-    public invioce_recode(String invoice_id, String vehicle_serial_no, int price) {
+    public InvioceRecode(String invoice_id, String vehicle_serial_no, int price) {
         this.invoice_id = invoice_id;
         this.vehicle_serial_no = vehicle_serial_no;
         this.price = price;
@@ -14,19 +14,19 @@ public class invioce_recode {
     }
 
     // Constructor
-    public String getInvoice_id() {
+    public String getInvoiceId() {
         return invoice_id;
     }
 
-    public void setInvoice_id(String invoice_id) {
+    public void setInvoiceId(String invoice_id) {
         this.invoice_id = invoice_id;
     }
 
-    public String getVehicle_serial_no() {
+    public String getVehicleSerialNo() {
         return vehicle_serial_no;
     }
 
-    public void setVehicle_serial_no(String vehicle_serial_no) {
+    public void setVehicleSerialNo(String vehicle_serial_no) {
         this.vehicle_serial_no = vehicle_serial_no;
     }
 
