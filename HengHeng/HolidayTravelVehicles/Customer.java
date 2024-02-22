@@ -22,6 +22,8 @@ public class Customer {
         this.tradeInVehicle = null;
     }
 
+
+    
     // Getters and Setters for customerId, name, address, phone...
 
     public List<Vehicle> getVehicles() {
