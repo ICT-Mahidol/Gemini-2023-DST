@@ -4,7 +4,7 @@
 
 # Lone-wolf's Use Cases Description
 
-![Usecase_01](Gemini_Usecase_lonewolf.png)
+![Usecase_01](Lone-wolf_Use Case Description.pdf)
 
 ![Usecase_02](Gemini_Usecase_lonewolf.png)
 
