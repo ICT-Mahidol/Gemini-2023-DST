@@ -1,6 +1,6 @@
 # Analysis of Selected 5 Use Case
 
-![Gemini_Usecase](Gemini_Usecase_lonewolf.png)
+![Gemini_Usecase]([Gemini_Usecase_lonewolf.png](https://github.com/ICT-Mahidol/Gemini-2023-DST/blob/Lone-wolf/lonewolf/Gemini_Usecase_lonewolf.png))
 ![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
 
