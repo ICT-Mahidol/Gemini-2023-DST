@@ -1,0 +1,32 @@
+name: Java CI
+
+on:
+  push:
+    branches:
+      - ชาบูหมาล่า
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        fetch-depth: ${{ env.PR_FETCH_DEPTH }}
+
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11' # You can change this to the version you want
+
+    - name: Compile Java
+      run: |
+        cd ชาบูหมาล่า/HolidayTravelVehicles 
+        javac -d . *.java
+      # Compile java file from directory
+    - name: Run java Program
+      run: |
+        cd ชาบูหมาล่า/HolidayTravelVehicles
+        java -cp . Main
