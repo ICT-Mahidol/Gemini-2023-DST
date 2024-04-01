@@ -18,4 +18,9 @@ public class Vehicle {
         this.manufacturer = manufacturer;
         this.basePrice = basePrice;
     }
+
+    public void setVehicle() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setVehicle'");
+    }
 }
