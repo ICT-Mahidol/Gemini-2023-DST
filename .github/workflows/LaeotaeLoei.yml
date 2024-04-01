@@ -1,0 +1,41 @@
+
+name: Java CI 
+
+on:
+  push:
+    branches: [ "แล้วแต่เรย" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        fetch-depth: ${{ env.PR_FETCH_DEPTH }}
+
+
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '17' # You can change this to the version you want
+
+    - name: Compile Java
+      run: |
+        cd แล้วแต่เรย/HolidayTravelVehicles
+        javac -d . *.java
+      # Compile java file from directory
+    - name: Run Main
+      run: |
+        cd แล้วแต่เรย/HolidayTravelVehicles
+        java Main > result.txt
+        
+    - name: Run
+      run: |
+        cd แล้วแต่เรย/HolidayTravelVehicles
+        java Main > output.log
+        cat output.log
+    
+

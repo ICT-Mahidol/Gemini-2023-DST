@@ -1,0 +1,35 @@
+# name: Java CI
+
+# on:
+#   push:
+#     branches:
+#       - Golden-Dragon
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v3
+#       with:
+#         ref: ${{ github.event.pull_request.head.ref }}
+#         fetch-depth: ${{ env.PR_FETCH_DEPTH }}
+
+#     - name: Set up JDK
+#       uses: actions/setup-java@v1
+#       with:
+#         java-version: '11' # You can change this to the version you want
+    - name: Compile Java
+      run: |
+        cd lonewolf/HolidayTravelVehicles 
+        javac -d . main.java
+      # Compile java file from directory
+
+    - name: Run Java Program
+      run: | 
+        cd lonewolf/HolidayTravelVehicles 
+        java -cp . main
+#     - name: Run Main Class
+#       run: |
+#             cd Golden-Dragon/HolidayTravelVehicle/goldendragonminicase3/src
+#             java -cp . Display
