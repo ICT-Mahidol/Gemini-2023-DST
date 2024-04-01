@@ -1,0 +1,53 @@
+name: Java CI
+
+on:
+
+  push:
+
+    branches:
+
+      - HengHeng
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout code
+
+      uses: actions/checkout@v3
+
+      with:
+
+        ref: ${{ github.event.pull_request.head.ref }}
+        
+        fetch-depth: ${{ env.PR_FETCH_DEPTH }}
+
+    - name: Set up JDK
+
+      uses: actions/setup-java@v1
+
+      with:
+
+        java-version: '11' # You can change this to the version you want
+
+    - name: Compile Java
+
+      run: |
+
+        cd HengHeng/HolidayTravelVehicles
+
+        javac -d . *.java
+
+    - name: Run Main File
+
+      run: |
+
+        cd HengHeng/HolidayTravelVehicles
+
+        java Main
+
+# Compile java file from directory
