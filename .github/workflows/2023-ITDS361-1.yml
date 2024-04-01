@@ -1,0 +1,40 @@
+name: Java CI
+
+on:
+  push:
+    branches:
+      - 2023-ITDS361-1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        fetch-depth: ${{ env.PR_FETCH_DEPTH }}
+
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11' # You can change this to the version you want
+
+    - name: Compile Java
+      run: |
+        cd 2023-ITDS361-1/HolidayTravelVehicles
+        javac -d . *.java
+      # Compile java file from directory
+      
+    - name: Run Main Class and save output to log file
+      run: |
+        cd 2023-ITDS361-1/HolidayTravelVehicles
+        java Main > output.log
+      
+    - name: Upload Log File
+      uses: actions/upload-artifact@v2
+      with:
+        name: main-class-output
+        path: 2023-ITDS361-1/HolidayTravelVehicles/output.log      
+
