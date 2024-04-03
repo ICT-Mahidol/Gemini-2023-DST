@@ -6,7 +6,7 @@
 - [Case 3 Create an Observing Program](#case-3)
 - [Case 4 Validate an Observing Program](#case-4)
 # Class Diagram
-![OCS](Class-Diagram.png)
+![alt text](Class-Diagram-1.png)
 # Case 2
 <table>
         <tr>
