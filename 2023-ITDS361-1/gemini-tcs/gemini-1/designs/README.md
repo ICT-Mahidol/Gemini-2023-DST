@@ -179,7 +179,7 @@
             <th>Normal Flow of Events</th>
             <td>
                 <ol>
-                    <li>TTelescope Operator click to validate an observing program.</li>
+                    <li>Telescope Operator click to validate an observing program.</li>
                     <li>Telescope Operator received a status.</li>
                 </ol>
             </td>
