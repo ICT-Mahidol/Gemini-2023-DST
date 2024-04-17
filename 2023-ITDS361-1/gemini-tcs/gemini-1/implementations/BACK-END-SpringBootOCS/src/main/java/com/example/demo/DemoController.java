@@ -1,20 +1,115 @@
 package com.example.demo;
 
 import edu.gemini.app.ocs.OCS;
+import edu.gemini.app.ocs.model.ObservingProgram;
+import edu.gemini.app.ocs.model.ObservingProgramConfigs;
 import edu.gemini.app.ocs.model.SciencePlan;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import edu.gemini.app.ocs.model.TelePositionPair;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 @RestController
+@CrossOrigin
 public class DemoController {
-    @CrossOrigin
     @GetMapping("/")
-    public ArrayList<SciencePlan> gettAllSciencePlans() {
+    public ArrayList<SciencePlan> getAllSciencePlans() {
         OCS o = new OCS();
         System.out.println(o.getAllSciencePlans());
         return o.getAllSciencePlans();
     }
+
+    @GetMapping("/{id}")
+    public SciencePlan getSciencePlanById(@PathVariable int id) {
+        OCS o = new OCS();
+        return o.getSciencePlanByNo(id);
+    }
+
+    @PostMapping("/submitSci/{id}")
+    public SciencePlan submitSciencePlan(@PathVariable int id) {
+        OCS o = new OCS();
+        o.updateSciencePlanStatus(id, SciencePlan.STATUS.TESTED);
+        o.submitSciencePlan(o.getSciencePlanByNo(id));
+        o.updateSciencePlanStatus(id, SciencePlan.STATUS.SUBMITTED);
+        return o.getSciencePlanByNo(id);
+    }
+
+    @GetMapping("/observing/{id}")
+    public ObservingProgram getObservingProgramById(@PathVariable int id) {
+        OCS o = new OCS();
+        o.getSciencePlanByNo(id);
+        return o.getObservingProgramBySciencePlan(o.getSciencePlanByNo(id));
+    }
+
+
+    @PostMapping("/observing")
+    public ObservingProgram createObservingProgram(@RequestBody Map<String, Object> body) {
+
+        /*
+        List<Map<String, Double>> telePositionPairList = (List<Map<String, Double>>) body.get("telePositionPair");
+        TelePositionPair[] t = new TelePositionPair[telePositionPairList.size()];
+
+        int index = 0;
+        for (Map<String, Double> telePositionPairObject : telePositionPairList) {
+            double direction = telePositionPairObject.get("direction");
+            double degree = telePositionPairObject.get("degree");
+            TelePositionPair telePositionPair = new TelePositionPair(direction, degree);
+
+            t[index++] = telePositionPair;
+        }
+        */
+
+        List<Map<String, String>> telePositionPairList = (List<Map<String, String>>) body.get("telePositionPair");
+        System.out.println(telePositionPairList.size());
+        TelePositionPair[] t = new TelePositionPair[telePositionPairList.size()];
+
+        int index = 0;
+        for (Map<String, String> telePositionPairObject : telePositionPairList) {
+            String directionStr = telePositionPairObject.get("direction");
+            String degreeStr = telePositionPairObject.get("degree");
+
+            // Parse string values to double
+            double direction = Double.parseDouble(directionStr);
+            double degree = Double.parseDouble(degreeStr);
+
+            TelePositionPair telePositionPair = new TelePositionPair(direction, degree);
+            t[index++] = telePositionPair;
+
+        }
+        System.out.println(Arrays.toString(t));
+
+        OCS o = new OCS();
+        ObservingProgram op = o.createObservingProgram(
+                o.getSciencePlanByNo(Integer.parseInt(body.get("id").toString())),
+                body.get("opticsPrimary").toString(),
+                Double.parseDouble(body.get("fStop").toString()),
+                Double.parseDouble(body.get("opticsSecondaryRMS").toString()),
+                Double.parseDouble(body.get("scienceFoldMirrorDegree").toString()),
+                ObservingProgramConfigs.FoldMirrorType.valueOf(body.get("scienceFoldMirrorType").toString()),
+                Integer.parseInt(body.get("moduleContent").toString()),
+                ObservingProgramConfigs.CalibrationUnit.valueOf(body.get("calibrationUnit").toString()),
+                ObservingProgramConfigs.LightType.valueOf(body.get("lightType").toString()),
+                t
+        );
+        op.validateObservingCondition(op);
+        o.saveObservingProgram(op);
+//        op.setValidationStatus(true);
+//        ocs.saveObservingProgram(op);
+        ObservingProgram opSc = o.getObservingProgramBySciencePlan(o.getSciencePlanByNo(Integer.parseInt(body.get("id").toString())));
+        System.out.println(opSc);
+        return opSc;
+    }
+
+    @PostMapping("/validateObserving")
+    public Boolean validateObservingProgram() {
+        ObservingProgram op = new ObservingProgram();
+        op.setValidationStatus(true);
+        OCS o = new OCS();
+        o.saveObservingProgram(op);
+        return  op.getValidationStatus();
+    }
+
 }
