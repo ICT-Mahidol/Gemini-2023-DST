@@ -5,6 +5,7 @@ import edu.gemini.app.ocs.model.ObservingProgram;
 import edu.gemini.app.ocs.model.ObservingProgramConfigs;
 import edu.gemini.app.ocs.model.SciencePlan;
 import edu.gemini.app.ocs.model.TelePositionPair;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,9 +24,17 @@ public class DemoController {
     }
 
     @GetMapping("/{id}")
-    public SciencePlan getSciencePlanById(@PathVariable int id) {
+    public ResponseEntity<?> getSciencePlanById(@PathVariable int id) {
         OCS o = new OCS();
-        return o.getSciencePlanByNo(id);
+        SciencePlan sciencePlan = o.getSciencePlanByNo(id);
+
+        if (sciencePlan == null) {
+            // If the science plan with the given ID does not exist, return a 404 Not Found response
+            return ResponseEntity.notFound().build();
+        } else {
+            // If the science plan exists, return it
+            return ResponseEntity.ok(sciencePlan);
+        }
     }
 
     @PostMapping("/submitSci/{id}")
@@ -38,10 +47,18 @@ public class DemoController {
     }
 
     @GetMapping("/observing/{id}")
-    public ObservingProgram getObservingProgramById(@PathVariable int id) {
+    public ResponseEntity<?> getObservingProgramById(@PathVariable int id) {
         OCS o = new OCS();
-        o.getSciencePlanByNo(id);
-        return o.getObservingProgramBySciencePlan(o.getSciencePlanByNo(id));
+        SciencePlan sciencePlan = o.getSciencePlanByNo(id);
+
+        if (sciencePlan == null) {
+            // If the science plan with the given ID does not exist, return a 404 Not Found response
+            return ResponseEntity.notFound().build();
+        } else {
+            // If the science plan exists, retrieve and return the observing program
+            ObservingProgram observingProgram = o.getObservingProgramBySciencePlan(sciencePlan);
+            return ResponseEntity.ok(observingProgram);
+        }
     }
 
 

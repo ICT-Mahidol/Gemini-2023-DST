@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/Sign-up';
 import NotFound from './components/NotFound';
@@ -19,7 +19,8 @@ function App() {
 
             <Route path='/' element={<Home />} />
 
-            <Route path='*' element={<NotFound />} />
+            <Route path='/404' element={<NotFound />} />
+            <Route path='*' element={<Navigate to='/404'/>} />
             <Route />
           </Route>
         </Routes>

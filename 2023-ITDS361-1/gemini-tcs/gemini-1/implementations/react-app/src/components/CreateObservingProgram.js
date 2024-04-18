@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import InputLabel from '@mui/material/InputLabel';
 import Box from '@mui/material/Box';
@@ -13,11 +13,15 @@ import Typography from '@mui/material/Typography';
 import SendIcon from '@mui/icons-material/Send';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-
+import Alert from '@mui/material/Alert';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogActions from '@mui/material/DialogActions';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function CreatingObservingProgram() {
     const [sciencePlan, setSciencePlan] = useState('')
-    const {planNo} = useParams();
+    const { planNo } = useParams();
     const [opticsPrimary, setOpticsPrimary] = useState('');
     const [fStop, setFStop] = useState('');
     const [opticsSecondaryRMS, setOpticsSecondaryRMS] = useState('')
@@ -28,45 +32,78 @@ export default function CreatingObservingProgram() {
     const [lightType, setLightType] = useState('');
     const [telePositionPairs, setTelePositionPairs] = useState([{ direction: '', degree: '' }]);
 
-    
+
 
     const [fStopError, setFStopError] = useState(false);
     const [opticsSecondaryError, setOpticsSecondaryError] = useState(false);
     const [scienceFoldMirrorDegreeError, setScienceFoldMirrorDegreeError] = useState(false);
 
+
+    const navigate = useNavigate();
     useEffect(() => {
         fetch(`http://localhost:8080/${planNo}`)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error('Failed to fetch data');
-            }
-            return res.json();
-        })
-        .then((result) => {
-            setSciencePlan(result)
-        })
-    }, [planNo])
+            .then(res => {
+                if (!res.ok) {
+                    navigate('/404');
+                    throw new Error('Failed to fetch data');
+                }
+                // Check if response body is empty
+                if (res.status === 204) {
+                    throw new Error('No content found');
+                }
+                return res.json();
+            })
+            .then((result) => {
+                setSciencePlan(result);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [navigate, planNo]);
 
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertOpen, setAlertOpen] = React.useState(false);
     const handleSubmit = (event) => {
+
         event.preventDefault()
-        const observingProgram  = {
+        const observingProgram = {
             id: planNo,
-            opticsPrimary: opticsPrimary, 
-            fStop: fStop, 
-            opticsSecondaryRMS: opticsSecondaryRMS, 
+            opticsPrimary: opticsPrimary,
+            fStop: fStop,
+            opticsSecondaryRMS: opticsSecondaryRMS,
             scienceFoldMirrorDegree: foldMirrorDegree,
-            scienceFoldMirrorType: foldMirrorType, 
+            scienceFoldMirrorType: foldMirrorType,
             moduleContent: moduleContent,
             calibrationUnit: calibrationUnit,
             lightType: lightType,
             telePositionPair: telePositionPairs
+        }
+
+        console.log(observingProgram)
+        if (!planNo || !opticsPrimary || !fStop || !opticsSecondaryRMS || !foldMirrorType || !moduleContent || !calibrationUnit || !lightType || !telePositionPairs || fStopError || opticsSecondaryError || scienceFoldMirrorDegreeError) {
+            alert("Please provide correct and valid data")
+        } else {
+            try {
+                fetch("http://localhost:8080/observing", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(observingProgram)
+                }).then(() => {
+                    setAlertMessage('Successfuly created observing program');
+                    setAlertOpen(true);                    
+                })
+            } catch (error) {
+                console.log("Error fetching data: ", error);
+                setAlertMessage('Failed to create observing program');
+                setAlertOpen(true);
+            }
+        }
+
     }
-        console.log(observingProgram )
-        fetch("http://localhost:8080/observing", {
-            method: "POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(observingProgram)
-        }).then(() => {"New Observing Program Added"})
+
+    const handleClose = () => {
+        setAlertOpen(false);
+        navigate('/')
     }
 
 
@@ -145,13 +182,25 @@ export default function CreatingObservingProgram() {
     };
 
     return (
+
         <Grid component="main" >
             <CssBaseline />
             <Grid container justifyContent="center" spacing={2}
                 sx={{ marginTop: 2, marginBottom: 2, textAlign: 'left' }}
             >
                 <Grid item xs={12} md={7}>
-                    <Box sx={{mb:2}}>
+                    <Dialog
+                        open={alertOpen}
+                        onClose={handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle component={Alert} id="alert-dialog-title">{alertMessage}</DialogTitle>
+                        <DialogActions>
+                            <Button onClick={handleClose}><CloseIcon/></Button>
+                        </DialogActions>
+                    </Dialog>
+                    <Box sx={{ mb: 2 }}>
                         <Typography variant='h5'>Plan Number: {planNo}</Typography>
                         <Grid container spacing={2}>
                             <Grid item xs={7}>
@@ -250,7 +299,7 @@ export default function CreatingObservingProgram() {
                                 scienceFoldMirrorDegreeError
                                     ? "The degree must be within the range of 30 to 45."
                                     : "The supported degree is in the range of 30 to 45."
-                            }                        
+                            }
                         />
 
                         <FormControl margin='normal' fullWidth>
