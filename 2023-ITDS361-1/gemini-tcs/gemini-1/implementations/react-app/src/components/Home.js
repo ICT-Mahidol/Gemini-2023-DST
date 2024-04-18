@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { TableContainer, Table, TableBody, TableRow, TableCell } from '@mui/material';
-
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogActions from '@mui/material/DialogActions';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Home() {
     const [plans, setPlans] = useState([])
@@ -15,6 +20,48 @@ export default function Home() {
                 setPlans(result)
             })
     }, [])
+
+    const [showMessage, setShowMessage] = useState('');
+    const [open, setOpen] = React.useState(false);
+
+    const handleShowObserving = async (planNo) => {
+        try {
+            const response = await fetch(`http://localhost:8080/observing/${planNo}`);
+            if (response.ok) {
+                const observingProgram = await response.json();
+                // Display observing program data as dialog
+                setShowMessage(JSON.stringify(observingProgram));
+                setOpen(true);
+
+            } else {
+                throw new Error('Failed to fetch observing program');
+            }
+        } catch (error) {
+            console.error('Error fetching observing program:', error);
+            setShowMessage('Failed to fetch observing program');
+            setOpen(true);
+        }
+    };
+
+    const formatObservingProgram = (observingProgram) => {
+        let formattedString = '';
+        for (const [key, value] of Object.entries(observingProgram)) {
+            if (Array.isArray(value)) {
+                formattedString += `${key}: \n`;
+                value.forEach((item) => {
+                    formattedString += `\t${JSON.stringify(item)}\n`;
+                });
+            } else {
+                formattedString += `${key}: ${JSON.stringify(value)}\n`;
+            }
+        }
+        return formattedString;
+    };
+
+    const handleClose = (event) => {
+        setOpen(false);
+    }
+
 
     return (
         <Paper
@@ -124,6 +171,33 @@ export default function Home() {
                                         </TableCell>
                                     </TableRow>
                                 )}
+
+                                <TableRow>
+                                    <TableCell />
+                                    <TableCell>
+                                        <Button
+                                            onClick={() => handleShowObserving(plan.planNo)}
+                                            variant="contained"
+                                        >
+                                            show observing program
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+                                
+                                <Dialog
+                                    open={open}
+                                    onClose={handleClose}
+                                    aria-labelledby="scroll-dialog-title"
+                                    aria-describedby="scroll-dialog-description"
+                                >
+                                    <DialogTitle id="scroll-dialog-title">Observing Program</DialogTitle>
+                                    <DialogContent>
+                                        <pre>{showMessage && formatObservingProgram(JSON.parse(showMessage))}</pre>
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button onClick={handleClose}><CloseIcon /></Button>
+                                    </DialogActions>
+                                </Dialog>
 
                             </TableBody>
                         </Table>
