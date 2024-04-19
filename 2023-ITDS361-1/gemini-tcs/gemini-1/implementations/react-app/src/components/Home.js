@@ -43,6 +43,19 @@ export default function Home() {
         }
     };
 
+    const handleValidateObserving = async (planNo) => {
+        try {
+            const response = await fetch(`http://localhost:8080/validateObserving/${planNo}`, {
+                method: "POST"
+            });
+
+            const responseBody = await response.text(); // or response.json() if the response is JSON
+            console.log(responseBody);
+        } catch (error) {
+            console.error('Error Validating observing program:', error);
+        }
+    };
+
     const formatObservingProgram = (observingProgram) => {
         let formattedString = '';
         for (const [key, value] of Object.entries(observingProgram)) {
@@ -55,6 +68,7 @@ export default function Home() {
                 formattedString += `${key}: ${JSON.stringify(value)}\n`;
             }
         }
+
         return formattedString;
     };
 
@@ -157,7 +171,7 @@ export default function Home() {
                                     <TableCell>{plan.status}</TableCell>
                                 </TableRow>
 
-                                {plan.status === 'TESTED' && (
+                                {plan.status !== 'TESTED' && (
                                     <TableRow>
                                         <TableCell>Create Observing Program</TableCell>
                                         <TableCell>
@@ -182,8 +196,9 @@ export default function Home() {
                                             show observing program
                                         </Button>
                                     </TableCell>
+
                                 </TableRow>
-                                
+
                                 <Dialog
                                     open={open}
                                     onClose={handleClose}
@@ -195,6 +210,7 @@ export default function Home() {
                                         <pre>{showMessage && formatObservingProgram(JSON.parse(showMessage))}</pre>
                                     </DialogContent>
                                     <DialogActions>
+                                        <Button onClick={() => handleValidateObserving(JSON.parse(showMessage)["planNo"])} variant="contained">validate</Button>
                                         <Button onClick={handleClose}><CloseIcon /></Button>
                                     </DialogActions>
                                 </Dialog>

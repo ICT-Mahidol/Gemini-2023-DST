@@ -19,7 +19,7 @@ public class DemoController {
     @GetMapping("/")
     public ArrayList<SciencePlan> getAllSciencePlans() {
         OCS o = new OCS();
-        System.out.println(o.getAllSciencePlans());
+//        System.out.println(o.getAllSciencePlans());
         return o.getAllSciencePlans();
     }
 
@@ -80,7 +80,7 @@ public class DemoController {
         */
 
         List<Map<String, String>> telePositionPairList = (List<Map<String, String>>) body.get("telePositionPair");
-        System.out.println(telePositionPairList.size());
+//        System.out.println(telePositionPairList.size());
         TelePositionPair[] t = new TelePositionPair[telePositionPairList.size()];
 
         int index = 0;
@@ -96,7 +96,7 @@ public class DemoController {
             t[index++] = telePositionPair;
 
         }
-        System.out.println(Arrays.toString(t));
+//        System.out.println(Arrays.toString(t));
 
         OCS o = new OCS();
         ObservingProgram op = o.createObservingProgram(
@@ -116,17 +116,28 @@ public class DemoController {
 //        op.setValidationStatus(true);
 //        ocs.saveObservingProgram(op);
         ObservingProgram opSc = o.getObservingProgramBySciencePlan(o.getSciencePlanByNo(Integer.parseInt(body.get("id").toString())));
-        System.out.println(opSc);
+//        System.out.println(opSc);
         return opSc;
     }
 
-    @PostMapping("/validateObserving")
-    public Boolean validateObservingProgram() {
-        ObservingProgram op = new ObservingProgram();
-        op.setValidationStatus(true);
+    @PostMapping("/validateObserving/{id}")
+    public Boolean validateObservingProgram(@PathVariable int id) {
         OCS o = new OCS();
-        o.saveObservingProgram(op);
-        return  op.getValidationStatus();
+        ObservingProgram opSc = o.getObservingProgramBySciencePlan(o.getSciencePlanByNo(id));
+        System.out.println(opSc);
+        if (opSc.getValidationStatus() == false){
+            opSc.setValidationStatus(true);
+            o.saveObservingProgram(opSc);
+            return opSc.getValidationStatus();
+        } else {
+            return opSc.getValidationStatus();
+        }
+//
+//        ObservingProgram op = new ObservingProgram();
+//        op.setValidationStatus(true);
+//        OCS o = new OCS();
+//        o.saveObservingProgram(op);
+//        return  op.getValidationStatus();
     }
 
 }
