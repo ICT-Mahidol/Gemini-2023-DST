@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.model.User;
 import edu.gemini.app.ocs.OCS;
 import edu.gemini.app.ocs.model.ObservingProgram;
 import edu.gemini.app.ocs.model.ObservingProgramConfigs;
@@ -7,9 +8,9 @@ import edu.gemini.app.ocs.model.SciencePlan;
 import edu.gemini.app.ocs.model.TelePositionPair;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -138,6 +139,22 @@ public class DemoController {
 //        OCS o = new OCS();
 //        o.saveObservingProgram(op);
 //        return  op.getValidationStatus();
+    }
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getUsers(){
+        List<User> users = GetUsersInDatabase.getUsers();
+        return ResponseEntity.ok(users);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> loginUser(@RequestBody User user) {
+        List<User> users = GetUsersInDatabase.getUsers();
+        for (User u : users) {
+            if (u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword())) {
+                return ResponseEntity.ok(u.getRole());
+            }
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
     }
 
 }
