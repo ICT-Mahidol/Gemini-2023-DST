@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2023-ITDS361-1/2023-ITDS361-1.iml" filepath="$PROJECT_DIR$/2023-ITDS361-1/2023-ITDS361-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Gemini-2023-DST.iml" filepath="$PROJECT_DIR$/.idea/Gemini-2023-DST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Golden-Dragon/Golden-Dragon.iml" filepath="$PROJECT_DIR$/Golden-Dragon/Golden-Dragon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/instructors/instructors.iml" filepath="$PROJECT_DIR$/instructors/instructors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lonewolf/lonewolf.iml" filepath="$PROJECT_DIR$/lonewolf/lonewolf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ.iml" filepath="$PROJECT_DIR$/ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ/ชาซีลอนปั่นหวานน้อยใส่ช้อกชิพ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ชาบูหมาล่า/ชาบูหมาล่า.iml" filepath="$PROJECT_DIR$/ชาบูหมาล่า/ชาบูหมาล่า.iml" />
+      <module fileurl="file://$PROJECT_DIR$/น้องเน/น้องเน.iml" filepath="$PROJECT_DIR$/น้องเน/น้องเน.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ฟอมเฟี้ยว/ฟอมเฟี้ยว.iml" filepath="$PROJECT_DIR$/ฟอมเฟี้ยว/ฟอมเฟี้ยว.iml" />
+      <module fileurl="file://$PROJECT_DIR$/แล้วแต่เรย/แล้วแต่เรย.iml" filepath="$PROJECT_DIR$/แล้วแต่เรย/แล้วแต่เรย.iml" />
+    </modules>
+  </component>
+</project>

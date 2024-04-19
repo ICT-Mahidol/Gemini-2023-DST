@@ -133,12 +133,6 @@ public class DemoController {
         } else {
             return opSc.getValidationStatus();
         }
-//
-//        ObservingProgram op = new ObservingProgram();
-//        op.setValidationStatus(true);
-//        OCS o = new OCS();
-//        o.saveObservingProgram(op);
-//        return  op.getValidationStatus();
     }
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers(){
