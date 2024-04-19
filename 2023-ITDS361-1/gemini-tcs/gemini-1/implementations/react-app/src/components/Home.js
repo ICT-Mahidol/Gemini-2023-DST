@@ -24,6 +24,32 @@ export default function Home() {
     const [showMessage, setShowMessage] = useState('');
     const [open, setOpen] = React.useState(false);
 
+    const handleSubmitSciencePlan = async (planNo) => {
+        try {
+            const response = await fetch(`http://localhost:8080/submitSci/${planNo}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: planNo })
+            });
+            if (response.ok) {
+                // Assuming the response returns the updated science plan
+                const updatedSciencePlan = await response.json();
+                // Show popup alert
+                window.alert('SciPlan was submitted');
+                // Do something with the updated science plan if needed
+                console.log('Science plan submitted:', updatedSciencePlan);
+            } else {
+                throw new Error('Failed to submit science plan');
+            }
+        } catch (error) {
+            console.error('Error submitting science plan:', error);
+            // Handle error
+        }
+    };
+
+
     const handleShowObserving = async (planNo) => {
         try {
             const response = await fetch(`http://localhost:8080/observing/${planNo}`);
@@ -185,6 +211,19 @@ export default function Home() {
                                         </TableCell>
                                     </TableRow>
                                 )}
+
+                                <TableRow>
+                                    <TableCell>Submit SciPlan</TableCell>
+                                    <TableCell>
+                                        <Button
+                                            onClick={() => handleSubmitSciencePlan(plan.planNo)}
+                                            variant="contained"
+                                        >
+                                            Submit
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+
 
                                 <TableRow>
                                     <TableCell />
