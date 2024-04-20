@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Scienceobserver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: sans-serif;
+            background-color: #E7EEF6;
+            padding: 20px;
+            color: #092C4C; /* Changed text color */
+        }
+
+        /* Container styles */
+        .container {
+            background-color: #E7EEF6;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 30px; /* Increase padding for larger size */
+        }
+
+        /* Form styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-weight: bold;
+            color: #092C4C; /* Changed text color */
+        }
+
+        form input[type="number"],
+        form input[type="text"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: #092C4C; /* Changed text color */
+        }
+
+        table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block; /* Ensure buttons are displayed in line */
+            text-decoration: none; /* Remove underline from buttons */
+            text-align: center; /* Center text in buttons */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:focus {
+            outline: none;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        .button-container button {
+            margin: 0 10px; /* Adjust the margin to separate buttons */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to Science Observer Page</h1>
+</div>
+
+
+<!-- ดูตารรางรวมของ science plan -->
+<h2>All Science Plans</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Plan Number</th>
+        <th>Creator</th>
+        <th>Submitter</th>
+        <th>Funding (USD)</th>
+        <th>Objectives</th>
+        <th>Star System</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Telescope Location</th>
+        <th>Status</th>
+        <!-- เพิ่มหัวข้อคอลัมน์ตามที่ต้องการ -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sciencePlan : ${sciencePlans}">
+        <td th:text="${sciencePlan.planNo}"></td>
+        <td th:text="${sciencePlan.creator}"></td>
+        <td th:text="${sciencePlan.submitter}"></td>
+        <td th:text="${sciencePlan.fundingInUSD}"></td>
+        <td th:text="${sciencePlan.objectives}"></td>
+        <td th:text="${sciencePlan.starSystem}"></td>
+        <td th:text="${sciencePlan.startDate}"></td>
+        <td th:text="${sciencePlan.endDate}"></td>
+        <td th:text="${sciencePlan.telescopeLocation}"></td>
+        <td th:text="${sciencePlan.status}"></td>
+        <!-- แสดงข้อมูลตามที่คุณต้องการ -->
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<h2>All Observing Programs</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Optics Primary</th>
+        <th>Gemini Location</th>
+        <th>F-Stop</th>
+        <th>Optics Secondary RMS</th>
+        <th>Science Fold Mirror Degree</th>
+        <th>Science Fold Mirror Type</th>
+        <th>Module Content</th>
+        <th>Calibration Unit</th>
+        <th>Light Type</th>
+        <!--        <th>Tele Positions</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="observingProgram : ${observingPrograms}">
+        <td th:text="${observingProgram.opticsPrimary}"></td>
+        <td th:text="${observingProgram.geminiLocation}"></td>
+        <td th:text="${observingProgram.fStop}"></td>
+        <td th:text="${observingProgram.opticsSecondaryRMS}"></td>
+        <td th:text="${observingProgram.scienceFoldMirrorDegree}"></td>
+        <td th:text="${observingProgram.scienceFoldMirrorType}"></td>
+        <td th:text="${observingProgram.moduleContent}"></td>
+        <td th:text="${observingProgram.calibrationUnit}"></td>
+        <td th:text="${observingProgram.lightType}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+<div class="button-container">
+<button onclick="location.href='/scienceobserverCreateOP'"> Create Observing Programs</button>
+<br>
+</div>
+
+</body>
+</html>

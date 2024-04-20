@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* your CSS styles here */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Container for the form */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        /* Form input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #bde0ff;
+        }
+
+        /* Form button */
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 12px 20px;
+            margin: 10px 0 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Close button */
+        .close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Center the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 5px;
+            max-width: 400px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Center-align the login button */
+        .center-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 250px;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 600px) {
+            .form-container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="display: flex; justify-content: center; align-items: center;">Signup</h2>
+
+<!-- Button to open the modal form -->
+<div class="center-btn">
+    <button onclick="document.getElementById('addUserModal').style.display='block'" style="width:auto;margin-bottom:10px;">Signup</button>
+</div>
+
+<!-- The Modal -->
+<div id="addUserModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('addUserModal').style.display='none'">&times;</span>
+        <form action="http://localhost:8080/signup" method="post">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required style="margin-top: 10px;">
+            <label for="role"><b>Role</b></label>
+            <input type="text" placeholder="Enter Role" name="role" required style="margin-top: 10px;">
+            <button type="submit">Add Users</button>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    // Get the modal
+    const modal = document.getElementById('addUserModal');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

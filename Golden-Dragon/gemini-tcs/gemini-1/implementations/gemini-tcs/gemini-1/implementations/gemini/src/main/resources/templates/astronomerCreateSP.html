@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Astronomer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: sans-serif;
+            background-color: #E7EEF6;
+            padding: 20px;
+            color: #092C4C; /* Changed text color */
+        }
+
+        /* Container styles */
+        .container {
+            background-color: #E7EEF6;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 30px; /* Increase padding for larger size */
+        }
+
+        /* Form styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-weight: bold;
+            color: #092C4C; /* Changed text color */
+        }
+
+        form input[type="number"],
+        form input[type="text"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: #092C4C; /* Changed text color */
+        }
+
+        table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .testalert {
+            font-size:20px ;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <h1>Welcome to Astronomer Page</h1>
+</div>
+
+<!-- การสร้าง Sciencec plan-->
+
+
+<h2>AlertMessage</h2>
+<table border="1">
+    <thead>
+    <th>alertMessage</th>
+    </thead>
+    <tbody>
+    <tr th:each="msg : ${alertMessage}">
+        <td class="testalert" th:text="${alertMessage}"></td>
+    </tbody>
+</table>
+
+<br>
+<h2>Check ID Science Plan</h2>
+<form action="http://localhost:8080/checkId" method="post">
+    <label for="planNo"><b>Plan numbe</b></label>
+    <input type="number" placeholder="Enter Plan number" name="planNo" required>
+    <br><br>
+    <button type="submit">Check</button>
+</form>
+<br>
+
+<!-- ดูตารรางรวมของ science plan -->
+<h2>Astronomer</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Username</th>
+
+        <!-- เพิ่มหัวข้อคอลัมน์ตามที่ต้องการ -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="astronomer : ${Astronomers}">
+        <td th:text="${astronomer.username}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+
+<!-- การสร้าง Sciencec plan-->
+<h2>Create Science Plan</h2>
+<form action="http://localhost:8080/createSP" method="post">
+    <label for="planNo"><b>Plan numbe</b></label>
+    <input type="number" placeholder="Enter Plan number" name="planNo" required>
+    <br><br>
+    <label for="creator"><b>Creator</b></label>
+    <input type="text" placeholder="Enter Creator" name="creator" required>
+    <br><br>
+    <label for="submitter"><b>Submitter</b></label>
+    <input type="text" placeholder="Enter Submitter" name="submitter" required>
+    <br><br>
+    <label for="fundingInUSD"><b>Funding in USD</b></label>
+    <input type="number" placeholder="Enter Funding in USD" name="fundingInUSD" required>
+    <br><br>
+    <label for="objectives"><b>Objectives</b></label>
+    <input type="text" placeholder="Enter Objectives" name="objectives" required>
+    <br><br>
+    <label for="starSystem"><b>Star System</b></label>
+<!--    <input type="text" placeholder="Enter Star System" name="starSystem" required>-->
+    <select name="starSystem" required>
+        <option value="Andromeda">Andromeda</option>
+        <option value="Antlia">Antlia</option>
+        <option value="Apus">Apus</option>
+        <!-- เพิ่มตัวเลือกที่ขาดตามที่คุณต้องการ -->
+        <option value="Aquarius">Aquarius</option>
+        <option value="Aquila">Aquila</option>
+        <option value="Ara">Ara</option>
+        <option value="Aries">Aries</option>
+        <option value="Auriga">Auriga</option>
+        <option value="Boötes">Boötes</option>
+        <option value="Caelum">Caelum</option>
+        <option value="Camelopardalis">Camelopardalis</option>
+        <option value="Cancer">Cancer</option>
+        <option value="CanesVenatici">CanesVenatici</option>
+        <option value="CanisMajor">CanisMajor</option>
+        <option value="CanisMinor">CanisMinor</option>
+        <option value="Capricornus">Capricornus</option>
+        <option value="Carina">Carina</option>
+        <option value="Cassiopeia">Cassiopeia</option>
+        <option value="Centaurus">Centaurus</option>
+        <option value="Cepheus">Cepheus</option>
+        <option value="Cetus">Cetus</option>
+        <option value="Chamaeleon">Chamaeleon</option>
+        <option value="Circinus">Circinus</option>
+        <option value="Columba">Columba</option>
+        <option value="ComaBerenices">ComaBerenices</option>
+        <option value="CoronaAustralis">CoronaAustralis</option>
+        <option value="CoronaBorealis">CoronaBorealis</option>
+        <option value="Corvus">Corvus</option>
+        <option value="Crater">Crater</option>
+        <option value="Crux">Crux</option>
+        <option value="Cygnus">Cygnus</option>
+        <option value="Delphinus">Delphinus</option>
+        <option value="Dorado">Dorado</option>
+        <option value="Draco">Draco</option>
+        <option value="Equuleus">Equuleus</option>
+        <option value="Eridanus">Eridanus</option>
+        <option value="Fornax">Fornax</option>
+        <option value="Gemini">Gemini</option>
+        <option value="Grus">Grus</option>
+        <option value="Hercules">Hercules</option>
+        <option value="Horologium">Horologium</option>
+        <option value="Hydra">Hydra</option>
+        <option value="Hydrus">Hydrus</option>
+        <option value="Indus">Indus</option>
+        <option value="Lacerta">Lacerta</option>
+        <option value="Leo">Leo</option>
+        <option value="LeoMinor">LeoMinor</option>
+        <option value="Lepus">Lepus</option>
+        <option value="Libra">Libra</option>
+        <option value="Lupus">Lupus</option>
+        <option value="Lynx">Lynx</option>
+        <option value="Lyra">Lyra</option>
+        <option value="Mensa">Mensa</option>
+        <option value="Microscopium">Microscopium</option>
+        <option value="Monoceros">Monoceros</option>
+        <option value="Musca">Musca</option>
+        <option value="Norma">Norma</option>
+        <option value="Octans">Octans</option>
+        <option value="Ophiuchus">Ophiuchus</option>
+        <option value="Orion">Orion</option>
+        <option value="Pavo">Pavo</option>
+        <option value="Pegasus">Pegasus</option>
+        <option value="Perseus">Perseus</option>
+        <option value="Phoenix">Phoenix</option>
+        <option value="Pictor">Pictor</option>
+        <option value="Pisces">Pisces</option>
+        <option value="PiscisAustrinus">PiscisAustrinus</option>
+        <option value="Puppis">Puppis</option>
+        <option value="Pyxis">Pyxis</option>
+        <option value="Reticulum">Reticulum</option>
+        <option value="Sagitta">Sagitta</option>
+        <option value="Sagittarius">Sagittarius</option>
+        <option value="Scorpius">Scorpius</option>
+        <option value="Sculptor">Sculptor</option>
+        <option value="Scutum">Scutum</option>
+        <option value="Serpens">Serpens</option>
+        <option value="Sextans">Sextans</option>
+        <option value="Taurus">Taurus</option>
+        <option value="Telescopium">Telescopium</option>
+        <option value="Triangulum">Triangulum</option>
+        <option value="TriangulumAustrale">TriangulumAustrale</option>
+        <option value="Tucana">Tucana</option>
+        <option value="UrsaMajor">UrsaMajor</option>
+        <option value="UrsaMinor">UrsaMinor</option>
+        <option value="Vela">Vela</option>
+        <option value="Virgo">Virgo</option>
+        <option value="Volans">Volans</option>
+        <option value="Vulpecula">Vulpecula</option>
+    </select>
+
+
+    <br><br>
+    <label for="startDate"><b>Start Date</b></label>
+    <input type="text" placeholder="Enter Start Date" name="startDate" required>
+    <br><br>
+    <label for="endDate"><b>End Date</b></label>
+    <input type="text" placeholder="Enter End Date" name="endDate" required>
+    <br><br>
+    <label for="telescopeLocation"><b>Telescope Location</b></label>
+    <select name="telescopeLocation" required>
+        <option value="CHILE">CHILE</option>
+        <option value="HAWAII">HAWAII</option>
+    </select>
+    <br><br>
+    <label for="fileType"><b>File Type</b></label>
+    <input type="text" placeholder="Enter File Type" name="fileType" required>
+    <br><br>
+    <label for="fileQuality"><b>File Quality</b></label>
+    <input type="text" placeholder="Enter File Quality" name="fileQuality" required>
+    <br><br>
+    <label for="colorType"><b>Color Type</b></label>
+    <input type="text" placeholder="Enter Color Type" name="colorType" required>
+    <br><br>
+    <label for="contrast"><b>Contrast</b></label>
+    <input type="number" placeholder="Enter Contrast" name="contrast" required>
+    <br><br>
+    <label for="brightness"><b>Brightness</b></label>
+    <input type="number" placeholder="Enter Brightness" name="brightness" required>
+    <br><br>
+    <label for="saturation"><b>Saturation</b></label>
+    <input type="number" placeholder="Enter Saturation" name="saturation" required>
+    <br><br>
+    <label for="highlights"><b>Highlights</b></label>
+    <input type="number" placeholder="Enter Highlights" name="highlights" required>
+    <br><br>
+    <label for="exposure"><b>Exposure</b></label>
+    <input type="number" placeholder="Enter Exposure" name="exposure" required>
+    <br><br>
+    <label for="shadows"><b>Shadows</b></label>
+    <input type="number" placeholder="Enter Shadows" name="shadows" required>
+    <br><br>
+    <label for="whites"><b>Whites</b></label>
+    <input type="number" placeholder="Enter Whites" name="whites" required>
+    <br><br>
+    <label for="blacks"><b>Blacks</b></label>
+    <input type="number" placeholder="Enter Blacks" name="blacks" required>
+    <br><br>
+    <label for="luminance"><b>Luminance</b></label>
+    <input type="number" placeholder="Enter Luminance" name="luminance" required>
+    <br><br>
+    <label for="hue"><b>Hue</b></label>
+    <input type="number" placeholder="Enter Hue" name="hue" required>
+    <br><br>
+    <button type="submit">Add</button>
+</form>
+
+
+</body>
+</html>

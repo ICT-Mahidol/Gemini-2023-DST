@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Scienceobserver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: sans-serif;
+            background-color: #E7EEF6;
+            padding: 20px;
+            color: #092C4C; /* Changed text color */
+        }
+
+        /* Container styles */
+        .container {
+            background-color: #E7EEF6;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 30px; /* Increase padding for larger size */
+        }
+
+        /* Form styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-weight: bold;
+            color: #092C4C; /* Changed text color */
+        }
+
+        form input[type="number"],
+        form input[type="text"],
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: #092C4C; /* Changed text color */
+        }
+
+        table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .testalert {
+            font-size:20px ;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to Science Observer Page</h1>
+</div>
+
+<br>
+<h2>AlertMessage</h2>
+<table border="1">
+    <thead>
+    <th>alertMessage</th>
+    </thead>
+    <tbody>
+    <tr th:each="msg : ${alertMessage}">
+        <td class="testalert" th:text="${alertMessage}"></td>
+    </tbody>
+</table>
+<br>
+
+<H2> Get BY ID Science Plan</H2>
+
+<form action="http://localhost:8080/byidSPforob" method="post">
+    <label for="planNo"><b>ID</b></label>
+    <input type="text" placeholder="Enter id" name="planNo" required>
+    <br><br>
+    <button type="submit">Search</button>
+</form>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Plan Number</th>
+        <th>Creator</th>
+        <th>Submitter</th>
+        <th>Funding (USD)</th>
+        <th>Objectives</th>
+        <th>Star System</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Telescope Location</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sciencePlanByID : ${sciencePlansTocontrollerByID}">
+        <td th:text="${sciencePlanByID.planNo}"></td>
+        <td th:text="${sciencePlanByID.creator}"></td>
+        <td th:text="${sciencePlanByID.submitter}"></td>
+        <td th:text="${sciencePlanByID.fundingInUSD}"></td>
+        <td th:text="${sciencePlanByID.objectives}"></td>
+        <td th:text="${sciencePlanByID.starSystem}"></td>
+        <td th:text="${sciencePlanByID.startDate}"></td>
+        <td th:text="${sciencePlanByID.endDate}"></td>
+        <td th:text="${sciencePlanByID.telescopeLocation}"></td>
+        <td th:text="${sciencePlanByID.status}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+
+<h2>Create Observing Program</h2>
+<form action="http://localhost:8080/createop" method="post">
+    <label for="planNo">Plan Number:</label>
+    <input type="number" id="planNo" name="planNo" required>
+    <br><br>
+
+    <label for="geminiLocation">Gemini Location:</label>
+    <input type="text" id="geminiLocation" name="geminiLocation" required>
+    <br><br>
+
+    <label for="opticsPrimary">Optics Primary:</label>
+    <input type="text" id="opticsPrimary" name="opticsPrimary" required>
+    <br><br>
+
+    <label for="fStop">F-Stop:</label>
+    <input type="number" id="fStop" name="fStop" step="0.01" required>
+    <br><br>
+
+    <label for="opticsSecondaryRMS">Optics Secondary RMS:</label>
+    <input type="number" id="opticsSecondaryRMS" name="opticsSecondaryRMS" step="0.01" required>
+    <br><br>
+
+    <label for="scienceFoldMirrorDegree">Science Fold Mirror Degree:</label>
+    <input type="number" id="scienceFoldMirrorDegree" name="scienceFoldMirrorDegree" step="0.01" required>
+    <br><br>
+
+    <!-- Fold Mirror Type -->
+    <label for="scienceFoldMirrorType"><b>Fold Mirror Type</b></label>
+    <select name="scienceFoldMirrorType" required>
+        <option value="REFLECTIVE_CONVERGING_BEAM">REFLECTIVE_CONVERGING_BEAM</option>
+        <option value="CASSEGRAIN_FOCUS">CASSEGRAIN_FOCUS</option>
+    </select>
+    <br><br>
+
+    <label for="moduleContent">Module Content:</label>
+    <input type="number" id="moduleContent" name="moduleContent" required>
+    <br><br>
+
+    <!-- Calibration Unit -->
+    <label for="calibrationUnit"><b>Calibration Unit</b></label>
+    <select name="calibrationUnit" required>
+        <option value="Argon">Argon</option>
+        <option value="Xenon">Xenon</option>
+        <option value="ThAr">ThAr</option>
+        <option value="CuAr">CuAr</option>
+    </select>
+    <br><br>
+
+    <!-- Light Type -->
+    <label for="lightType"><b>Light Type</b></label>
+    <select name="lightType" required>
+        <option value="MaunaKeaSkyEmission">MaunaKeaSkyEmission</option>
+        <option value="CerroPachonSkyEmission">CerroPachonSkyEmission</option>
+    </select>
+    <br><br>
+
+    <!-- Tele Position 1 -->
+    <label for="telePosition1X"><b>Tele Position 1 X</b></label>
+    <input type="number" placeholder="Enter Tele Position 1 X" name="telePosition1X" >
+    <label for="telePosition1Y"><b>Tele Position 1 Y</b></label>
+    <input type="number" placeholder="Enter Tele Position 1 Y" name="telePosition1Y" >
+    <br><br>
+    <!-- Tele Position 2 -->
+    <label for="telePosition2X"><b>Tele Position 2 X</b></label>
+    <input type="number" placeholder="Enter Tele Position 2 X" name="telePosition2X" >
+    <label for="telePosition2Y"><b>Tele Position 2 Y</b></label>
+    <input type="number" placeholder="Enter Tele Position 2 Y" name="telePosition2Y" >
+    <br><br>
+    <!-- Tele Position 3 -->
+    <label for="telePosition3X"><b>Tele Position 3 X</b></label>
+    <input type="number" placeholder="Enter Tele Position 3 X" name="telePosition3X" >
+    <label for="telePosition3Y"><b>Tele Position 3 Y</b></label>
+    <input type="number" placeholder="Enter Tele Position 3 Y" name="telePosition3Y" >
+    <br><br>
+    <!-- Tele Position 4 -->
+    <label for="telePosition4X"><b>Tele Position 4 X</b></label>
+    <input type="number" placeholder="Enter Tele Position 4 X" name="telePosition4X" >
+    <label for="telePosition4Y"><b>Tele Position 4 Y</b></label>
+    <input type="number" placeholder="Enter Tele Position 4 Y" name="telePosition4Y" >
+    <br><br>
+    <!-- Tele Position 5 -->
+    <label for="telePosition5X"><b>Tele Position 5 X</b></label>
+    <input type="number" placeholder="Enter Tele Position 5 X" name="telePosition5X" >
+    <label for="telePosition5Y"><b>Tele Position 5 Y</b></label>
+    <input type="number" placeholder="Enter Tele Position 5 Y" name="telePosition5Y" >
+    <br><br>
+    <button type="submit">Create Observing Program</button>
+</form>
+
+</body>
+</html>
