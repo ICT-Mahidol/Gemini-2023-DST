@@ -1,9 +1,11 @@
 <h1>Implementation Group Golden Dragon </h1>
 <br>
+
 <h3>
     ในข้อมูล Readme อยู่ใน file : Readme_implementations.pdf
-    
+    โดยกลุ่ม Golden Dragon มีการทำ Docker
 </h3>
+
 <h4>
   - มีรายละเอียดของ design pattern
   - มีรายละเอียดของการใช้งาน interface
@@ -17,11 +19,11 @@
 
     ├── gemini-1
     
-    │   ├── Gemini-1.md
+    │   ├── readme.md
     
     │   ├── designs 
 
-    |       ├── readme
+    |       ├── readme.md
 
     |       ├── Use_Case_Description_Golden_Dragon.pdf
 
@@ -34,6 +36,8 @@
     |       ├── Use_Case_Diagram_Golden_Dragon.pdf
 
     │   ├── implementations 
+
+    |       ├── readme.md
 
     |       ├── Readme_implementations.pdf
     
