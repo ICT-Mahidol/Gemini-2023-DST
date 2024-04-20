@@ -78,6 +78,7 @@ export default function Home() {
             const responseBody = await response.text(); // or response.json() if the response is JSON
             window.alert('Validate Observing success');
             console.log(responseBody);
+            setOpen(false);
         } catch (error) {
             console.error('Error Validating observing program:', error);
         }
@@ -198,7 +199,7 @@ export default function Home() {
                                     <TableCell>{plan.status}</TableCell>
                                 </TableRow>
 
-                                {plan.status !== 'TESTED' && (
+                                {plan.status === 'TESTED' && (
                                     <TableRow>
                                         <TableCell>Create Observing Program</TableCell>
                                         <TableCell>
