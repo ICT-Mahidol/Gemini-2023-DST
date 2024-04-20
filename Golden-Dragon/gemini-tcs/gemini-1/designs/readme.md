@@ -184,15 +184,17 @@ Astronomer
 <th>Basic Workflow:</th>
 <th align="left">
   
-1. Astronomer ค้นหาข้อมูลใน list (รายการรวม) ของ science plan <br>
-1.1 ถ้า “ไม่มี science plan” อยู่ใน list ระบบจะส่งข้อความแจ้งเตือนกลับมาที่ Astronomer ว่าไม่มี science plan อยู่ในระบบ<br>
-1.2 ถ้า “มี science plan” อยู่ใน list ระบบจะส่ง error massage กลับมาที่ Astronomer ว่ามี science plan อยู่แล้วในระบบ<br>
+1.	Astronomer แสดงข้อมูลใน list (รายการรวม) ของ science plan <br>
+2.	Astronomer ค้นหาด้วย id ของ science plan<br>
+2.1  ถ้า “ มี science plan” อยู่ใน list ระบบจะส่งข้อความเเจ้งเตือนกลับมาที่ Astronomer ว่า มี science plan ที่พร้อมใช้งานอยู่<br>
+2.2  ถ้า “ไม่มี science plan” อยู่ใน list ระบบจะส่ง error massage กลับมาที่ Astronomer ว่า ไม่มี science plan <br>
+3.	แสดง Astronomer ที่ลงทะเบียนทุกคน<br>
+4.	ระบบเพิ่ม  science plan <br>
+5.	Astronomer กรอกข้อมูลรายละเอียดที่จำเป็น ดังนี้ Creator, Submitter, Funding, Object, Starts System, Schedule (date, time), Telescope location, Data processing requirements - File type, File quality, Image processing - B&W, color, contrast, brightness, Saturation<br>
+5.1  หากไม่มี การกำหนดรายละเอียด function ครบตามที่กำหนดไว้ ระบบจะส่ง error message ไปที่ Astronomer <br>
+5.2  หาก มีการกำหนดรายละเอียด function ครบตามที่กำหนดไว้ ระบบจะส่ง พร้อมสำหรับการสร้าง science plan<br>
+6.	Astronomer create a science plan<br>
 
-2. ระบบเพิ่ม science plan<br>
-Astronomer กรอกข้อมูลรายละเอียดที่จำเป็น ดังนี้ ระบุ Creator, Submitter, fundingInUSD, objectives, startDate endDate, SciencePlan.STATUS, SciencePlan.TELESCOPELOC, fileType, fileQuality, colorType, contrast, brightness, saturation, highlights, exposure, shadows, whites, blacks, luminance, hue<br>
-3.1 หากไม่มีการกำหนดรายละเอียด function ครบตามที่กำหนดไว้ ระบบจะส่ง error message ไปที่ Astronomer <br>
-3.2 หากมีการกำหนดรายละเอียด function ครบตามที่กำหนดไว้ ระบบจะส่ง พร้อมสำหรับการสร้าง science plan<br>
-Astronomer create a science plan
 </th>
 </tr>
 
