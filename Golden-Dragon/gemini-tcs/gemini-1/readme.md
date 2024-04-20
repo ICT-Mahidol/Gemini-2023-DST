@@ -1,0 +1,109 @@
+<h2>
+  รูปเเบบ path
+</h2>
+
+|   gemini-tcs
+
+├── gemini-1
+
+│   ├── Gemini-1.md
+
+│   ├── designs 
+
+|       ├── readme
+
+|       ├── Use_Case_Description_Golden_Dragon.pdf
+
+|       ├── Sequence_Diagram_Golden_Dragon.pdf
+
+|       ├── Activity_Diagram_Golden_Dragon.pdf
+
+|       ├── Class_Diagram_Golden_Dragon.pdf
+
+|       ├── Use_Case_Diagram_Golden_Dragon.pdf
+
+│   ├── implementations 
+
+|       ├── Readme_implementations.pdf
+
+|       ├── gemini
+
+|           ├──ocs.mv
+
+|           ├──build
+
+|           ├──....
+
+|           ├──db
+
+|               ├──Gemini-update-17-4-2567.sql
+
+|           ├──src
+
+|              ├──main
+
+|                  ├──java
+
+|                    ├──com.example.gemini  
+
+|                      ├──Controller 
+
+|                        ├──ObservingProgramController.java   
+
+|                        ├──SciecncePlanController.java      
+
+|                        ├──LoginController.java            
+
+|                      ├──Model 
+
+|                        ├──Astronomer
+
+|                        ├──AstronomerRepository
+
+|                        ├──DataProcessReqModel
+
+|                        ├──DataProcReqMentRepository
+
+|                        ├──ObservingProgramModelGDDG
+
+|                        ├──ObservingProGramRepository
+
+|                        ├──ScienceObserver
+
+|                        ├──ScienceObserverRepository
+
+|                        ├──SciencePlanModelGDDG
+
+|                        ├──SciencePlanRepository
+
+|                        ├──User
+
+|                        ├──UserRepository
+
+|                      ├──GeminiApplication //ไม่ต้องเเก้ในนี้
+
+|                  ├──mysql
+
+|                      ├──JDBCDriverLoader
+
+|                  ├──resources
+
+|                    ├──application.properties
+
+|                    ├──templates
+
+|                      ├──astronomerCreateSP.html
+
+|                      ├──astronomerHomePage.html
+
+|                      ├──astronomerSubmitSP.html
+
+|                      ├──login.html 
+
+|                      ├──notfound.html
+
+|                      ├──scienceobserverCreateOP.html 
+
+|                      ├──scienceobserverHomePage.html 
+
+|                      ├──signup.html 
