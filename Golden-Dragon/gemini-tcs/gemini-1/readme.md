@@ -7,11 +7,11 @@
 
     ├── gemini-1
     
-    │   ├── Gemini-1.md
+    │   ├── readme.md
     
     │   ├── designs 
 
-    |       ├── readme
+    |       ├── readme.md
 
     |       ├── Use_Case_Description_Golden_Dragon.pdf
 
@@ -24,6 +24,8 @@
     |       ├── Use_Case_Diagram_Golden_Dragon.pdf
 
     │   ├── implementations 
+
+    |       ├── readme.md
 
     |       ├── Readme_implementations.pdf
     
