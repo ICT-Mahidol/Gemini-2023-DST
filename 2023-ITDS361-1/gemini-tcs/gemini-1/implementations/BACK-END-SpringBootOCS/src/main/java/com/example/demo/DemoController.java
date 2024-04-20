@@ -145,9 +145,12 @@ public class DemoController {
         List<User> users = GetUsersInDatabase.getUsers();
         for (User u : users) {
             if (u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword())) {
-                return ResponseEntity.ok(u.getRole());
+                System.out.println("---------------------------------------------");
+                System.out.println(ResponseEntity.ok().body("{\"role\": \"" + u.getRole() + "\"}"));
+                return ResponseEntity.ok().body("{\"role\": \"" + u.getRole() + "\"}");
             }
         }
+        System.out.println(user);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
     }
 
