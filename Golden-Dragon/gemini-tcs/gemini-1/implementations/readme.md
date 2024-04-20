@@ -3,14 +3,12 @@
 
 <h3>
     ในข้อมูล Readme อยู่ใน file : Readme_implementations.pdf
-    
     โดยกลุ่ม Golden Dragon มีการทำ Docker
 </h3>
 
 <h4>
-  - มีรายละเอียดของ design pattern
-    
-  - มีรายละเอียดของการใช้งาน interface
+  - มีรายละเอียดของ design pattern   
+- มีรายละเอียดของการใช้งาน interface
 </h4>
 
 
