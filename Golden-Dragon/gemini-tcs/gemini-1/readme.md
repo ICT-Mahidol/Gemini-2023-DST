@@ -1,109 +1,113 @@
-<h2>
-  รูปเเบบ path
-</h2>
+<h1>Group Golden Dragon </h1>
 
-|   gemini-tcs
+<h3>รุปเเบบ path</h3>
 
-├── gemini-1
 
-│   ├── Gemini-1.md
+    |   gemini-tcs
 
-│   ├── designs 
+    ├── gemini-1
+    
+    │   ├── Gemini-1.md
+    
+    │   ├── designs 
 
-|       ├── readme
+    |       ├── readme
 
-|       ├── Use_Case_Description_Golden_Dragon.pdf
+    |       ├── Use_Case_Description_Golden_Dragon.pdf
 
-|       ├── Sequence_Diagram_Golden_Dragon.pdf
+    |       ├── Sequence_Diagram_Golden_Dragon.pdf
 
-|       ├── Activity_Diagram_Golden_Dragon.pdf
+    |       ├── Activity_Diagram_Golden_Dragon.pdf
 
-|       ├── Class_Diagram_Golden_Dragon.pdf
+    |       ├── Class_Diagram_Golden_Dragon.pdf
 
-|       ├── Use_Case_Diagram_Golden_Dragon.pdf
+    |       ├── Use_Case_Diagram_Golden_Dragon.pdf
 
-│   ├── implementations 
+    │   ├── implementations 
 
-|       ├── Readme_implementations.pdf
+    |       ├── Readme_implementations.pdf
+    
+    |       ├── gemini
+    
+    |           ├──ocs.mv
+    
+    |           ├──build
+    
+    |           ├──....
 
-|       ├── gemini
+    |           ├──db
 
-|           ├──ocs.mv
+    |               ├──Gemini-update-17-4-2567.sql
+    
+    |           ├──src
+    
+    |              ├──main
+    
+    |                  ├──java
+    
+    |                    ├──com.example.gemini  
+    
+    |                      ├──Controller 
+    
+    |                        ├──ObservingProgramController.java   
+    
+    |                        ├──SciecncePlanController.java      
+    
+    |                        ├──LoginController.java            
+    
+    |                      ├──Model 
 
-|           ├──build
+    |                        ├──Astronomer
 
-|           ├──....
+    |                        ├──AstronomerRepository
 
-|           ├──db
+    |                        ├──DataProcessReqModel
 
-|               ├──Gemini-update-17-4-2567.sql
+    |                        ├──DataProcReqMentRepository
 
-|           ├──src
+    |                        ├──ObservingProgramModelGDDG
 
-|              ├──main
+    |                        ├──ObservingProGramRepository
 
-|                  ├──java
+    |                        ├──ScienceObserver
 
-|                    ├──com.example.gemini  
+    |                        ├──ScienceObserverRepository
 
-|                      ├──Controller 
+    |                        ├──SciencePlanModelGDDG
 
-|                        ├──ObservingProgramController.java   
+    |                        ├──SciencePlanRepository
 
-|                        ├──SciecncePlanController.java      
+    |                        ├──User
 
-|                        ├──LoginController.java            
+    |                        ├──UserRepository
+    
+    |                      ├──GeminiApplication //ไม่ต้องเเก้ในนี้
 
-|                      ├──Model 
+    |                  ├──mysql
 
-|                        ├──Astronomer
+    |                      ├──JDBCDriverLoader
+    
+    |                  ├──resources
+    
+    |                    ├──application.properties
+    
+    |                    ├──templates
+    
+    |                      ├──astronomerCreateSP.html
 
-|                        ├──AstronomerRepository
+    |                      ├──astronomerHomePage.html
 
-|                        ├──DataProcessReqModel
+    |                      ├──astronomerSubmitSP.html
+    
+    |                      ├──login.html 
+    
+    |                      ├──notfound.html
 
-|                        ├──DataProcReqMentRepository
+    |                      ├──scienceobserverCreateOP.html 
 
-|                        ├──ObservingProgramModelGDDG
+    |                      ├──scienceobserverHomePage.html 
 
-|                        ├──ObservingProGramRepository
+    |                      ├──signup.html 
 
-|                        ├──ScienceObserver
+    
 
-|                        ├──ScienceObserverRepository
-
-|                        ├──SciencePlanModelGDDG
-
-|                        ├──SciencePlanRepository
-
-|                        ├──User
-
-|                        ├──UserRepository
-
-|                      ├──GeminiApplication //ไม่ต้องเเก้ในนี้
-
-|                  ├──mysql
-
-|                      ├──JDBCDriverLoader
-
-|                  ├──resources
-
-|                    ├──application.properties
-
-|                    ├──templates
-
-|                      ├──astronomerCreateSP.html
-
-|                      ├──astronomerHomePage.html
-
-|                      ├──astronomerSubmitSP.html
-
-|                      ├──login.html 
-
-|                      ├──notfound.html
-
-|                      ├──scienceobserverCreateOP.html 
-
-|                      ├──scienceobserverHomePage.html 
-
-|                      ├──signup.html 
