@@ -6,10 +6,18 @@
     โดยกลุ่ม Golden Dragon มีการทำ Docker
 </h3>
 
-<h4>
-  - มีรายละเอียดของ design pattern   
+<p>
+     1. ในข้อมูล Readme อยู่ใน file : Readme_implementations.pdf
+    
+  - มีรายละเอียดของ design pattern
+    
 - มีรายละเอียดของการใช้งาน interface
-</h4>
+
+
+      2.ในข้อมูล Readme อยู่ใน file : gemini with docker Golden Dragon.pdf
+
+ -  มีรายละเอียดการลง Docker file
+</p>
 
 
 <h3>รุปเเบบ path</h3>
@@ -39,7 +47,34 @@
 
     |       ├── readme.md
 
-    |       ├── Readme_implementations.pdf
+    |       ├──  gemini with docker Golden Dragon.pdf
+
+    |       ├── Gemini_with_Docker/gemini
+
+    |           ├──ocs.mv
+    
+    |           ├──build
+
+    |           ├──docker-compose.yml
+    
+    |           ├──Dockerfile
+
+    |           ├──....
+
+    |           ├──db-init-scripts
+
+    |               ├──testGemini.sql    
+
+    |           ├──src
+    
+    |              ├──main
+
+    |                  ├──java
+
+    |                  ├──.... 
+
+    
+    |       ├── Readme_implementations.pdf    
     
     |       ├── gemini
     
@@ -51,7 +86,7 @@
 
     |           ├──db
 
-    |               ├──Gemini-update-17-4-2567.sql
+    |               ├──Gemini
     
     |           ├──src
     
