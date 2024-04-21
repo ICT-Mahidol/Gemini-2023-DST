@@ -1,16 +1,4 @@
-<h1>Implementation Group Golden Dragon </h1>
-<br>
-
-<h3>
-    ในข้อมูล Readme อยู่ใน file : Readme_implementations.pdf
-    โดยกลุ่ม Golden Dragon มีการทำ Docker
-</h3>
-
-<h4>
-  - มีรายละเอียดของ design pattern   
-- มีรายละเอียดของการใช้งาน interface
-</h4>
-
+<h1>Group Golden Dragon </h1>
 
 <h3>รุปเเบบ path</h3>
 
