@@ -2,7 +2,6 @@
 
 <h3>รุปเเบบ path</h3>
 
-
     |   gemini-tcs
 
     ├── gemini-1
@@ -27,7 +26,34 @@
 
     |       ├── readme.md
 
-    |       ├── Readme_implementations.pdf
+    |       ├──  gemini with docker Golden Dragon.pdf
+
+    |       ├── Gemini_with_Docker/gemini
+
+    |           ├──ocs.mv
+    
+    |           ├──build
+
+    |           ├──docker-compose.yml
+    
+    |           ├──Dockerfile
+
+    |           ├──....
+
+    |           ├──db-init-scripts
+
+    |               ├──testGemini.sql    
+
+    |           ├──src
+    
+    |              ├──main
+
+    |                  ├──java
+
+    |                  ├──.... 
+
+    
+    |       ├── Readme_implementations.pdf    
     
     |       ├── gemini
     
@@ -39,7 +65,7 @@
 
     |           ├──db
 
-    |               ├──Gemini-update-17-4-2567.sql
+    |               ├──Gemini
     
     |           ├──src
     
