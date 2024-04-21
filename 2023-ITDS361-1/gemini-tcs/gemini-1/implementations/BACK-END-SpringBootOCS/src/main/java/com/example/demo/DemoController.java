@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.h2.GetUsersInDatabase;
 import com.example.demo.model.User;
 import edu.gemini.app.ocs.OCS;
 import edu.gemini.app.ocs.model.ObservingProgram;
@@ -141,16 +142,13 @@ public class DemoController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> loginUser(@RequestBody User user) {
+    public ResponseEntity<?> loginUser(@RequestBody User user) {
         List<User> users = GetUsersInDatabase.getUsers();
         for (User u : users) {
             if (u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword())) {
-                System.out.println("---------------------------------------------");
-                System.out.println(ResponseEntity.ok().body("{\"role\": \"" + u.getRole() + "\"}"));
-                return ResponseEntity.ok().body("{\"role\": \"" + u.getRole() + "\"}");
+                return new ResponseEntity<>(u.getRole(),HttpStatus.OK);
             }
         }
-        System.out.println(user);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
     }
 

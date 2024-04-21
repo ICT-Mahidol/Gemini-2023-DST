@@ -12,7 +12,9 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+
 
 function Copyright(props) {
   return (
@@ -31,39 +33,34 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-
 export default function SignInSide() {
-  const navigate =useNavigate();
-  const [role, setRole] = useState('');
-  const handleSubmit = (event) => {
+  const [role ,setRole] = useState(null);
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    
     const data = new FormData(event.currentTarget);
-    const response = fetch(`http://localhost:8080/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: data.get('email'),
-        password: data.get('password'),
-      })
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('User role:', data.role);
-        setRole(data.role);
-      }).then (()=>{
-        navigate('/');
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
+    const email = data.get('email');
+    const password = data.get('password');
+
+    try {
+      const response = await fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
       });
+
+      if (response.ok) {
+        const userData = await response.text();
+        setRole(userData);
+        localStorage.setItem('role', userData);
+        window.location.href = '/';
+      } else {
+        alert('Login failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (
