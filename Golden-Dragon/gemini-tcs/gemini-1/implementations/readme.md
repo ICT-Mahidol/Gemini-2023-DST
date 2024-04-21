@@ -7,14 +7,13 @@
 </h3>
 
 <p>
-     1. ในข้อมูล Readme อยู่ใน file : Readme_implementations.pdf
+1. ในข้อมูล Readme อยู่ใน file : Readme_implementations.pdf
     
   - มีรายละเอียดของ design pattern
     
 - มีรายละเอียดของการใช้งาน interface
 
-
-      2.ในข้อมูล Readme อยู่ใน file : gemini with docker Golden Dragon.pdf
+2.ในข้อมูล Readme อยู่ใน file : gemini with docker Golden Dragon.pdf
 
  -  มีรายละเอียดการลง Docker file
 </p>
