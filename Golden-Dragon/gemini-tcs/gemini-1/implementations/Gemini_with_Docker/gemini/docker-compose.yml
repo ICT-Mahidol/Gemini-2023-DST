@@ -1,0 +1,40 @@
+#Connection url for connection in the DatabaseView:
+#  jdbc:mysql://0.0.0.0:13306/DOCKERDB, login=root, password=root
+#App is available at: http://localhost:<local-port>/entitybus/post
+version: "3.8"
+
+services:
+  java:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  db:
+    image: mysql:8.0.30
+    container_name: db
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD : 20032546
+      MYSQL_DATABASE: testGemini
+    command: [
+      '--default-authentication-plugin=mysql_native_password',
+      '--lower-case-table-names=1'
+    ]
+    volumes:
+      - ./db-init-scripts:/docker-entrypoint-initdb.d
+    restart: always
+    healthcheck:
+      test: [ "CMD", "mysql", "-h", "localhost", "-P", "3306", "-u", "root", "--password=20032546", "-e", "USE testGemini; SELECT 1;", "testGemini" ]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+# ประกาศการเชื่อมต่อฐานข้อมูลใน Docker Compose
+  app:
+    image: app:latest
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:13306/testGemini?autoReconnect=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 20032546
