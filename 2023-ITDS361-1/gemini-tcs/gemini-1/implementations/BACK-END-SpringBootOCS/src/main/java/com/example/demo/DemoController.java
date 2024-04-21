@@ -135,12 +135,6 @@ public class DemoController {
             return opSc.getValidationStatus();
         }
     }
-    @GetMapping("/users")
-    public ResponseEntity<List<User>> getUsers(){
-        List<User> users = GetUsersInDatabase.getUsers();
-        return ResponseEntity.ok(users);
-    }
-
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User user) {
         List<User> users = GetUsersInDatabase.getUsers();

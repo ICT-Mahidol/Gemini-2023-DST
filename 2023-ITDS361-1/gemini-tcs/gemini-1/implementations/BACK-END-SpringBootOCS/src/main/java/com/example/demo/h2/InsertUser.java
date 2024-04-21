@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.h2;
 
 import com.example.demo.model.User;
 
@@ -30,7 +30,7 @@ public class InsertUser {
     }
 
     public static void main(String[] args) {
-        User user = new User("user2","user2", "user2@gmail.com", "0987654321", "Astronomer");
+        User user = new User("user3","user3", "user3@gmail.com", "0981234567", "ScienceObserver");
 
         InsertUser inserter = new InsertUser();
         inserter.insertUser(user);

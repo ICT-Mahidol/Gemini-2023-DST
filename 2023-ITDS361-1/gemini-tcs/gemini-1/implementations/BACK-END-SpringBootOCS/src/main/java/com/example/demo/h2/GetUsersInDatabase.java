@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.h2;
 
 import com.example.demo.model.User;
 
