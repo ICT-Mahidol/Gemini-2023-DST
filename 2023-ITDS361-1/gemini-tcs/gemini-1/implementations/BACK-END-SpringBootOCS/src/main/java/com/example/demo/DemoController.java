@@ -126,13 +126,17 @@ public class DemoController {
     public Boolean validateObservingProgram(@PathVariable int id) {
         OCS o = new OCS();
         ObservingProgram opSc = o.getObservingProgramBySciencePlan(o.getSciencePlanByNo(id));
-        System.out.println(opSc);
-        if (opSc.getValidationStatus() == false){
-            opSc.setValidationStatus(true);
-            o.saveObservingProgram(opSc);
-            return opSc.getValidationStatus();
-        } else {
-            return opSc.getValidationStatus();
+        if (opSc != null){
+            if (opSc.getValidationStatus() == false){
+                opSc.setValidationStatus(true);
+                o.saveObservingProgram(opSc);
+                return opSc.getValidationStatus();
+            } else {
+                return opSc.getValidationStatus();
+            }
+        }
+        else {
+            return false;
         }
     }
     @PostMapping("/login")

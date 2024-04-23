@@ -89,9 +89,13 @@ export default function Home() {
         }
       );
 
-      const responseBody = await response.text(); // or response.json() if the response is JSON
-      window.alert("Validate Observing success");
-      console.log(responseBody);
+      const responseBody = await response.text(); 
+      if (responseBody === "true"){
+        window.alert("Validate Observing success");
+      }
+      else{
+        window.alert("Validate Observing failed");
+      }
     } catch (error) {
       console.error("Error Validating observing program:", error);
     }
