@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gemini System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/create.css">
+  <style>
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .rightnav {
+      float: right;
+    }
+
+    /* Styles for page title */
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .title h1 {
+      color: #333;
+    }
+
+    /* Styles for form fields */
+    .form__field {
+      margin-bottom: 15px;
+    }
+
+    .form__field label {
+      display: block;
+      font-weight: bold;
+    }
+
+    .form__field input[type="text"],
+    .form__field input[type="number"],
+    .form__field select,
+    .form__field textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    /* Styles for buttons */
+    .mybtn,
+    .prevbtn {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .mybtn:hover,
+    .prevbtn:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/100c767ee6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="topnav">
+  <div class="rightnav">
+
+    <a href="#" onclick="logout()" id="log"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+  </div>
+</div>
+<div class="page1">
+</div>
+<div class="page2">
+
+    <div class="title">
+      <h1>Create Science Plan</h1>
+    </div>
+
+      <!-- Step 1 -->
+      <section id="progress-form__panel-1" role="tabpanel" aria-labelledby="progress-form__tab-1" tabindex="0">
+        <div class="sm:d-grid sm:grid-col-2 sm:mt-3">
+
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="creator">
+              Creator Name
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input class="form-control" id="creatorname" type="text" name="creatorname" autocomplete="given-name"
+                   disabled>
+          </div>
+
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="submitter">
+              Submitter Name
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input class="form-control" id="submittername" type="text" name="submittername" autocomplete="family-name"
+                   disabled>
+          </div>
+        </div>
+
+        <div class="mt-3 form__field">
+          <label for="funding">
+            Funding (USD)
+            <span data-required="true" aria-hidden="true"></span>
+          </label>
+          <input id="funding" type="number" name="funding" required>
+        </div>
+
+
+        <div class="mt-3 form__field">
+          <label for="objectives">
+            Objectives
+          </label>
+          <textarea id="objectives" name="objectives"></textarea>
+        </div>
+
+        <div class="d-flex align-items-center justify-center sm:justify-end mt-4 sm:mt-5">
+          <button type="button" class="mybtn" data-action="next">
+            Continue
+          </button>
+        </div>
+      </section>
+
+
+      <section id="progress-form__panel-2" role="tabpanel" aria-labelledby="progress-form__tab-2" tabindex="0" hidden>
+        <div class="sm:d-grid sm:grid-col-2 sm:mt-3">
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="fileType">
+              File Type
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <select id="fileType" name="fileType" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="JPEG">JPEG (.jpg, .jpeg)</option>
+              <option value="PNG">PNG (.png)</option>
+              <option value="RAW">RAW (.raw)</option>
+            </select>
+          </div>
+
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="fileQuality">
+              File Quality
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <select id="fileQuality" name="fileQuality" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="Low">Low</option>
+              <option value="Fine">Fine</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sm:d-grid sm:grid-col-3 sm:mt-3">
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="colorType">
+              Color Type
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <select id="colorType" name="colorType" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="B&W mode">B&W mode</option>
+              <option value="Color mode">Color mode</option>
+            </select>
+          </div>
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="brightness">
+              Brightness
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="brightness" type="number" name="brightness" inputmode="numeric" required>
+          </div>
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="contrast">
+              Contrast
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="contrast" type="number" name="contrast" inputmode="numeric" required>
+          </div>
+        </div>
+        <div class="sm:d-grid sm:grid-col-3 sm:mt-3">
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="saturation">
+              Saturation
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="saturation" type="number" name="saturation" inputmode="numeric" required>
+          </div>
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="highlights">
+              Highlights
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="highlights" type="number" name="highlights" inputmode="numeric" required>
+          </div>
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="exposure">
+              Exposure
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="exposure" type="number" name="exposure" inputmode="numeric" required>
+          </div>
+        </div>
+        <div class="sm:d-grid sm:grid-col-3 sm:mt-3">
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="shadows">
+              Shadows
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="shadow" type="number" name="shadows" inputmode="numeric" required>
+          </div>
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="whites">
+              Whites
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="whites" type="number" name="whites" inputmode="numeric" required>
+          </div>
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="hue">
+              Hue
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="hue" type="number" name="hue" inputmode="numeric" required>
+          </div>
+        </div>
+        <div class="sm:d-grid sm:grid-col-3 sm:mt-3">
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="blacks">
+              Blacks
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="blacks" type="number" name="blacks" inputmode="numeric" required>
+          </div>
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="luminance">
+              Luminance
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input id="luminance" type="number" name="luminance" inputmode="numeric" required>
+          </div>
+
+        </div>
+
+        <div class="d-flex  sm:flex-row align-items-center justify-center sm:justify-end mt-4 sm:mt-5">
+          <button type="button" class="prevbtn" data-action="prev">
+            Back
+          </button>
+          <button type="button" class="mybtn" data-action="next">
+            Continue
+          </button>
+        </div>
+      </section>
+      <!-- / End Step 2 -->
+
+      <!-- Step 3 -->
+      <section id="progress-form__panel-3" role="tabpanel" aria-labelledby="progress-form__tab-3" tabindex="0" hidden>
+        <div class="mt-3 form__field">
+          <label for="starsystem">
+            Stars System
+            <span data-required="true" aria-hidden="true"></span>
+          </label>
+          <select id="starsystem" name="starsystem" required>
+            <option value="" disabled selected>Please select</option>
+
+          </select>
+        </div>
+        <div class="mt-3 form__field">
+          <label for="telescopelocation">
+            Telescope Location
+            <span data-required="true" aria-hidden="true"></span>
+          </label>
+          <select id="telescopelocation" name="telescopelocation" required>
+            <option value="" disabled selected>Please select</option>
+          </select>
+        </div>
+
+
+
+        <div class="sm:d-grid sm:grid-col-2 sm:mt-3">
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="startdate">
+              Start Date
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input class="form-control" type="date" id="startdate" name="startdate">
+          </div>
+
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="starttime">
+              Time
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input class="form-control" id="starttime" type="time" name="starttime" placeholder="HH:MM:SS">
+          </div>
+        </div>
+        <div class="sm:d-grid sm:grid-col-2 sm:mt-3">
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="enddate">
+              End Date
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input class="form-control" id="enddate" type="date" name="enddate" placeholder="DD / MM / YYYY">
+          </div>
+
+          <div class="mt-3 sm:mt-0 form__field">
+            <label for="endtime">
+              Time
+              <span data-required="true" aria-hidden="true"></span>
+            </label>
+            <input class="form-control" id="endtime" type="time" name="endtime" placeholder="HH:MM:SS">
+          </div>
+        </div>
+
+        <div
+                class="d-flex flex-column-reverse sm:flex-row align-items-center justify-center sm:justify-end mt-4 sm:mt-5">
+          <button type="button" class="prevbtn" data-action="prev">
+            Back
+          </button>
+          <button type="submit" class="mybtn">
+            Submit
+          </button>
+        </div>
+      </section>
+      <!-- / End Step 3 -->
+
+      <!-- Thank You -->
+      <section id="progress-form__thank-you" hidden>
+        <p>New Science Plan has been Created!</p>
+        <p>Congratulations! Your science plan has been successfully created and is now in our queue for processing. Our team will carefully review it and contact you if any further information is needed. Thank you for your submission!"</p>
+      </section>
+      <!-- / End Thank You -->
+
+    </form>
+    <!-- / End Progress Form -->
+
+  </div>
+
+</div>
+<script src="/js/create.js"></script>
+</body>
+
+</html>

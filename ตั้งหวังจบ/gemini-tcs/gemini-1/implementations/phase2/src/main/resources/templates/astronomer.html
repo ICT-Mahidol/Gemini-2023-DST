@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Gemini System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/100c767ee6.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar Styles */
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topnav .rightnav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav .rightnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Main Content Area */
+        .page1 {
+            padding-top: 60px; /* Give space for fixed navbar */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .create {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            width: 80%;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .create .left, .create .right {
+            flex: 1;
+        }
+
+        .create .left {
+            padding-right: 20px;
+        }
+
+        .create .left h3 {
+            margin-bottom: 20px;
+        }
+
+        .create .left button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .create .left button:hover {
+            background-color: #45a049;
+        }
+
+        .create .right img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Table Styles */
+        .main-container {
+            width: 80%;
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .table thead th {
+            background-color: #555;
+        }
+
+        .table-responsive {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="topnav">
+    <div class="rightnav">
+        <a href="#" onclick="logout()" id="log"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+    </div>
+</div>
+<div class="page1">
+    <div class="create">
+        <div class="left">
+            <h3>Create Science Plan</h3>
+            <a href="/create_scienceplan"><button id="createNow">Create Now</button></a>
+        </div>
+    </div>
+    <div class="main-container">
+        <h2>Science Plan</h2>
+        <table class="table table-responsive table-dark">
+            <thead>
+            <tr>
+                <th>Plan No</th>
+                <th>Creator</th>
+                <th>Funding</th>
+                <th>Star System</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+</div>
+<script src="/js/astronomer.js">
+</script>
+</body>
+
+</html>
