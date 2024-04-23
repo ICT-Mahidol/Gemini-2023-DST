@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Create Science Plan</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            width: 60%;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="datetime-local"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            /*display: flex;*/
+            /*justify-content: flex-end;*/
+            /*!*flex-wrap: wrap;*!*/
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Create Science Plan</h1>
+<form action="/NewSP" method="post">
+    <label for="creator">Creator:</label>
+    <input type="text" id="creator" name="creator" required>
+
+    <label for="submitter">Submitter:</label>
+    <input type="text" id="submitter" name="submitter" required>
+
+    <label for="fundingInUSD">Funding in USD:</label>
+    <input type="number" id="fundingInUSD" name="fundingInUSD" step="0.01" required>
+
+    <label for="objectives">Objectives:</label>
+    <input type="text" id="objectives" name="objectives" required>
+
+    <label for="starSystem">Star System:</label>
+    <input type="text" id="starSystem" name="starSystem" required>
+    <!--    <select id="starSystem" name="starSystem" required>-->
+    <!--        <option value="ANDROMEDA">Andromeda</option>-->
+    <!--        <option value="AQUARIUS">Aquarius</option>-->
+    <!--        &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+    <!--    </select>-->
+
+    <label for="startDate">Start Date:</label>
+    <input type="datetime-local" id="startDate" name="startDate" required>
+
+    <label for="endDate">End Date:</label>
+    <input type="datetime-local" id="endDate" name="endDate" required>
+
+    <label for="telescopeLocation">Telescope Location:</label>
+    <select id="telescopeLocation" name="telescopeLocation" required>
+        <option value="HAWAII">HAWAII</option>
+        <option value="CHILE">CHILE</option>
+        <!-- Add more options as needed -->
+    </select>
+    <label for="fileType">File Type</label>
+    <input type="text" placeholder="Ex. JPEG" name="fileType" required>
+
+    <label for="fileQuality">File Quality</label>
+    <input type="text" placeholder="Ex. Fine, Low" name="fileQuality" required>
+
+    <label for="fileType">File Type</label>
+    <input type="text" placeholder="Ex. JPEG" name="fileType" required>
+
+    <label for="colorType">Color Type</label>
+    <input type="text" placeholder="Ex. B&W mode, Color mode" name="colorType" required>
+
+    <label for="contrast">Contrast</label>
+    <input type="number" placeholder="Ex. 10.0" name="contrast" required>
+
+    <label for="brightness">Brightness</label>
+    <input type="number" placeholder="Ex. 10.0" name="brightness" required>
+
+    <label for="saturation">Saturation</label>
+    <input type="number" placeholder="Ex. 10.0" name="saturation" required>
+
+    <label for="highlights">Highlights</label>
+    <input type="number" placeholder="Ex. 10.0" name="highlights" required>
+
+    <label for="exposure">Exposure</label>
+    <input type="number" placeholder="Ex. 10.0" name="exposure" required>
+
+    <label for="shadows">Shadows</label>
+    <input type="number" placeholder="Ex. 10.0" name="shadows" required>
+
+    <label for="whites">Whites</label>
+    <input type="number" placeholder="Ex. 10.0" name="whites" required>
+
+    <label for="blacks">Blacks</label>
+    <input type="number" placeholder="Ex. 10.0" name="blacks" required>
+
+    <label for="luminance">Luminance</label>
+    <input type="number" placeholder="Ex. 10.0" name="luminance" required>
+
+    <label for="hue">Hue</label>
+    <input type="number" placeholder="Ex. 10.0" name="hue" required>
+
+
+    <button type="button" class="cancel-button" onclick="confirmReset()">Cancel</button>
+    <button type="button" class="submit-button" onclick="validateForm()">Create Science Plan</button>
+</form>
+<script>
+    function validateForm() {
+        const requiredFields = document.querySelectorAll('input[required]');
+
+        let isFormValid = true;
+
+        requiredFields.forEach(field => {
+            if (!field.value) {
+                // หากฟิลด์ฟอร์มไม่ได้กรอกข้อมูลให้ครบ
+                isFormValid = false;
+            }
+        });
+
+        // หากฟอร์มไม่ถูกต้องให้แสดงข้อความเตือนว่ายังไม่ได้กรอกข้อมูลให้ครบทั้งฟอร์ม
+        if (!isFormValid) {
+            const confirmSave = confirm('Do you want to save this draft?');
+            if (confirmSave) {
+                // ถ้าผู้ใช้ต้องการเซฟ daft ให้ไม่ต้องทำอะไรเพิ่ม
+            } else {
+                // ถ้าผู้ใช้ไม่ต้องการเซฟ daft ให้ redirect ไปที่หน้า path /list-spAstro
+                window.location.href = '/list-spAstro';
+            }
+        } else {
+            // หากฟอร์มถูกต้องให้ส่งข้อมูล
+            submitForm();
+        }
+    }
+
+
+    function confirmReset() {
+        // ใช้ confirm() เพื่อแสดงหน้าต่างเตือนก่อนที่จะล้างข้อมูล
+        if (confirm("Are you sure you want to cancel?")) {
+            // ทำสิ่งที่คุณต้องการเมื่อยืนยันการล้างข้อมูล
+            console.log("Form reset!");
+            // ส่งผู้ใช้กลับไปยังหน้า home โดยใช้ window.location.href
+            window.location.href = "/list-spAstro";
+        }
+    }
+</script>
+</body>
+</html>

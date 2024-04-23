@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Observing Program</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            width: 60%;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Create Observing Program</h1>
+<form action="/create-op" method="post">
+    <input type="hidden" name="planNo" th:value="${planNo}" />
+    <label for="geminiLocation">Gemini Location:</label>
+    <input type="text" id="geminiLocation" name="geminiLocation" required>
+    <label for="opticsPrimary">Optics Primary:</label>
+    <input type="text" id="opticsPrimary" name="opticsPrimary" required>
+    <label for="fStop">F-Stop:</label>
+    <input type="number" id="fStop" name="fStop" step="0.01" required>
+    <label for="opticsSecondaryRMS">Optics Secondary RMS:</label>
+    <input type="number" id="opticsSecondaryRMS" name="opticsSecondaryRMS" step="0.01" required>
+    <label for="scienceFoldMirrorDegree">Science Fold Mirror Degree:</label>
+    <input type="number" id="scienceFoldMirrorDegree" name="scienceFoldMirrorDegree" step="0.01" required>
+    <label for="scienceFoldMirrorType">Science Fold Mirror Type:</label>
+    <select id="scienceFoldMirrorType" name="scienceFoldMirrorType" required>
+        <option value="REFLECTIVE_CONVERGING_BEAM">REFLECTIVE_CONVERGING_BEAM</option>
+        <option value="CASSEGRAIN_FOCUS">CASSEGRAIN_FOCUS</option>
+    </select>
+    <label for="moduleContent">Module Content:</label>
+    <input type="text" id="moduleContent" name="moduleContent" required>
+    <label for="calibrationUnit">Calibration Unit:</label>
+    <select id="calibrationUnit" name="calibrationUnit" required>
+        <option value="Argon">Argon</option>
+        <option value="Xenon">Xenon</option>
+        <option value="ThAr">ThAr</option>
+        <option value="CuAr">CuAr</option>
+    </select>
+    <label for="lightType">Light Type:</label>
+    <select id="lightType" name="lightType" required>
+        <option value="MaunaKeaSkyEmission">MaunaKeaSkyEmission</option>
+        <option value="CerroPachonSkyEmission">CerroPachonSkyEmission</option>
+    </select>
+    <label for="telePositionPairDirection">Tele Position Pair Direction:</label>
+    <input type="number" id="telePositionPairDirection" name="telePositionPairDirection" step="0.01" required>
+    <label for="telePositionPairDegree">Tele Position Pair Degree:</label>
+    <input type="number" id="telePositionPairDegree" name="telePositionPairDegree" step="0.01" required>
+    <label for="validationStatus">Validation Status:</label>
+    <select id="validationStatus" name="validationStatus" required>
+        <option value="true">True</option>
+        <option value="false">False</option>
+    </select>
+    <button type="submit">Save Observing Program</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Observing Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>List of Observing Programs</h1>
+
+<!-- แสดงข้อความ message ถ้ามี -->
+<div class="message" th:if="${message}">
+    <p th:text="${message}"></p>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Plan No.</th>
+        <th>Gemini Location</th>
+        <th>Optics Primary</th>
+        <th>F-Stop</th>
+        <th>Optics Secondary RMS</th>
+        <th>Science Fold Mirror Degree</th>
+        <th>Science Fold Mirror Type</th>
+        <th>Module Content</th>
+        <th>Calibration Unit</th>
+        <th>Light Type</th>
+        <th>Tele Positions</th>
+        <th>Validation Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- ใช้ Thymeleaf เพื่อวนลูปข้อมูลใน sciencePrograms และแสดงในตาราง -->
+    <tr th:each="program : ${sciencePrograms}">
+        <td th:text="${program.planNo}"></td>
+        <td th:text="${program.geminiLocation}"></td>
+        <td th:text="${program.opticsPrimary}"></td>
+        <td th:text="${program.fStop}"></td>
+        <td th:text="${program.opticsSecondaryRMS}"></td>
+        <td th:text="${program.scienceFoldMirrorDegree}"></td>
+        <td th:text="${program.scienceFoldMirrorType}"></td>
+        <td th:text="${program.moduleContent}"></td>
+        <td th:text="${program.calibrationUnit}"></td>
+        <td th:text="${program.lightType}"></td>
+        <td>
+            <ul>
+                <!-- ใช้ Thymeleaf เพื่อวนลูปข้อมูล TelePositions และแสดงในลิสต์ -->
+                <li th:each="position : ${program.telePositions}">
+                    <span th:text="${position.x} + ', ' + ${position.y}"></span>
+                </li>
+            </ul>
+        </td>
+        <td th:text="${program.validationStatus}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Plans for observer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li strong {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+        td ul li {
+            font-family: 'sans-serif', monospace;
+        }
+        .dataprocReq {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .createSP-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Science Plans</h1>
+<!--<a href="/NewSP" class="createSP-button">Create Science Plan</a>-->
+<table>
+    <thead>
+    <tr>
+        <th>Plan No.</th>
+        <th>Creator</th>
+        <th>Submitter</th>
+        <th>Funding (USD)</th>
+        <th>Objectives</th>
+        <th>Star System</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Telescope Location</th>
+        <th>Data Processing Requirements</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="plan : ${sciencePlans}">
+        <td>
+            <a th:href="@{/createObservingProgram/{planNo}(planNo=${plan.planNo})}" th:text="${plan.planNo}"></a>
+        </td>
+        <td th:text="${plan.creator}"></td>
+        <td th:text="${plan.submitter}"></td>
+        <td th:text="${plan.fundingInUSD}"></td>
+        <td th:text="${plan.objectives}"></td>
+        <td th:text="${plan.starSystem}"></td>
+        <td th:text="${plan.startDate}"></td>
+        <td th:text="${plan.endDate}"></td>
+        <td th:text="${plan.telescopeLocation}"></td>
+        <td>
+            <ul class="dataprocReq">
+                <li th:each="procReq : ${plan.dataProcRequirements}">
+                    <strong>File Type:</strong> <span th:text="${procReq.fileType}"></span><br>
+                    <strong>File Quality:</strong> <span th:text="${procReq.fileQuality}"></span><br>
+                    <strong>Color Type:</strong> <span th:text="${procReq.colorType}"></span><br>
+                    <strong>Contrast:</strong> <span th:text="${procReq.contrast}"></span><br>
+                    <strong>Brightness:</strong> <span th:text="${procReq.brightness}"></span><br>
+                    <strong>Saturation:</strong> <span th:text="${procReq.saturation}"></span><br>
+                    <strong>Highlights:</strong> <span th:text="${procReq.highlights}"></span><br>
+                    <strong>Exposure:</strong> <span th:text="${procReq.exposure}"></span><br>
+                    <strong>Shadows:</strong> <span th:text="${procReq.shadows}"></span><br>
+                    <strong>Whites:</strong> <span th:text="${procReq.whites}"></span><br>
+                    <strong>Blacks:</strong> <span th:text="${procReq.blacks}"></span><br>
+                    <strong>Luminance:</strong> <span th:text="${procReq.luminance}"></span><br>
+                    <strong>Hue:</strong> <span th:text="${procReq.hue}"></span><br>
+                </li>
+            </ul>
+        </td>
+        <td th:text="${plan.status}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
