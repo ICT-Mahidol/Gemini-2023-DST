@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validated Science Plans</title>
+</head>
+<body>
+<h1>Validated Science Plans</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Plan No</th>
+        <th>Creator</th>
+        <th>Submitter</th>
+        <th>Funding</th>
+        <th>Objectives</th>
+        <th>Star System</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Telescope Location</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    </thead><tbody>
+<th:block th:each="sciPlan : ${sciencePlans}">
+    <tr>
+        <td th:text="${sciPlan.planNo}"></td>
+        <td th:text="${sciPlan.creator}"></td>
+        <td th:text="${sciPlan.submitter}"></td>
+        <td th:text="${sciPlan.fundingInUSD}"></td>
+        <td th:text="${sciPlan.objectives}"></td>
+        <td th:text="${sciPlan.starSystem}"></td>
+        <td th:text="${sciPlan.startDate}"></td>
+        <td th:text="${sciPlan.endDate}"></td>
+        <td th:text="${sciPlan.telescopeLocation}"></td>
+        <td th:text="${sciPlan.status}"></td>
+        <td>
+            <form method="post" th:action="@{/validateSciencePlan/approve}">
+                <input type="hidden" name="planNo" th:value="${sciPlan.planNo}" />
+                <button type="submit">Approve</button>
+            </form>
+            <form method="post" th:action="@{/validateSciencePlan/reject}">
+                <input type="hidden" name="planNo" th:value="${sciPlan.planNo}" />
+                <button type="submit">Reject</button>
+            </form>
+        </td>
+    </tr>
+</th:block>
+</tbody>
+</table>
+</body>
+</html>

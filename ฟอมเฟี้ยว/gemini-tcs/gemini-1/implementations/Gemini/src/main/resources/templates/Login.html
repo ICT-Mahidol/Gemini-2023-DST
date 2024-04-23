@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container input[type="submit"],
+        .login-container a.button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #007acc;
+        }
+
+        .login-container a {
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+        }
+
+        .login-container a.button {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+        <a href="/home" class="button">Login</a>
+        <a href="/signup" class="button">Sign Up</a>
+    </form>
+</div>
+
+</body>
+</html>

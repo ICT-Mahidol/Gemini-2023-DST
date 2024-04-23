@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/science_plan_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+      SPRING_JPA_HIBERNATE_DDL-AUTO: update
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: science_plan_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD:
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:

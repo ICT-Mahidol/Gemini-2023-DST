@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title class="title-all">All Science Plans</title>
+  <style>
+
+    .title-all{
+    text-align: center;
+    }
+    .table-allsp {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    .table-allsp th,
+    .table-allsp td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    .table-allsp th {
+      background-color: #f2f2f2;
+    }
+
+    .table-allsp tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .table-allsp tr:hover {
+      background-color: #ddd;
+    }
+
+    .table-allsp td div {
+      display: flex;
+      justify-content: center;
+    }
+
+    .table-allsp td button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .table-allsp td button:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+<h1>All Science Plans</h1>
+<table class="table-allsp" border="1">
+  <thead>
+  <tr>
+    <th>Plan No</th>
+    <th>Creator</th>
+    <th>Submitter</th>
+    <th>Funding</th>
+    <th>Objectives</th>
+    <th>Star System</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Telescope Location</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="sciPlan : ${sciencePlans}">
+    <td th:text="${sciPlan.planNo}"></td>
+    <td th:text="${sciPlan.creator}"></td>
+    <td th:text="${sciPlan.submitter}"></td>
+    <td th:text="${sciPlan.fundingInUSD}"></td>
+    <td th:text="${sciPlan.objectives}"></td>
+    <td th:text="${sciPlan.starSystem}"></td>
+    <td th:text="${sciPlan.startDate}"></td>
+    <td th:text="${sciPlan.endDate}"></td>
+    <td th:text="${sciPlan.telescopeLocation}"></td>
+    <td th:text="${sciPlan.status}"></td>
+    <td>
+      <div>
+        <a th:href="@{'/allSP/' + ${sciPlan.planNo}}"><button><i class="fa-solid fa-eye"></i></button></a>
+        <form method="post" th:action="@{/delete-science-plan}" style="display: inline;">
+          <input type="hidden" name="planNo" th:value="${sciPlan.planNo}" />
+          <button type="submit"><i class="fa-solid fa-trash"></i></button>
+        </form>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

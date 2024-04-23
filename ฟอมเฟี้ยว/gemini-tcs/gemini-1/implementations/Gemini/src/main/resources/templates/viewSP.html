@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Science Plans Detail</title>
+</head>
+<body>
+<h1>Science Plans Detail <span th:text="${planNo}"></span></h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>FileType</th>
+    <th>FileQuality</th>
+    <th>ColorType</th>
+    <th>Contrast</th>
+    <th>Brightness</th>
+    <th>Saturation</th>
+    <th>Highlights</th>
+    <th>Exposure</th>
+    <th>Shadows</th>
+    <th>Whites</th>
+    <th>Blacks</th>
+    <th>Luminance</th>
+    <th>Hue</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+    <td th:text="${sciencePlan.dataProcRequirements[0].fileType}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].fileQuality}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].colorType}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].contrast}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].brightness}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].saturation}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].highlights}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].exposure}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].shadows}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].whites}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].blacks}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].luminance}"></td>
+    <td th:text="${sciencePlan.dataProcRequirements[0].hue}"></td>
+    <td>
+      <div>
+        <form method="get" th:action="@{/allSP}" style="display: inline;">
+          <button type="submit"><i class="fa-solid fa-arrow-left"></i></button>
+        </form>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
