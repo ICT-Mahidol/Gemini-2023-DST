@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Observing Program Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            height: 100vh;
+        }
+
+        .container form {
+            margin-right: 10px;
+        }
+
+        .container form:last-child {
+            margin-right: 0;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Create Observing Program Success</h2>
+<div class="container">
+    <form action="/createObservingProgram" method="get">
+        <button type="submit">Create Another Observing Program</button>
+    </form>
+    <form action="/observing-page" method="get">
+        <button type="submit">Return to Main Menu</button>
+    </form>
+</div>
+</body>
+</html>

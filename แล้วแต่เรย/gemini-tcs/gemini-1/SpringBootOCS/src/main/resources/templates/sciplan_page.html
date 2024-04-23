@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SciencePlan Management</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0f0d; /* Dark background for space theme */
+            color: #fff; /* Light text for contrast */
+        }
+
+        /* Container for content */
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1a1a1a; /* Darker background for the container */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.75); /* Yellow glowing effect */
+        }
+
+        /* Headings */
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #ffd700; /* Yellow color for headings */
+        }
+
+        /* Buttons and forms */
+        .centered-button {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button[type="submit"] {
+            background-color: #ffd700; /* Vibrant yellow buttons */
+            color: #0a0f0d; /* Dark text for readability */
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #cca700; /* Darker yellow on hover */
+        }
+
+        button[type="submit"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #ffd700; /* Focus state with a yellow glow */
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Observing Program Management</h2>
+    <div class="centered-button">
+        <form action="/createSciencePlan" method="get">
+            <button type="submit">Create SciencePlan</button>
+        </form>
+    </div>
+    <div class="centered-button">
+        <form action="/allSciencePlans" method="get">
+            <button type="submit">View All SciencePlan</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

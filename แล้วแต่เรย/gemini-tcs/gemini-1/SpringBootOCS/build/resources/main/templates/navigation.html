@@ -1,0 +1,21 @@
+<!-- navigation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head content -->
+</head>
+<body>
+<h1>Welcome User!</h1>
+<div class="container">
+    <form th:if="${roles.contains('astronomer')}" action="/astronomer" method="get">
+        <button type="submit">Astronomer</button>
+    </form>
+    <form th:if="${roles.contains('science observer')}" action="/science-observer" method="get">
+        <button type="submit">Science Observer</button>
+    </form>
+    <form th:if="${roles.contains('telescope operator')}" action="/telescope-operator" method="get">
+        <button type="submit">Telescope Operator</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Observing Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+<h2>All Observing Programs</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Plan Number</th>
+        <th>Gemini Location</th>
+        <th>Optics Primary</th>
+        <th>f-Stop</th>
+        <th>Optics Secondary RMS</th>
+        <th>Science Fold Mirror Degree</th>
+        <th>Science Fold Mirror Type</th>
+        <th>Module Content</th>
+        <th>Calibration Unit</th>
+        <th>Light Type</th>
+        <th>TelePositionPairs</th>
+        <!-- Add other columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="observingProgram : ${observingPrograms}">
+        <td th:text="${observingProgram?.planNo}"></td>
+        <td th:text="${observingProgram?.geminiLocation}"></td>
+        <td th:text="${observingProgram?.opticsPrimary}"></td>
+        <td th:text="${observingProgram?.fStop}"></td>
+        <td th:text="${observingProgram?.opticsSecondaryRMS}"></td>
+        <td th:text="${observingProgram?.scienceFoldMirrorDegree}"></td>
+        <td th:text="${observingProgram?.scienceFoldMirrorType}"></td>
+        <td th:text="${observingProgram?.moduleContent}"></td>
+        <td th:text="${observingProgram?.calibrationUnit}"></td>
+        <td th:text="${observingProgram?.lightType}"></td>
+        <td th:text="${observingProgram?.telePositionPair}"></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

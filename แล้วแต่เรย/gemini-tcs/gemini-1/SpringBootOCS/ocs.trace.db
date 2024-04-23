@@ -1,0 +1,9 @@
+2024-04-22 11:27:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "MASUNAVAILABLEDATES" not found; SQL statement:
+SELECT * FROM masUnavailableDates [42102-192]
+2024-04-22 11:27:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "MASUNAVAILABLEDATES" not found; SQL statement:
+SELECT * FROM masUnavailableDates [42102-192]
+2024-04-23 23:45:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "MASASTRONOMICALDATA" not found; SQL statement:
+INSERT INTO masAstronomicalData VALUES(3,1,'https://www.gemini.edu/files/styles/large/public/gallery/20975/ngc6946handout_0.jpg'); [42102-192]
