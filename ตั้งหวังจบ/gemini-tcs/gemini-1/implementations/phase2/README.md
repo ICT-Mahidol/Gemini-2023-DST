@@ -33,22 +33,25 @@ Pattern ออกแบบ MVC (Model-View-Controller) ซึ่งเป็น�
 ## How to Use the Observation Control System !
 ### Steps to Create a Science Plan 👨‍🚀
 
-sh
+```sh
 1. Log in.
 2. Click the ‘Create now’ button.
 3. Fill in the information completely and accurately.
 4. Click the ‘SAVE’ button to save the entered data.
 5. Click the ‘OK’ button to confirm the creation of the Science Plan.
+```
 
 ### Steps to Create an Observing Program 🪐
 
-sh
+```sh
 1. Log in.
 2. Check the received Science Plan.
 3. Click to convert the verified Science Plan into an Observing Program.
 ### Steps to Validate an observing program 🚀
+```
 
-sh
+```sh
 1. Log in.
 2. Click to check the details of the Observing Program.
 3. Approve the observation program if it meets the specifications.
+```
