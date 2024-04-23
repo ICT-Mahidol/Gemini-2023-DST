@@ -210,7 +210,7 @@ export default function Home() {
                   <TableCell>{plan.status}</TableCell>
                 </TableRow>
 
-                {plan.status !== "TESTED" && role === "ScienceObserver" && (
+                {plan.status === "SUBMITTED" && role === "ScienceObserver" && (
                   <TableRow>
                     <TableCell>Create Observing Program</TableCell>
                     <TableCell>
