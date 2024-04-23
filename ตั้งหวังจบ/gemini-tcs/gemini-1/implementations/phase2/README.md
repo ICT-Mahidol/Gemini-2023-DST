@@ -47,9 +47,9 @@ Pattern ออกแบบ MVC (Model-View-Controller) ซึ่งเป็น�
 1. Log in.
 2. Check the received Science Plan.
 3. Click to convert the verified Science Plan into an Observing Program.
-### Steps to Validate an observing program 🚀
-```
 
+```
+### Steps to Validate an observing program 🚀
 ```sh
 1. Log in.
 2. Click to check the details of the Observing Program.
