@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Science Plan</title>
+    <style>
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: dodgerblue;
+            box-shadow: 0 0 5px dodgerblue;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: dodgerblue;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0072ff;
+        }
+
+        button:active {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h2>Create a new Science Plan</h2>
+<form action="/create-science-plan" method="post">
+    <label for="planNo">Plan No:</label>
+    <input type="text" id="planNo" name="planNo" required>
+
+    <label for="creator">Creator:</label>
+    <input type="text" id="creator" name="creator" required>
+
+    <label for="submitter">Submitter:</label>
+    <input type="text" id="submitter" name="submitter" required>
+
+    <label for="funding">Funding in USD:</label>
+    <input type="text" id="funding" name="funding" required>
+
+    <label for="objectives">Objectives:</label>
+    <textarea id="objectives" name="objectives" rows="4" required></textarea>
+
+    <label for="starSystem">Star System:</label>
+    <select id="starSystem" name="starSystem">
+        <option value="Andromeda">Andromeda</option>
+        <option value="Antlia">Antlia</option>
+        <!-- รายการเหลือตัดทอนเพื่อความสั้นกระชับ -->
+    </select>
+
+    <label for="startDate">Start Date:</label>
+    <input type="text" id="startDate" name="startDate" placeholder="yyyy-MM-dd HH:mm:ss">
+
+    <label for="telescopeLocation">Telescope Location:</label>
+    <select id="telescopeLocation" name="telescopeLocation">
+        <option value="CHILE">Chile</option>
+        <option value="HAWAII">Hawaii</option>
+    </select>
+
+    <label for="endDate">End Date:</label>
+    <input type="text" id="endDate" name="endDate" placeholder="yyyy-MM-dd HH:mm:ss">
+
+    <label for="fileType">File Type:</label>
+    <input type="text" id="fileType" name="fileType" required>
+
+    <label for="fileQuality">File Quality:</label>
+    <input type="text" id="fileQuality" name="fileQuality" required>
+
+    <label for="colorType">Color Type:</label>
+    <input type="text" id="colorType" name="colorType" required>
+
+    <label for="contrast">Contrast:</label>
+    <input type="number" id="contrast" name="contrast" required>
+
+    <label for="brightness">Brightness:</label>
+    <input type="number" id="brightness" name="brightness" required>
+
+    <label for="saturation">Saturation:</label>
+    <input type="number" id="saturation" name="saturation" required>
+
+    <label for="highlights">Highlights:</label>
+    <input type="number" id="highlights" name="highlights" required>
+
+    <label for="exposure">Exposure:</label>
+    <input type="number" id="exposure" name="exposure" required>
+
+    <label for="shadows">Shadows:</label>
+    <input type="number" id="shadows" name="shadows" required>
+
+    <label for="whites">Whites:</label>
+    <input type="number" id="whites" name="whites" required>
+
+    <label for="blacks">Blacks:</label>
+    <input type="number" id="blacks" name="blacks" required>
+
+    <label for="luminance">Luminance:</label>
+    <input type="number" id="luminance" name="luminance" required>
+
+    <label for="hue">Hue:</label>
+    <input type="number" id="hue" name="hue" required>
+
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
