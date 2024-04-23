@@ -1,10 +1,10 @@
 #  Gemini - Project Phase 2
 
 ## CONTENT
-> * [Team Members 🌤️](#Team-Members-🌤️)
-> * [Here’s how to run the Application 🌔](#Here’s-how-to-run-the-Application-🌔)
-> * [Patterns ⭐️](#Patterns-⭐️)
-> * [How to Use the Observation Control System !](#How-to-Use-the-Observation-Control-System-!)
+> * [Team Members 🌤️](#team-members-🌤️)
+> * [Here’s how to run the Application 🌔](#here’s-how-to-run-the-application-🌔)
+> * [Patterns ⭐️](#patterns-⭐️)
+> * [How to Use the Observation Control System !](#how-to-use-the-observation-control-system-!)
 
 
 ## Team Members 🌤️
