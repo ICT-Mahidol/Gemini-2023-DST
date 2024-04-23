@@ -1,0 +1,90 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #090707;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #3d2929;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff5500;
+        }
+
+        p.error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/login}" method="post" th:object="${user}">
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required><br>
+    <label for="role">Role:</label>
+    <select id="role" name="role">
+        <option value="Astronomer">Astronomer</option>
+        <option value="Science Observer">Science Observer</option>
+    </select><br>
+    <button type="submit">Login</button>
+    <p th:text="${error}" class="error"></p>
+</form>
+</body>
+</html>

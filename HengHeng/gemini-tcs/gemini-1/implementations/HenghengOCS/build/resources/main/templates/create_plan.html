@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Create Science Plan</title>
+    <style>
+        /* CSS styles for the navigation bar */
+        nav {
+            background-color: #efcfa3; /* Orange Pantone color */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ce5a08;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* CSS styles for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #d25910; /* Orange Pantone color */
+            text-align: center;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6600; /* Orange Pantone color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e65c00; /* Darker shade of orange */
+        }
+    </style>
+    <script>
+        function validateDates() {
+            var startDate = document.getElementById("startDate").value;
+            var endDate = document.getElementById("endDate").value;
+            if (startDate >= endDate) {
+                alert("Start date must be before end date.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <a href="/science-plans">Home</a>
+    <span>HengHeng</span>
+</nav>
+<h1>Create Science Plan</h1>
+<form th:action="@{/create-plan}" method="post" th:object="${sciencePlan}" onsubmit="return validateDates()">
+    <label for="astronomerCode">Astronomer ID:</label><br>
+    <select id="astronomerCode" name="astronomerCode" required>
+        <option th:each="astronomer : ${astronomers}" th:value="${astronomer.usercode}" th:text="${astronomer.usercode}"></option>
+    </select><br>
+    <label for="creator">Creator:</label><br>
+    <input type="text" id="creator" name="creator" required><br>
+    <label for="submitter">Submitter:</label><br>
+    <input type="text" id="submitter" name="submitter" required><br>
+    <label for="fundingInUSD">Funding (USD):</label><br>
+    <input type="number" id="fundingInUSD" name="fundingInUSD" required><br>
+    <label for="objectives">Objectives:</label><br>
+    <textarea id="objectives" name="objectives" required></textarea><br>
+    <label for="starSystem">Star System:</label><br>
+    <select id="starSystem" name="starSystem" required>
+        <option value="ANDROMEDA">Andromeda</option>
+        <option value="ANTLIA">Antlia</option>
+        <option value="APUS">Apus</option>
+        <option value="AQUARIUS">Aquarius</option>
+        <option value="AQUILA">Aquila</option>
+        <option value="ARA">Ara</option>
+        <option value="ARIES">Aries</option>
+        <option value="AURIGA">Auriga</option>
+        <option value="BOOTES">Bootes</option>
+        <option value="CAELUM">Caelum</option>
+        <option value="CAMELOPARDALIS">Camelopardalis</option>
+        <option value="CANCER">Cancer</option>
+        <option value="CANES_VENATICI">Canes Venatici</option>
+        <option value="CANIS_MAJOR">Canis Major</option>
+        <option value="CANIS_MINOR">Canis Minor</option>
+        <option value="CAPRICORNUS">Capricornus</option>
+        <option value="CARINA">Carina</option>
+        <option value="CASSIOPEIA">Cassiopeia</option>
+        <option value="CENTAURUS">Centaurus</option>
+        <option value="CEPHEUS">Cepheus</option>
+        <option value="CETUS">Cetus</option>
+        <option value="CHAMAELEON">Chamaeleon</option>
+        <option value="CIRCINUS">Circinus</option>
+        <option value="COLUMBA">Columba</option>
+        <option value="COMA_BERENICES">Coma Berenices</option>
+        <option value="CORONA_AUSTRALIS">Corona Australis</option>
+        <option value="CORONA_BOREALIS">Corona Borealis</option>
+        <option value="CORVUS">Corvus</option>
+        <option value="CRATER">Crater</option>
+        <option value="CRUX">Crux</option>
+        <option value="CYGNUS">Cygnus</option>
+        <option value="DELPHINUS">Delphinus</option>
+        <option value="DORADO">Dorado</option>
+        <option value="DRACO">Draco</option>
+        <option value="EQUULEUS">Equuleus</option>
+        <option value="ERIDANUS">Eridanus</option>
+        <option value="FORNAX">Fornax</option>
+        <option value="GEMINI">Gemini</option>
+        <option value="GRUS">Grus</option>
+        <option value="HERCULES">Hercules</option>
+        <option value="HOROLOGIUM">Horologium</option>
+        <option value="HYDRA">Hydra</option>
+        <option value="HYDRUS">Hydrus</option>
+        <option value="INDUS">Indus</option>
+        <option value="LACERTA">Lacerta</option>
+        <option value="LEO">Leo</option>
+        <option value="LEO_MINOR">Leo Minor</option>
+        <option value="LEPUS">Lepus</option>
+        <option value="LIBRA">Libra</option>
+        <option value="LUPUS">Lupus</option>
+        <option value="LYNX">Lynx</option>
+        <option value="LYRA">Lyra</option>
+        <option value="MENSA">Mensa</option>
+        <option value="MICROSCOPIUM">Microscopium</option>
+        <option value="MONOCEROS">Monoceros</option>
+        <option value="MUSCA">Musca</option>
+        <option value="NORMA">Norma</option>
+        <option value="OCTANS">Octans</option>
+        <option value="OPHIUCHUS">Ophiuchus</option>
+        <option value="ORION">Orion</option>
+        <option value="PAVO">Pavo</option>
+        <option value="PEGASUS">Pegasus</option>
+        <option value="PERSEUS">Perseus</option>
+        <option value="PHOENIX">Phoenix</option>
+        <option value="PICTOR">Pictor</option>
+        <option value="PISCES">Pisces</option>
+        <option value="PISCIS_AUSTRINUS">Piscis Austrinus</option>
+        <option value="PUPPIS">Puppis</option>
+        <option value="PYXIS">Pyxis</option>
+        <option value="RETICULUM">Reticulum</option>
+        <option value="SAGITTA">Sagitta</option>
+        <option value="SAGITTARIUS">Sagittarius</option>
+        <option value="SCORPIUS">Scorpius</option>
+        <option value="SCULPTOR">Sculptor</option>
+        <option value="SCUTUM">Scutum</option>
+        <option value="SERPENS">Serpens</option>
+        <option value="SEXTANS">Sextans</option>
+        <option value="TAURUS">Taurus</option>
+        <option value="TELESCOPIUM">Telescopium</option>
+        <option value="TRIANGULUM">Triangulum</option>
+        <option value="TRIANGULUM_AUSTRAL">Triangulum Austral</option>
+        <option value="TUCANA">Tucana</option>
+        <option value="URSA_MAJOR">Ursa Major</option>
+        <option value="URSA_MINOR">Ursa Minor</option>
+        <option value="VELA">Vela</option>
+        <option value="VIRGO">Virgo</option>
+        <option value="VOLANS">Volans</option>
+        <option value="VULPECULA">Vulpecula</option>
+
+    </select><br>
+    <label for="startDate">Start Date:</label><br>
+    <input type="date" id="startDate" name="startDate" required><br>
+    <label for="endDate">End Date:</label><br>
+    <input type="date" id="endDate" name="endDate" required><br>
+    <label for="telescopeLocation">Telescope Location:</label><br>
+    <select id="telescopeLocation" name="telescopeLocation" required>
+        <option value="CHILE">CHILE</option>
+        <option value="HAWAII">HAWAII</option>
+    </select><br>
+
+    <!-- Data Processing Requirements title -->
+    <h2>Data Processing Requirements</h2>
+
+    <!-- Form fields for Data Processing Requirements -->
+    <label for="fileType">File Type:</label><br>
+    <input type="text" id="fileType" name="dataRequirement.fileType" required><br>
+    <label for="fileQuality">File Quality:</label><br>
+    <input type="text" id="fileQuality" name="dataRequirement.fileQuality" required><br>
+    <label for="colorType">Color Type:</label><br>
+    <input type="text" id="colorType" name="dataRequirement.colorType" required><br>
+    <label for="contrast">Contrast:</label><br>
+    <input type="number" id="contrast" name="dataRequirement.contrast" required><br>
+    <label for="brightness">Brightness:</label><br>
+    <input type="number" id="brightness" name="dataRequirement.brightness" required><br>
+    <label for="saturation">Saturation:</label><br>
+    <input type="number" id="saturation" name="dataRequirement.saturation" required><br>
+    <label for="highlights">Highlights:</label><br>
+    <input type="number" id="highlights" name="dataRequirement.highlights" required><br>
+    <label for="exposure">Exposure:</label><br>
+    <input type="number" id="exposure" name="dataRequirement.exposure" required><br>
+    <label for="shadows">Shadows:</label><br>
+    <input type="number" id="shadows" name="dataRequirement.shadows" required><br>
+    <label for="whites">Whites:</label><br>
+    <input type="number" id="whites" name="dataRequirement.whites" required><br>
+    <label for="blacks">Blacks:</label><br>
+    <input type="number" id="blacks" name="dataRequirement.blacks" required><br>
+    <label for="luminance">Luminance:</label><br>
+    <input type="number" id="luminance" name="dataRequirement.luminance" required><br>
+    <label for="hue">Hue:</label><br>
+    <input type="number" id="hue" name="dataRequirement.hue" required><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="Save">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
