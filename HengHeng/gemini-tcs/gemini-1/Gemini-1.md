@@ -5,7 +5,7 @@
 
 - **อธิบาย 3 use case ที่ได้รับการปรับปรุง**
 
-- **Use case: create sciplan**
+**Use case: create sciplan**
 
 1. **มีการเพิ่มเติมและปรับแก้ usecase description** 
 - เพิ่มให้มีการ ตรวจสอบข้อมูล Objective Science Plan เพื่อตรวจสอบ Science Plan ว่า Objective ไม่ซ้ำกับในระบบ
@@ -20,25 +20,25 @@
 - เพิ่มgetAllastronomer() และreturn Astronomer ID() กลับมา เพื่อตรวจสอบว่า Astronomer Idอะไรที่ต้องการทำ Sciplan นี้ เพื่อจะเพิ่ม Astronomer ใน Sciplan นั้นๆ โดยการ setAstronomerID()
 - เพิ่ม SciencePlan.STATUS SAVED เพื่อให้เมื่อ  Astronomer  กด save Controller จะตรวจสอบ ข้อมูล sciplan
 
-- **Usecase : Test Science Plan**
+**Usecase : Test Science Plan**
 
 1. **มีการปรับแก้ usecase description** 
 - จากเดิมได้assign ให้ supportor ทำในส่วนtest sciplan จากนั้นได้ปรับเปลี่ยนให้ Astronomer ทำ testsciplan แทน
 
-1. **มีการแก้ไข Activity Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
-1. **มีการแก้ไข Sequence Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
+2. **มีการแก้ไข Activity Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
+3. **มีการแก้ไข Sequence Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
 - เพิ่มการเรียกดู Scienceplan ทั้งหมด 
 
-- **Usecase :  Validate Science Plan**
+**Usecase :  Validate Science Plan**
 
 1. **มีการปรับแก้ usecase description** 
-1. **มีการแก้ไข Activity Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
-1. **มีการแก้ไข Sequence Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
+2. **มีการแก้ไข Activity Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
+3. **มีการแก้ไข Sequence Diagram ให้มีflow processที่ตรงกับusecase descriptionที่แก้**
 - เปลี่ยนfunction การเรียกดูข้อมูลเป็น getAllSciencePlan()  
 - เพิ่ม function  getSciencePlanByNo เพื่อดูข้อมูลของ sciplan ที่ต้องการจะ
 - เพิ่ม functiopn UpdateSciencePlanStatus โดย เปลี่ยน Status ของ sciplan ที่ได้ทำการทดสอบผ่านทาง planno
 
-- **อธิบาย Class diagram ที่ได้ปรับปรุง**
+ **อธิบาย Class diagram ที่ได้ปรับปรุง**
 
 
 
@@ -48,27 +48,27 @@
 - เปลี่ยน class ocs ออกเเละทำการเปลี่ยนเป็น class HengHengController
 - เเก้ไข class sciplan ให้ข้อมูลตรงกับ function เเละตัวเเปรของ ระบบที่สร้างขึ้นมาใหม่
 
-- **อธิบายการใช้งาน Gemini software ที่เกี่ยวข้องกับทั้ง 3 use case**
+**อธิบายการใช้งาน Gemini software ที่เกี่ยวข้องกับทั้ง 3 use case**
 
-- **HenghengOCS**
+**HenghengOCS**
 
 - เริ่มต้น RunApp ใน HenghengOCSApplication.java เมื่อรันแอพระบบจะทำการเพิ่ม user ในระบบเมื่อรันครัั้งแรกเสร็จให้ทำการ comment code ในบรรทัดที่ 31-63 หากต้องการรันแอพซ้ำสามารถรันแอพลิเคชั่นได้เลย โดยไม่ต้อง uncomment code
 
-- **UseCase: Create Sciplan**
+ **UseCase: Create Sciplan**
 - localhost:8080/ : Homepage 
 - localhost:8080/login : เข้าสู่ระบบ โดยต้องมีบทบาท เป็น Astronomer
 - localhost:8080/science-plans: Astronomer HomePage
 - กด Menu ข้างบนขวา ไปยัง Create sciplan
 - ระบบพาไปสู่ localhost:8080/create\_plan : Science Plan Form
 - กด Submit ระบบจะบันทึก Science Plan ที่สร้าง
-- **UseCase: Validate Sciplan**
+ **UseCase: Validate Sciplan**
 - localhost:8080/ : Homepage 
 - localhost:8080/login : เข้าสู่ระบบ โดยต้องมีบทบาท เป็น ScienceObserver
 - localhost:8080/science-plans-obserever: Science Observer HomePage
 - กด Menu ข้างบนขวา ไปยัง validate sciplan
 - ระบบพาไปสู่ localhost:8080/validSciPlan : Science Plan ValidatePage
 - กดปุ่มระบบจะอัปเดตสถานะ Science Plan (Validated/Invalidated)
-- **UseCase: Test Sciplan**
+ **UseCase: Test Sciplan**
 - localhost:8080/ : Homepage 
 - localhost:8080/login : เข้าสู่ระบบ โดยต้องมีบทบาท เป็น Astronomer
 - localhost:8080/science-plans: Astronomer HomePage
@@ -81,21 +81,21 @@
 
 
 
-- **การเลือกใช้ design pattern ใน project:**
+ **การเลือกใช้ design pattern ใน project:**
 
 กลุ่มเราใช้**รูปแบบ Factory Method** ในการปรับปรุงโค้ด โดยสร้าง instances ของ subclass (Astronomer, SciObserver) ของคลาส User ซึ่งช่วยในการ loose coupling และส่วนขยายง่ายๆ โดยไม่ต้องแก้ไข code ใน client ที่มีอยู่
 
-- **ปัญหา:**
+ **ปัญหา:**
 
 โค้ดเก่าตอนที่สร้าง Object ไม่ได้ถูก centralize และ encapsulate กลุ่มเราสร้าง subclass (Astronomer, SciObserver) แต่ละอัน โดยใช้ constructor ของแต่ละคลาสเอง ซึ่งไม่ถูกต้อง ตามหลักของ encapsulation และถ้าในอนาคตหากมีปรับเปลี่ยนหรือเพิ่มเติมprocess ก็จะต้องเปลี่ยนแก้ไขโค้ดในหลายจุด codebase ทำให้maintain ยากแล้วก็อาจจะเกิด errorได้ง่าย
 
-- **วิธีการแก้ไข:**
+ **วิธีการแก้ไข:**
 
 นำเข้า Factory Method pattern เพื่อแก้ปัญหา โดยใช้ factory method ที่ centralize ในคลาส User เพื่อสร้าง instances ของ subclass ตัวเอง แต่ละ subclass จะสร้าง factory method และ encapsulating การสร้างobjectภายใน subclass ทำให้maintain ได้ง่ายโดยไม่มีผลต่อ code ที่มีอยู่ใน client ซึ่งใน code เราเป็น mehod createUser() ที่สร้างขึ้นมาเป็น instance
 
-- **ประโยชน์ในการใช้ Factory Pattern ได้แก่:**
+ **ประโยชน์ในการใช้ Factory Pattern ได้แก่:**
 1. **Encapsulation:** กระบวนการสร้างถูก encapsulate ภายใน factory methods ซึ่งซ่อนรายละเอียดจาก client code
-1. **Loose Coupling:** client code ทำงานกับ factory methods ไม่ใช่การสร้าง subclass โดยตรง ช่วยให้ loose coupling และการบำรุงรักษาที่ง่ายขึ้น
-1. **Extensibility:** มันช่วยในการส่วนขยายได้อย่างง่ายๆ โดยการเพิ่ม subclass ใหม่ หรือการปรับปรุงกระบวนการสร้างโดยไม่มีผลต่อ code ที่มีอยู่
-1. **Centralized Control:** กระบวนการสร้างวัตถุถูก centralize ซึ่งทำให้ง่ายต่อการจัดการและการบำรุงรักษา
+2. **Loose Coupling:** client code ทำงานกับ factory methods ไม่ใช่การสร้าง subclass โดยตรง ช่วยให้ loose coupling และการบำรุงรักษาที่ง่ายขึ้น
+3. **Extensibility:** มันช่วยในการส่วนขยายได้อย่างง่ายๆ โดยการเพิ่ม subclass ใหม่ หรือการปรับปรุงกระบวนการสร้างโดยไม่มีผลต่อ code ที่มีอยู่
+4. **Centralized Control:** กระบวนการสร้างวัตถุถูก centralize ซึ่งทำให้ง่ายต่อการจัดการและการบำรุงรักษา
 1. **Consistent Interface:** factory methods ให้ interface ที่มีความสัมพันธ์กัน ทำให้ใช้งานง่ายและลดข้อผิดพลาด
