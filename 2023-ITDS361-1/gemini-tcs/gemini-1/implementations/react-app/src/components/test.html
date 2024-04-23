@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatment Follow-Up for Autistic Patients</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .form-group textarea {
+        height: 100px;
+    }
+    .form-group button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .form-group button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Treatment Follow-Up for Autistic Patients</h2>
+    <form id="treatmentForm">
+        <div class="form-group">
+            <label for="HN">HN:</label>
+            <input type="text" id="HN" name="HN" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="dsmv">DSM-V Diagnosis:</label>
+            <textarea id="dsmv" name="dsmv" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>TDSI:</label><br>
+            <input type="checkbox" id="gm" name="gm">
+            <label for="gm"> GM (Gross Motor)</label><br>
+            <input type="checkbox" id="fm" name="fm">
+            <label for="fm"> FM (Fine Motor)</label><br>
+            <input type="checkbox" id="rl" name="rl">
+            <label for="rl"> RL (Receptive Language)</label><br>
+            <input type="checkbox" id="el" name="el">
+            <label for="el"> EL (Expressive Language)</label><br>
+            <input type="checkbox" id="ps" name="ps">
+            <label for="ps"> PS (Personal/Social)</label>
+        </div>
+        <div class="form-group">
+            <label for="medication">Medication:</label>
+            <textarea id="medication" name="med" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="vineland">Vineland Scale:</label>
+            <textarea id="vineland" name="vineland" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="st">Speech Therapy (ST):</label>
+            <textarea id="st" name="st" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="ot">Occupational Therapy (OT):</label>
+            <textarea id="ot" name="ot" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="sped">Special Education (Sp.Ed):</label>
+            <textarea id="sped" name="sped" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="iotest">Intelligence/Developmental Test:</label>
+            <textarea id="iotest" name="iotest" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="cgi">Clinical Global Impression (CGI):</label>
+            <textarea id="cgi" name="cgi" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="other">Other:</label>
+            <textarea id="other" name="other" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="summary">Summary:</label>
+            <textarea id="summary" name="summary" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
