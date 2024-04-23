@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Observing Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            text-decoration: none;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 5px;
+        }
+        .approve-btn {
+            background-color: #28a745;
+        }
+        .reject-btn {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Observing Programs</h1>
+    <div th:if="${observingPrograms.isEmpty()}">
+        <p>No Observing Programs available.</p>
+    </div>
+    <div th:unless="${observingPrograms.isEmpty()}">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Optics Primary</th>
+                <th>Optics Secondary RMS</th>
+                <th>FStop</th>
+                <th>Science Fold Mirror Degree</th>
+                <th>Module Content</th>
+                <th>Calibration Unit</th>
+                <th>Light Type</th>
+                <th>Tele Position Pairs</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="observingProgram : ${observingPrograms}">
+                <td th:text="${observingProgram.id}">ID</td>
+                <td th:text="${observingProgram.opticsPrimary}">Optics Primary</td>
+                <td th:text="${observingProgram.opticsSecondaryRMS}">Optics Secondary RMS</td>
+                <td th:text="${observingProgram.fStop}">FStop</td>
+                <td th:text="${observingProgram.scienceFoldMirrorDegree}">Science Fold Mirror Degree</td>
+                <td th:text="${observingProgram.moduleContent}">Module Content</td>
+                <td th:text="${observingProgram.calibrationUnit}">Calibration Unit</td>
+                <td th:text="${observingProgram.lightType}">Light Type</td>
+                <td th:text="${observingProgram.telePositionPairs}">Tele Position Pairs</td>
+                <td>
+                    <a th:href="@{/approve-observing-program/{id}(id=${observingProgram.id})}" class="btn approve-btn">Approve</a>
+                    <a th:href="@{/reject-observing-program/{id}(id=${observingProgram.id})}" class="btn reject-btn">Reject</a>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
