@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        .topnav {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: cornflowerblue;
+            color: white;
+        }
+    </style>
+    <title>Telescope Operator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<header>
+    <nav>
+        <div class="topnav">
+            <a class="active" th:text="'Hello, World!' + ' you are Telescope Operator'"></a>
+            <a href="http://localhost:8080/commandline">Command Line</a>
+        </div>
+    </nav>
+</header>
+</body>
+</html>

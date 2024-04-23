@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .bottom-left {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        #command {
+            width: 200px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Control Telescope</title>
+</head>
+<body>
+<h1>Welcome to Command Line</h1>
+<div>
+    <p th:text="'Received command: ' + ${received} " />
+    <p th:text="'Result: ' + ${result} " />
+</div>
+<div class="bottom-left">
+    <form action="/commandline" method="post">
+        <input type="text" id="command" name="command" placeholder="type some command here">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>

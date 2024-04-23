@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Science Plans</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #333, #444);
+            color: #ffd700;
+            margin: 0;
+            padding: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+        th {
+            background-color: #222;
+        }
+        td {
+            background-color: #000;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+<h1>All Science Plans</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Plan No</th>
+        <th>Creator</th>
+        <th>Submitter</th>
+        <th>Objectives</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="plan : ${sciencePlans}">
+        <td th:text="${plan.planNo}"></td>
+        <td th:text="${plan.creator}"></td>
+        <td th:text="${plan.submitter}"></td>
+        <td th:text="${plan.objectives}"></td>
+        <td th:text="${plan.status}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
