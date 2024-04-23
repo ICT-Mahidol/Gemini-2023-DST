@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Observing Program</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border-color: #4cae4c;
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #449d44;
+        }
+    </style>
+</head>
+<body>
+<h1>Create Observing Program</h1>
+<form th:action="@{/create-observing-program}" method="post">
+    <!-- Fields for ObservingProgram data based on SciencePlan -->
+    <div class="form-group">
+        <label for="planNo">Plan No:</label>
+        <input type="text" id="planNo" name="planNo" th:value="${sciencePlan.planNo}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="creator">Creator:</label>
+        <input type="text" id="creator" name="creator" th:value="${sciencePlan.creator}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="submitter">Submitter:</label>
+        <input type="text" id="submitter" name="submitter" th:value="${sciencePlan.submitter}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="fundingInUSD">Funding (USD):</label>
+        <input type="text" id="fundingInUSD" name="fundingInUSD" th:value="${sciencePlan.fundingInUSD}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="objectives">Objectives:</label>
+        <input type="text" id="objectives" name="objectives" th:value="${sciencePlan.objectives}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="starSystem">Star System:</label>
+        <input type="text" id="starSystem" name="starSystem" th:value="${sciencePlan.starSystem}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input type="text" id="startDate" name="startDate" th:value="${sciencePlan.startDate}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="text" id="endDate" name="endDate" th:value="${sciencePlan.endDate}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="telescopeLocation">Telescope Location:</label>
+        <input type="text" id="telescopeLocation" name="telescopeLocation" th:value="${sciencePlan.telescopeLocation}" readonly>
+    </div>
+
+    <!-- Fields for additional ObservingProgram data -->
+    <div class="form-group">
+        <label for="opticsPrimary">Optics Primary:</label>
+        <select id="opticsPrimary" name="opticsPrimary">
+            <option value="GNZ">GN Zemax Model</option>
+            <option value="GSZ">GS Zemax Model</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="fStop">F-Stop:</label>
+        <input type="number" id="fStop" name="fStop" step="0.1" required>
+    </div>
+    <div class="form-group">
+        <label for="opticsSecondaryRMS">Optics Secondary RMS (nm):</label>
+        <input type="number" id="opticsSecondaryRMS" name="opticsSecondaryRMS" step="0.1" required>
+    </div>
+    <div class="form-group">
+        <label for="scienceFoldMirrorDegree">Science Fold Mirror Degree:</label>
+        <input type="number" id="scienceFoldMirrorDegree" name="scienceFoldMirrorDegree" min="30" max="45" step="0.1" required>
+    </div>
+    <div class="form-group">
+        <label for="moduleContent">Module Content:</label>
+        <select id="moduleContent" name="moduleContent" required>
+            <option value="1">Module 1: Acquisition Camera/High Resolution Wavefront Sensor</option>
+            <option value="2">Module 2: Science Fold</option>
+            <option value="3">Module 3: Second Peripheral Wavefront Sensor</option>
+            <option value="4">Module 4: First Peripheral Wavefront Sensor</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="calibrationUnit">Calibration Unit:</label>
+        <select id="calibrationUnit" name="calibrationUnit" required>
+            <option value="Argon">Argon</option>
+            <option value="Xenon">Xenon</option>
+            <option value="ThAr">ThAr</option>
+            <option value="CuAr">CuAr</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="lightType">Light Type:</label>
+        <select id="lightType" name="lightType" required>
+            <option value="MaunaKeaSkyEmission">MaunaKeaSkyEmission</option>
+            <option value="CerroPachonSkyEmission">CerroPachonSkyEmission</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="telePositionPairs">Telescope Position Pairs:</label>
+        <input type="text" id="telePositionPairs" name="telePositionPairs" placeholder="direction-degree ex. 20-10,15-30" required>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create Observing Program">
+    </div>
+</form>
+</body>
+</html>
