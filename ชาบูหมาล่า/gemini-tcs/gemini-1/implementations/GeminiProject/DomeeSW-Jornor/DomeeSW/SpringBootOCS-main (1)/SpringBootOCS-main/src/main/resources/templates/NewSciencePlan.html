@@ -132,7 +132,6 @@
 
 
     <button type="button" class="cancel-button" onclick="confirmReset()">Cancel</button>
-    <button type="button" class="save-button" onclick="saveSciencePlan()">Save</button>
     <button type="button" class="submit-button" onclick="validateForm()">Create Science Plan</button>
 </form>
 <script>
@@ -150,28 +149,18 @@
 
         // หากฟอร์มไม่ถูกต้องให้แสดงข้อความเตือนว่ายังไม่ได้กรอกข้อมูลให้ครบทั้งฟอร์ม
         if (!isFormValid) {
-            alert('Please fill in complete information.');
+            const confirmSave = confirm('Do you want to save this draft?');
+            if (confirmSave) {
+                // ถ้าผู้ใช้ต้องการเซฟ daft ให้ไม่ต้องทำอะไรเพิ่ม
+            } else {
+                // ถ้าผู้ใช้ไม่ต้องการเซฟ daft ให้ redirect ไปที่หน้า path /list-spAstro
+                window.location.href = '/list-spAstro';
+            }
         } else {
             // หากฟอร์มถูกต้องให้ส่งข้อมูล
             submitForm();
         }
     }
-
-    function saveSciencePlan() {
-        // แสดงข้อความแจ้งเตือน
-        var confirmSave = confirm("คุณต้องการจะเซฟ draft นี้ใช่ไหม?");
-
-        // ตรวจสอบคำตอบ
-        if (confirmSave) {
-            alert("คุณกด yes");
-            // ทำการเซฟ draft นี้
-        } else {
-            // alert("ไม่เซฟ draft นี้");
-            // ไม่ทำการเซฟ draft นี้
-            window.location.href = "/list-spAstro";
-        }
-    }
-
 
 
     function confirmReset() {
