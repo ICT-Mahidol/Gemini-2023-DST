@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Science Plan</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    nav {
+      background-color: #efcfa3; /* Orange Pantone color */
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ce5a08;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center; /* Center text within the container */
+    }
+
+    h2 {
+      color: #ec924c;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+    }
+
+    .alert {
+      margin-top: 20px;
+    }
+    .horizontal-table {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .table-row {
+      display: flex;
+      justify-content: space-between;
+      width: 300px; /* Adjust width as needed */
+      margin: 0 auto; /* Center the table within its parent */
+    }
+
+    .table-header, .table-data {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      width: 150px; /* Set fixed width for header and data cells */
+      box-sizing: border-box; /* Include padding and border in width calculation */
+    }
+
+    .table-header {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .table-data {
+      flex: 1;
+      text-align: center;
+    }
+    .btn-primary {
+      background-color: #9e4220; /* Change to orange */
+      border-color: #9e4220; /* Change border color to orange */
+      color: #fff; /* Change text color to white */
+    }
+
+    .btn-primary:hover {
+      background-color: #e65800; /* Darker orange on hover */
+      border-color: #e65800; /* Darker orange border on hover */
+    }
+
+
+  </style>
+</head>
+<nav>
+  <a href="/science-plans">Home</a>
+  <span>HengHeng</span>
+</nav>
+<body>
+<div class="container mt-5">
+  <h2 class="text-center">Testing a Science Plan</h2>
+  <h5 class="text-center">Select the Science Plan You Want to Test</h5>
+  <form th:action="@{/test}" method="post">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Enter Science Plan by ID" name="planNo">
+    </div>
+    <button type="submit" class="btn btn-primary">Run Test</button>
+  </form>
+
+  <div th:if="${result}" class="alert alert-dismissible fade show mt-3" th:classappend="${result == 'success' ? 'alert-success' : 'alert-danger'}" role="alert">
+    <strong th:text="${result == 'success' ? 'Success!' : 'Error!'}"></strong> Test <span th:text="${result == 'success' ? 'passed' : 'failed'}"></span>.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+<!-- Wrap the table in a div and apply styling to center it -->
+<div class="container mt-3">
+  <h5 class="text-center">List of Science Plans</h5>
+  <div class="horizontal-table">
+    <div class="table-row">
+      <div class="table-header">Plan No</div>
+      <div class="table-header">Creator</div>
+      <div class="table-header">Status</div>
+    </div>
+    <div th:each="plan : ${sciplans}" class="table-row">
+      <div th:text="${plan.planNo}" class="table-data"></div>
+      <div th:text="${plan.creator}" class="table-data"></div>
+      <div th:text="${plan.spStatus}" class="table-data"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

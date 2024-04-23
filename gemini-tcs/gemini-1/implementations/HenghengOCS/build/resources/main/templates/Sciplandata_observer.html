@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Science Plans List </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+        }
+
+
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 70%; /* Adjust the width as needed */
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #d25910;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+
+        /* Add new styles for the menu button and slide-out menu */
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            cursor: pointer;
+        }
+        .menu-icon {
+            width: 90px;
+            height: 40px;
+            background-color: orange; /* Background color for the menu icon */
+            border-radius: 50%; /* Rounded shape for the icon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: saddlebrown;
+            font-size: 20px;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #e3f6c7;
+            transform: translateX(250px);
+            transition: transform 0.3s ease;
+            z-index: 998;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            padding: 15px;
+            color: #fff;
+            border-bottom: 1px solid #555;
+        }
+        .menu li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Menu Button -->
+<div class="menu-btn" onclick="toggleMenu()">
+    <div class="menu-icon">Menu</div>
+</div>
+
+<!-- Slide-out Menu -->
+<div class="menu" id="slideMenu">
+    <ul>
+        <li><a href="/validSciPlan" style="color: #8b4513;">Validate Plan</a></li>
+        <li><a href="/login" style="color: #8b4513;">Logout</a></li>
+    </ul>
+</div>
+
+<div id="content">
+    <h1>Science Observer Homepage</h1><br>
+    <h2>Science Plan List</h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Plan No</th>
+            <th>Creator</th>
+            <th>Submitter</th>
+            <th>Funding (USD)</th>
+            <th>Objectives</th>
+            <th>Star System</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Telescope Location</th>
+            <th>DataRequirement</th>
+            <th>Related Astronomer ID</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Loop through each science plan and display its details -->
+        <tr th:each="plan : ${sciplans}" th:if="${plan.astronomer != null and plan.astronomer.role == 'Astronomer'}">
+            <td th:text="${plan.planNo}"></td>
+            <td th:text="${plan.creator}"></td>
+            <td th:text="${plan.submitter}"></td>
+            <td th:text="${plan.fundingInUSD}"></td>
+            <td th:text="${plan.objectives}"></td>
+            <td th:text="${plan.starSystem}"></td>
+            <td th:text="${#dates.format(plan.startDate, 'yyyy-MM-dd')}"></td>
+            <td th:text="${#dates.format(plan.endDate, 'yyyy-MM-dd')}"></td>
+            <td th:text="${plan.telescopeLocation}"></td>
+            <td th:text="${plan.dataRequirement.toString()}"></td>
+            <td th:text="${plan.astronomer.usercode}"></td>
+            <td th:text="${plan.spStatus}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    // JavaScript function to toggle the slide-out menu
+    function toggleMenu() {
+        var menu = document.getElementById("slideMenu");
+        if (menu.style.transform === "translateX(250px)") {
+            menu.style.transform = "translateX(0)";
+        } else {
+            menu.style.transform = "translateX(250px)";
+        }
+    }
+</script>
+</body>
+</html>
