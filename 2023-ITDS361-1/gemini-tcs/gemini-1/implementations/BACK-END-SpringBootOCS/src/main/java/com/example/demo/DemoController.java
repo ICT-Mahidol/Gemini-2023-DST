@@ -21,7 +21,6 @@ public class DemoController {
     @GetMapping("/")
     public ArrayList<SciencePlan> getAllSciencePlans() {
         OCS o = new OCS();
-//        System.out.println(o.getAllSciencePlans());
         return o.getAllSciencePlans();
     }
 
@@ -67,22 +66,7 @@ public class DemoController {
     @PostMapping("/observing")
     public ObservingProgram createObservingProgram(@RequestBody Map<String, Object> body) {
 
-        /*
-        List<Map<String, Double>> telePositionPairList = (List<Map<String, Double>>) body.get("telePositionPair");
-        TelePositionPair[] t = new TelePositionPair[telePositionPairList.size()];
-
-        int index = 0;
-        for (Map<String, Double> telePositionPairObject : telePositionPairList) {
-            double direction = telePositionPairObject.get("direction");
-            double degree = telePositionPairObject.get("degree");
-            TelePositionPair telePositionPair = new TelePositionPair(direction, degree);
-
-            t[index++] = telePositionPair;
-        }
-        */
-
         List<Map<String, String>> telePositionPairList = (List<Map<String, String>>) body.get("telePositionPair");
-//        System.out.println(telePositionPairList.size());
         TelePositionPair[] t = new TelePositionPair[telePositionPairList.size()];
 
         int index = 0;
@@ -98,7 +82,6 @@ public class DemoController {
             t[index++] = telePositionPair;
 
         }
-//        System.out.println(Arrays.toString(t));
 
         OCS o = new OCS();
         ObservingProgram op = o.createObservingProgram(
@@ -115,10 +98,7 @@ public class DemoController {
         );
         op.validateObservingCondition(op);
         o.saveObservingProgram(op);
-//        op.setValidationStatus(true);
-//        ocs.saveObservingProgram(op);
         ObservingProgram opSc = o.getObservingProgramBySciencePlan(o.getSciencePlanByNo(Integer.parseInt(body.get("id").toString())));
-//        System.out.println(opSc);
         return opSc;
     }
 

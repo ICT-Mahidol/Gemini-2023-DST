@@ -31,7 +31,6 @@ public class InsertUser {
 
     public static void main(String[] args) {
         User user = new User("user3","user3", "user3@gmail.com", "0981234567", "ScienceObserver");
-
         InsertUser inserter = new InsertUser();
         inserter.insertUser(user);
     }
